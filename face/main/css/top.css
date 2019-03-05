@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+margin:0 auto;font-size:14px;
+}
+
+.kj_head_bg2{
+ background-color:#005e5e;height:43px;margin-top:-3px;
+}
+
+.kj_head_bg{
+background-image:url(../images2/s_02.jpg);background-repeat:no-repeat;background-color:#bae4d8; 
+}
+.kj_head_bg h1{
+font-size:16px;font-family:"宋体";padding:0;margin:0;
+}
+.kj_head_bg h2{
+font-size:13px;font-family:"宋体";font-weight:normal;padding:0px;margin:0	
+}
+.kj_head_bg select{
+width:150px;line-height:20px;background-color:#FFF; border:1px solid #009999;
+}
+.kj_nav_bg{
+background-image:url(../images/kj-index_07.gif);background-repeat:repeat-x;width:100%;height:27px;font-family:"幼圆";font-weight:bold;
+}
+.kj_nav_bg a:link{
+color:#FFF;text-decoration:none;font-size:14px;
+}
+.kj_nav_bg a:hover{
+color:#FF0000;text-decoration:none;
+}
+.kj_nav_bg a:visited{
+color:#FFF;text-decoration:none;
+}

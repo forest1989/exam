@@ -1,0 +1,475 @@
+
+.dtui-mask-msg{	
+	border:2px solid #888;
+}
+/*----------------------------------- tools ----------------------------------*/
+
+.dtui-tools-close
+{
+    background:url(images/tools/close.gif) no-repeat 50% 0px;
+}
+
+/*----------------------------------- toolbar ----------------------------------*/
+
+.dtui-toolbar
+{
+    border:solid 1px #8C8C8C;
+    padding:5px;
+    background:#F3F3F3;
+}
+.separator
+{
+    border-left:solid 1px #A8A8A8;    
+}
+
+/*----------------------------------- button ----------------------------------*/
+
+.dtui-button
+{
+    border:1px solid #aaa;
+    background:#E0DFDF url(images/button/button.gif) repeat-x 0 0;
+    color:#000000;
+}
+body a:hover.dtui-button
+{
+    border: 1px solid #999;
+    background:#f2f2f2 url(images/button/hover.gif) repeat-x 0 0;              
+}
+body .dtui-button-pressed, body a:hover.dtui-button-pressed,
+body .dtui-button-checked, body a:hover.dtui-button-checked,
+body a.dtui-button-popup, body a:hover.dtui-button-popup
+{
+    background:#d5d5d5;     
+}
+body .dtui-button-disabled, body a:hover.dtui-button-disabled
+{
+    border: 1px solid #cecec3;
+    color:#808080;
+    background:#E0DFDF url(images/button/disabled.gif) repeat-x 0 0px;        
+}
+
+
+/*----------------------------------- textbox ----------------------------------*/
+.dtui-textbox-border
+{
+    background:white;
+	border-color:#a5acb5;        
+}
+body .dtui-textbox-focus .dtui-textbox-border
+{
+    border-color: #7F7F7F;
+}
+
+
+/*----------------------------------- buttonedit ----------------------------------*/
+
+.dtui-buttonedit-border
+{
+    background:white;
+	border-color:#a5acb5;      
+}
+body .dtui-buttonedit-focus .dtui-buttonedit-border
+{
+    border-color: #7F7F7F;
+}
+.dtui-buttonedit-button
+{
+	background:#E6E6E6 url(images/buttonedit/button.gif) repeat-x 50% 50%;		
+	border:#a5acb5 1px solid;   
+	padding:0;
+}
+.dtui-buttonedit-button-hover,
+.dtui-buttonedit-hover .dtui-buttonedit-button
+{
+    background:#f2f2f2 url(images/buttonedit/hover.gif) repeat-x 0 0; 
+	border-color:#7F7F7F;
+}
+.dtui-buttonedit-button-pressed,
+.dtui-buttonedit-popup .dtui-buttonedit-button
+{
+	border-color:#7F7F7F;
+    background:#d5d5d5;	
+}
+.dtui-popupedit .dtui-buttonedit-icon
+{
+    background:url(images/buttonedit/icon2.gif) no-repeat 60% 30%;
+}
+.dtui-datepicker .dtui-buttonedit-icon
+{
+    background:url(images/buttonedit/icon2.gif) no-repeat 60% 30%;
+}
+
+
+
+/*------------------------- panel -----------------------*/
+
+.dtui-panel-border
+{
+    border:1px solid #8B8B8B;  
+}
+.dtui-panel-header
+{
+    height:21px;
+    background:#DCDCDC;
+}
+.dtui-panel-header-inner
+{
+   padding-top:3px;
+}
+.dtui-panel-toolbar
+{
+    border-bottom:solid 1px #C9C9C9;
+    background:#F3F3F3;
+}
+
+.dtui-panel-footer
+{
+    border-top:solid 1px #C9C9C9;
+    background:#F3F3F3;
+}
+
+/*----------------------------- window -------------------------*/
+.dtui-window .dtui-panel-header
+{
+    background:#DCDCDC;
+}
+.dtui-window .dtui-panel-footer
+{
+    background:#F3F3F3;
+}
+
+/*------------------- navbar ------------------*/
+.dtui-outlookbar-border
+{
+    border:1px solid #A8A8A8;         
+}
+.dtui-outlookbar-groupHeader
+{
+    background:#E0E0E0;    
+}
+/* view2 */
+.dtui-outlookbar-view2 .dtui-outlookbar-groupHeader
+{
+    border:solid 1px #A8A8A8; 
+}
+.dtui-outlookbar-view2 .dtui-outlookbar-groupBody
+{    
+    background:#efefef;
+}
+/* view3 */
+.dtui-outlookbar-view3 .dtui-outlookbar-group
+{
+    border:solid 1px #A8A8A8; 
+}
+
+
+/*----------------------- layout -----------------------*/
+
+.dtui-layout-region
+{
+    border:1px solid #8B8B8B;
+}
+.dtui-layout-region-header
+{
+    background:#E0E0E0;
+    border-bottom:solid 1px #A8A8A8;
+}
+.dtui-layout-proxy
+{
+    background:#E0E0E0;
+}
+.dtui-layout-proxy-hover
+{
+    background:#F2F2F2;    
+}
+
+/*------------------------- menu --------------------------------*/
+
+.dtui-menu
+{
+    border-color:#8B8B8B;
+    background:white url(images/menu/menubg.gif) repeat-y;   
+    color:Black;
+}
+.dtui-menuitem
+{
+    line-height:20px;
+}
+.dtui-menuitem-hover
+{
+    border-color:#888888;
+    background:#f2f2f2;
+}
+.dtui-menu-popup
+{
+    border-color:#888888; 
+    background:#f2f2f2;    
+}
+.dtui-menuitem-selected
+{    
+    border-color:#888888; 
+    background:#cbcbcb;    
+}
+.dtui-menuitem-text, .dtui-menuitem-text a
+{
+    color:Black;
+}
+/* menu horizontal */
+.dtui-menu-horizontal .dtui-menu-inner
+{
+    background:#f0f0f0;
+}
+.dtui-menu-horizontal .dtui-menuitem-hover
+{
+    border:solid 1px #888888;
+    background:#cbcbcb;
+}
+.dtui-menu-horizontal  .dtui-menu-popup
+{
+    border:solid 1px #888888;
+    border-bottom:0px;
+    background:#cbcbcb;
+}
+
+/*---------------------- listbox -----------------------------*/
+.dtui-listbox-border
+{
+    border:solid 1px #9f9f9f;
+}
+.dtui-listbox-item-hover{
+	background:#CFCFCF;
+}
+.dtui-listbox-item-selected{
+	background:#a5a5a5;
+	color:White;
+}
+.dtui-listbox-header
+{    
+    background:#dcdcdc;
+    border-bottom:solid 1px #a0a0a0;
+}
+
+/*------------------- treegrid --------------------*/
+.dtui-treegrid-border
+{
+    border-color:#9f9f9f;
+}
+
+.dtui-treegrid-header
+{
+    border-bottom:none;
+}
+.dtui-treegrid-headerInner
+{
+    background:#dcdcdc;
+}
+.dtui-treegrid-selectedNode
+{
+	background:#a5a5a5;
+}
+.dtui-treegrid-hoverNode
+{
+    background:#CFCFCF;
+}
+
+/*---------------------- calendar -----------------------------*/
+.dtui-calendar
+{    
+    border:1px solid #9f9f9f;       
+}
+.dtui-calendar-header
+{   
+    background:#dcdcdc;
+    border-bottom:solid 1px #c9c9c9;    
+}
+.dtui-calendar-footer
+{
+    background:#ededed;
+}
+.dtui-calendar-tadayButton, .dtui-calendar-clearButton,
+.dtui-calendar-okButton, .dtui-calendar-cancelButton
+{
+    border:1px solid #7F7F7F;
+    background:#E0DFDF url(images/calendar/button.gif) repeat-x 0 0;
+    color:#000000;
+}
+.dtui-calendar-menu-selected, a:hover.dtui-calendar-menu-selected
+{
+    color:White;
+    background:#8D8D8D;
+    border:solid 1px black;
+}
+.dtui-calendar .dtui-calendar-selected
+{
+    background:#8D8D8D;
+    color:White;
+    border:solid 1px #606060;
+}
+.dtui-calendar .dtui-calendar-today
+{
+    border:1px solid #C00000;
+}
+
+
+/*---------------------- tabs -----------------------------*/
+.dtui-tabs-scrollCt
+{
+    border-color:#a8a8a8;
+    background:#F3F3F3;
+}
+.dtui-tabs-leftButton, .dtui-tabs-rightButton
+{
+    border:solid 1px #7F7F7F;
+    background-color:#E0E0E0;
+}
+a:hover.dtui-tabs-leftButton,a:hover.dtui-tabs-rightButton
+{
+    background-color:#F2F2F2;
+}
+/* top */
+.dtui-tabs-bodys
+{
+    border:solid 1px #a8a8a8;
+    border-top:0;
+}
+.dtui-tabs-space
+{
+    border-bottom:solid 1px #a8a8a8;
+}
+.dtui-tabs-space2
+{
+    border-bottom:solid 1px #a8a8a8;
+}
+
+.dtui-tab
+{
+    background-color: #E0E0E0;
+    border: 1px solid #a8a8a8;
+    color:Black;
+}
+.dtui-tab-hover
+{        
+    background:#F2F2F2;    
+}
+.dtui-tab-active
+{
+    border-bottom:solid 1px white;
+    background:white;    
+}
+
+/* bottom */
+.dtui-tabs-header-bottom .dtui-tabs-space,
+.dtui-tabs-header-bottom .dtui-tabs-space2
+{
+    border:0;
+    border-top: 1px solid #a8a8a8;
+}
+.dtui-tabs-header-bottom .dtui-tabs-bodys
+{    
+    border:solid 1px #a8a8a8;
+    border-bottom:0;
+}
+.dtui-tabs-header-bottom .dtui-tab-active
+{
+    border-top:solid 1px white;
+    border-bottom:solid 1px #a8a8a8;
+}
+.dtui-tabs-body-bottom
+{
+    border:solid 1px #a8a8a8;
+    border-bottom:0;
+}
+/* left */
+.dtui-tabs-header-left .dtui-tabs-space,
+.dtui-tabs-header-left .dtui-tabs-space2
+{
+    border:0;
+    border-right: 1px solid #a8a8a8;
+}
+.dtui-tabs-header-left .dtui-tabs-bodys
+{
+    border:solid 1px #a8a8a8;
+    border-left:0;
+}
+.dtui-tabs-header-left .dtui-tab-active
+{    
+    border:solid 1px #a8a8a8;
+    border-right:solid 1px white;
+}
+.dtui-tabs-body-left
+{
+    border:solid 1px #a8a8a8;
+    border-left:0;
+}
+
+/* right */
+.dtui-tabs-header-right .dtui-tabs-space,
+.dtui-tabs-header-right .dtui-tabs-space2
+{
+    border:0;
+    border-left: 1px solid #a8a8a8;
+}
+.dtui-tabs-header-right .dtui-tabs-bodys
+{    
+    border:solid 1px #a8a8a8;
+    border-right:0;
+}
+.dtui-tabs-header-right .dtui-tab-active
+{    
+    border:solid 1px #a8a8a8;
+    border-left:solid 1px white;
+}
+.dtui-tabs-body-right
+{
+    border:solid 1px #a8a8a8;
+    border-right:0;
+}
+
+
+/*---------------------- tree -----------------------------*/
+
+.dtui-tree-node-hover .dtui-tree-nodeshow
+{
+    border:1px solid #888888;
+    background:#f2f2f2;
+}
+
+.dtui-tree-selectedNode .dtui-tree-nodeshow
+{
+    border:1px solid #888888;
+    background:#d8d8d8;
+}
+
+/*---------------------- grid -----------------------------*/
+.dtui-grid-headerCell, .dtui-grid-topRightCell
+{
+    background:#dcdcdc;
+    border-right:#9f9f9f 1px solid;
+    border-bottom:#9f9f9f 1px solid;
+}
+.dtui-grid-footer, .dtui-grid-pager
+{
+    background:#f2f2f2;
+}
+.dtui-grid-detailRow
+{
+    background:#F0F0F0;
+}
+
+/*---------------------- progressbar -----------------------------*/
+.dtui-progressbar
+{
+    border:1px solid #a5acb5;
+}
+.dtui-progressbar-border
+{
+    border:1px solid #a5acb5;
+}
+.dtui-progressbar-bar
+{
+    background:#ababab;
+}
+.dtui-progressbar-text
+{
+   color:#222;
+}

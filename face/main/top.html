@@ -1,0 +1,185 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>班组建设信息化管理系统</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.btnFont {
+	color: #005e5e;
+	font-size: 12px;
+	font-family: "宋体";
+	font-weight: normal;
+	padding: 0px;
+	margin: 10px 0px 0px 0px;
+}
+.btnFont2 {
+	color: #FFF;
+	font-size: 14px;
+	font-family: "宋体";
+	font-weight: normal;
+	width: 85px;
+	height: 30px;
+	padding: 10px 0px 0px 0px;
+	margin-top: 2px;
+}
+.btnFont22 {
+	color: #005e5e;
+	font-size: 14px;
+	font-family: "宋体";
+	font-weight: normal;
+	width: 85px;
+	height: 30px;
+	padding: 10px 0px 0px 0px;
+	margin-top: 2px;
+	text-alin: center;
+	border: 1px solid #ddd;
+	background: #FFF;
+	-moz-border-radius: 5px; /* Gecko browsers */
+	-webkit-border-radius: 5px; /* Webkit browsers */
+	border-radius: 5px; /* W3C syntax */
+}
+.btnFont3 {
+	color: #005e5e;
+	font-size: 14px;
+	font-family: "宋体";
+	font-weight: normal;
+	padding: 0px;
+	background-image: url(images2/ff_24.jpg);
+	background-repeat: no-repeat;
+	height: 43px;
+	width: 88px;
+}
+.btnImg {
+	margin: 5px 0px 0px 0px;
+}
+-->
+</style>
+<link href="css/top.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../resources/scripts/project/start.js"></script>
+<link href="../../resources/scripts/easy/themes/stategrid1/easyui.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<table width="100%" border="0" class="kj_head_bg">
+		<tr>
+			<td>
+				<table width="480" border="0" align="right" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="26" align="center">
+							<div class="btnImg">
+								<img src="images2/f_07.jpg" alt="" width="26" height="26" />
+							</div>
+						</td>
+						<td width="250" align="center"><div class="btnFont">你好，欢迎测试账号！</div></td>
+						<td width="34" align="center"><img src="images2/f_04.jpg" alt="" width="6" height="63" /></td>
+						<td width="34" align="center">
+							<div class="btnImg">
+								<img src="images2/f_10.jpg" alt="" width="26" height="26" />
+							</div>
+						</td>
+						<td width="120" align="center"><a href="javascript:void(0)" id="mb" class="easyui-menubutton" data-options="menu:'#mm'" style="margin-top: 8px;"><font color=#005e5e>视图模式</font></a>
+							<div id="mm" style="width: 100px;">
+								<div>浏览模式</div>
+								<div>操作模式</div>
+							</div></td>
+						<td width="34" align="center">
+							<img src="images2/f_04.jpg" alt="" width="6" height="63" />
+						</td>
+						<td width="34" align="center">
+							<div class="btnImg">
+								<img src="images2/f_09.jpg" alt="" width="26" height="25" />
+							</div>
+						</td>
+						<td width="40" align="center">
+							<div class="easyui-linkbutton" data-options="plain:true" style="margin-top: 8px; margin-left: -2px; width: 40px">
+								<font color=#005e5e>帮助</font>
+							</div>
+						</td>
+						<td width="34" align="center">
+							<img src="images2/f_04.jpg" alt="" width="6" height="63" />
+						</td>
+						<td width="34" align="center">
+							<div class="btnImg">
+								<img src="images2/f_11.jpg" alt="" width="26" height="26" />
+							</div>
+						</td>
+						<td width="40" align="center">
+							<div onclick="tt()" class="easyui-linkbutton" data-options="plain:true" style="margin-top: 8px; margin-left: -4px; width: 40px">
+								<font color=#005e5e> <a href="../main/logout.jsp?id=1">退出</a></font>
+							</div>
+						</td>
+						<td width="34" align="center">&nbsp;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	<div width="100%" id="top_row" />
+	<script type="text/javascript">
+		function tt() {
+			alert("111111");
+		}
+
+		var _currM = null;
+		function changeMenu(_this, _url) {
+			//将样式统一设置为默认状态
+			for (var i = 1; i < 100; i++) {
+				var m = document.getElementById('m' + i);
+				if (m) {
+					m.className = 'btnFont2';
+				}
+			}
+			_this.className = 'btnFont22';
+			_currM = _this;
+			top.currentMenuIndex = 0;
+			var _numStr = _this.id + "";
+			_numStr = _numStr.substr(1, _numStr.length);
+			var _num = _numStr - 1;
+			top.currentMenuIndex = _num;
+			top.mainFrame.I2.I1.location = top.mainFrame.I2.I1.location;
+
+		}
+		function menuMouseOver(_this) {
+			_this.className = 'btnFont22';
+		}
+		function menuMouseOut(_this) {
+			if (_this != _currM) {
+				_this.className = 'btnFont2';
+			}
+		}
+		function createFileds() {
+			var xmldoc = top.menuData;
+			if (typeof xmldoc == "undefined")
+				return;
+			var _htmlStr = '<table width="100%" height="44px" border="0" class="kj_head_bg2"><tr><td width="3%" align="center"> </td>';
+			for (var i = 0; i < xmldoc.childNodes.length; i++) {
+				var onode = xmldoc.childNodes[i];
+				if (i != 0) {
+					_htmlStr += '<td width="1%" align="center"><img src="images2/f_24.jpg" alt="" width="7" height="23" /></td>';
+				}
+				var selectedCls = "btnFont2";
+				if (i == 0) {
+					selectedCls = "btnFont22";
+				}
+				_htmlStr += '<td width="8%" align="center"><div id="m' + (i + 1) + '"class="'
+						+ selectedCls
+						+ '" onMouseOver="menuMouseOver(this)" onClick="changeMenu(this,\''
+						+ onode.getAttribute("url")
+						+ '\')" onMouseOut="menuMouseOut(this)" style="cursor:hand">'
+						+ onode.getAttribute("text") + '</div></td>';
+
+			}
+			_htmlStr += '<td width="44%" align="center"></td></tr></table>';
+			document.getElementById("top_row").innerHTML = _htmlStr;
+		}
+		//创建菜单
+		createFileds();
+	</script>
+</body>
+</html>

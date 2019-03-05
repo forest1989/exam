@@ -101,7 +101,7 @@ public class ExamTypeController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			examtypeBizc.delete(java.lang.Integer.valueOf(id));
+			examtypeBizc.delete(java.lang.String.valueOf(id));
 		}
 		return null;
 	}

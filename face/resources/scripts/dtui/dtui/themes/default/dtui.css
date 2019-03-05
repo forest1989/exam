@@ -1,0 +1,4116 @@
+html
+{
+    padding:0;border:0;margin:0;
+    width:100%;height:100%;   
+}
+body
+{
+    font-family:Tahoma, Verdana, 宋体;   
+    font-size:12px;
+    line-height:22px;
+}
+table
+{
+    position:relative;
+}
+
+.app-header
+{
+    background:url(images/header.gif) repeat-x 0 -1px;
+}
+    
+.dtui-disabled {
+    color: gray;
+    cursor: default;
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity=70);
+}
+.dtui-disabled * {
+    
+}
+
+.dtui-repaint {
+    zoom: 1;
+    background-color: transparent;
+    -moz-outline: none;
+}
+
+
+html,body{_background-image:url(about:blank);_background-attachment:fixed;}
+.dtui-modal
+{
+    position:fixed;width:100%;height:100%;left:0;top:0;
+    opacity: .1;-moz-opacity: .1;filter: alpha(opacity=10);
+    background:#555;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop));     
+    _left:expression(eval(document.documentElement.scrollLeft));
+    _height:expression(eval(document.documentElement.clientHeight));
+    _width:expression(eval(document.documentElement.clientWidth));
+}
+.dtui-modal iframe
+{
+	opacity: .0;-moz-opacity: .0;filter: alpha(opacity=0);
+}
+
+.dtui-shadow{
+	position:absolute;
+	overflow:hidden;
+	background:#ddd;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.3);
+	z-index:99;
+}
+
+.dtui-popup
+{
+    background:white;
+    border:1px solid #8B8B8B;
+    overflow:auto;
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+}
+
+.dtui-proxy
+{
+    position:absolute;
+    overflow:hidden;
+    z-index:100000000;
+    background:gray;
+    opacity: .4;-moz-opacity: .4;filter: alpha(opacity=40);
+}
+
+
+
+
+.dtui-mask{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:1000000;
+}
+body .dtui-fixed
+{
+    position:fixed;width:100%;height:100%;left:0;top:0;   
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop));     
+    _left:expression(eval(document.documentElement.scrollLeft));
+    _height:expression(eval(document.documentElement.clientHeight));
+    _width:expression(eval(document.documentElement.clientWidth));	    
+}
+.dtui-mask-background{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:#ccc;opacity: .3;-moz-opacity: .3;filter: alpha(opacity=30);
+}
+.dtui-mask-msg{
+	position:absolute;
+	cursor:wait;
+	left:50%;
+	top:50%;
+	width:auto;		
+	color:#222;
+	font-family:tahoma,arial,verdana,sans-serif;
+	font-size:12px;
+}
+.dtui-mask-loading
+{
+    padding:10px 8px 10px 30px;	
+    background:#fff url(images/grid/loading.gif) no-repeat scroll 5px 50%;
+	border:2px solid #517fad;
+}
+
+
+.dtui-tools
+{
+    position:absolute;
+    top:3px;right:5px;
+}
+.dtui-tools span
+{
+    display:inline-block;   
+    width:15px;
+    height:15px;
+    overflow:hidden;    
+    cursor:pointer;
+    margin-right:2px;
+}
+.dtui-tools-close
+{
+    background:url(images/tools/close.gif) no-repeat 50% 1px;
+}
+.dtui-tools .dtui-tools-collapse
+{
+    background:url(images/tools/collapse.gif) no-repeat 50% 50%;
+    width:13px;	
+}
+.dtui-tools .dtui-tools-expand
+{
+    background:url(images/tools/expand.gif) no-repeat 50% 50%;
+    width:13px;	
+}
+.dtui-tools-max
+{
+    background:url(images/tools/max.gif) no-repeat 50% 50%;
+}
+.dtui-tools-min
+{
+    background:url(images/tools/min.gif) no-repeat 50% 50%;
+}
+.dtui-tools-restore
+{
+    background:url(images/tools/restore.gif) no-repeat 50% 50%;
+}
+.dtui-tools-refresh
+{
+    background:url(images/tools/refresh.gif) no-repeat 50% 50%;
+}
+
+
+
+.dtui-toolbar
+{
+    border:solid 1px #909aa6;
+    padding:3px;   
+    _padding-bottom:4px;
+    background:#E7EAEE url(images/toolbar/toolbar.png) repeat-x 0 0;
+}
+.separator
+{    
+    display:inline-block;
+    zoom:1;            
+    border:0;
+    border-left:solid 1px #adb3b9;
+    margin:1px;
+    margin-top:0px;    
+    height:18px; 
+    vertical-align:middle;
+    margin-left:8px;
+    margin-right:8px;
+}
+
+body .dtui-toolbar a.dtui-button-disabled, body .dtui-toolbar a:hover.dtui-button-disabled
+{ 
+    cursor:default;    
+    background:none;    
+    border:0;
+    padding:1px;
+}
+body .dtui-toolbar .dtui-button-disabled .dtui-button-text, body .dtui-toolbar a:hover.dtui-button-disabled .dtui-button-text
+{
+    color:#777;
+}
+
+body .dtui-toolbar a.dtui-button-disabled, body .dtui-toolbar a:hover.dtui-button-disabled,
+body .dtui-pager a.dtui-button-disabled, body .dtui-pager a:hover.dtui-button-disabled
+{  
+    background:transparent;
+    border:0;
+    padding:1px;    
+}
+
+
+
+.dtui-drag-proxy
+{
+    position:absolute;
+    overflow:hidden;
+    z-index:100000000;
+    background:gray;
+    border:solid 1px #000;
+    opacity: .4;-moz-opacity: .4;filter: alpha(opacity=40);
+}
+
+.dtui-feedback-line
+{
+    position:absolute;left:-1000px;top:-1000px;z-index:2000080;
+    height:1px;overflow:hidden;background:blue;
+}
+.dtui-feedback
+{
+    position:absolute;left:-1000px;top:-1000px;background:no-repeat 3px 50% white;z-index:2000090;
+    border:solid 1px #aaa;padding:3px;padding-left:22px;padding-bottom:5px;padding-right:5px;
+    font:normal 12px tahoma, arial, helvetica, sans-serif;
+	*font-size:11px;line-height:16px;
+}
+.dtui-feedback-add
+{
+    background-image:url(images/dragdrop/drop-add.gif);
+}
+.dtui-feedback-before
+{
+    background-image:url(images/dragdrop/drop-over.gif);
+}
+.dtui-feedback-after
+{
+    background-image:url(images/dragdrop/drop-under.gif);
+}
+.dtui-feedback-no
+{
+    background-image:url(images/dragdrop/drop-no.gif);
+}
+.dtui-feedback-yes
+{
+    background-image:url(images/dragdrop/drop-yes.gif);
+}
+.dtui-supergrid-feedback-add .dtui-supertree-nodetext
+{    
+	border:dotted 1px #aaa;
+    background:#ddd;
+    font-weight:bold;
+}
+body .dtui-tree-feedback-add .dtui-tree-nodeshow,
+body .dtui-tree-feedback-add .dtui-treegrid-nodeshow
+{
+    border:dotted 1px #aaa;
+    background:#ddd;
+    padding:0;
+    padding-left:1px;
+    padding-right:2px;    
+}
+
+
+
+.dtui-resizer-trigger
+{
+    z-index:100;
+    position:absolute;
+    width:14px;height:12px;
+    right:1px;bottom:1px;
+    overflow:hidden;
+    cursor:se-resize;
+    background:url(images/panel/resize.gif) no-repeat right bottom;
+}
+.dtui-resizer-proxy
+{
+    border:dotted 1px black;
+    overflow:hidden;
+    position:absolute;
+    z-index:10000000000;
+    background:gray;
+    opacity: .30;-moz-opacity: .30;filter: alpha(opacity=30);
+    border:solid 1px black;        
+}
+.dtui-resizer-mask
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:100000000;
+    background:white;
+	opacity:0;
+	filter:alpha(opacity=0)    
+}
+
+
+.dtui-box
+{
+    overflow:hidden;        
+}
+.dtui-box-border
+{
+    border:1px solid #999999;
+    overflow:auto;
+    position:relative;    
+}
+
+
+body .dtui-grid *,
+body .dtui-supergird *,
+body .dtui-gantt *,
+body .dtui-panel *,
+body .dtui-window *
+{
+    box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -webkit-box-sizing:content-box;    
+}
+
+body .dtui-textbox *,
+body .dtui-buttonedit *
+{
+
+    box-sizing:content-box;     
+    -moz-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -webkit-box-sizing:content-box;      
+}
+
+
+.dtui-fit
+{
+    width:auto;
+    overflow:auto;
+    position:relative;
+}
+
+
+.dtui-error
+{
+    position:relative;
+}
+.dtui-error .dtui-errorIcon
+{
+    display:block;
+}
+.dtui-errorIcon
+{
+    background:url(images/textbox/error.gif) no-repeat 50% 50%;
+    width:14px;
+    height:16px;
+    overflow:hidden;
+    display:none;
+    cursor:default;
+    margin-top:2px;
+    
+    position:absolute;
+    right:1px;
+    top:0;
+}
+.dtui-error .dtui-listbox-border,
+.dtui-error .dtui-list-border
+{
+    margin-right:18px;
+}
+
+
+.dtui-labelfield-label
+{
+    position:absolute;left:0;top:0;line-height:20px;
+    width:100px;
+}
+body .dtui-labelfield
+{
+    display:block;
+    width:250px;
+    margin-bottom:5px;
+}
+body .dtui-labelfield-checkboxlist
+{
+    width:auto;*zoom:1;
+}
+.dtui-button
+{
+    padding:0;
+    border:1px solid #A9ACB5;
+    background:#EBEDF2 url(images/button/button.png) repeat-x 0 0;
+    
+    font-size:9pt;
+    font-family:Tahoma,Verdana,宋体;
+    
+    line-height:22px;
+    
+    text-decoration:none;
+    text-align: center;
+    display:inline-block;
+    zoom:1;    
+    cursor:pointer;
+    -khtml-user-select: none;
+    -moz-user-select:none;
+    vertical-align:middle;          
+    outline:none;
+}
+.dtui-button
+{
+    color:#201F35;
+}
+body a:hover.dtui-button
+{    
+    padding:0;
+    border:1px solid #A9ACB5;
+    background:#dde6fe url(images/button/hover.png) repeat-x 0 0;      
+    text-decoration:none;
+}
+.dtui-button-text
+{   
+    line-height:16px; 
+	padding:2px 8px 3px 8px;
+	
+    line-height:17px\9;
+    vertical-align:top;
+    display:inline-block;    
+    padding:3px 8px 2px 8px\9;    
+    +padding:3px 8px 2px 8px;  
+    _padding:2px 8px 2px 8px;  
+}
+.dtui-button .dtui-button-icon
+{
+    padding-left:25px;
+    background-position: 6px 50%;        
+    background-repeat:no-repeat;    
+}
+.dtui-button .dtui-button-iconOnly
+{
+    padding-left:14px;    
+    background-repeat:no-repeat;    
+    background-position:50% 50%;
+}
+
+
+body .dtui-button-plain
+{    
+    background:transparent;
+    border:0;
+    padding:1px;
+}
+
+
+body .dtui-button-pressed, body a:hover.dtui-button-pressed,
+body .dtui-button-checked, body a:hover.dtui-button-checked,
+body a.dtui-button-popup, body a:hover.dtui-button-popup
+{
+    border:solid 1px  #888;    
+    padding:0px;
+    color:#3C3C3C;
+    background:#DBDDE2 url(images/button/pressed.png) repeat-x 0 0; 
+    cursor:pointer;   
+}
+
+
+body a.dtui-button-disabled, body a:hover.dtui-button-disabled
+{
+    border:1px solid #ccc;
+    padding:0px;
+    color:#777;
+    background:#F8F9FA url(images/button/disabled.png) repeat-x 0 0px;      
+    cursor:default;
+}
+body .dtui-button-disabled *
+{    
+    cursor: default;
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity=70);        
+}
+
+
+.dtui-button-iconRight .dtui-button-icon
+{
+    padding-left:8px;
+    padding-right:18px;
+    background-position:right 50%;
+    margin-right:5px;
+}
+.dtui-button-iconTop .dtui-button-icon
+{
+    padding-left:8px;
+    padding-top:22px;
+    background-position:50% 4px;        
+}
+.dtui-button-iconBottom .dtui-button-icon
+{
+    padding-left:8px;
+    padding-bottom:18px;
+    margin-bottom:4px;
+    background-position:50% bottom;        
+}
+
+.dtui-button-iconTop .dtui-button-allow
+{
+    position:static;display:block;
+    background-position:3px 50%;
+    margin-top:0;
+    margin:auto;
+    +margin:0;  
+}
+
+
+.dtui-button-allow
+{
+    width:14px;
+    height:16px;
+    overflow:hidden;
+    display:inline-block;
+    vertical-align:top;
+    margin-top:3px;
+}
+.dtui-button-menu
+{
+    background:url(images/button/menu_arrow.png) no-repeat 0px 50%;
+}
+.dtui-button-split
+{
+    width:18px;
+    background:url(images/button/split_arrow.png) no-repeat 0px 50%;
+}
+
+
+.dtui-checkbox
+{
+    font-size:9pt;
+    font-family:Tahoma,Verdana,宋体;
+    line-height:22px;
+}
+.dtui-checkbox-check
+{
+    padding:0;
+    margin:0;
+    margin-right:4px;
+    vertical-align:bottom;
+    vertical-align:middle;
+    width:14px;height:14px;    
+}
+
+.dtui-textbox
+{
+    width:125px;
+    height:21px;
+    display:inline-block;
+      
+    padding:0;
+    margin:0;
+    border:0;
+    vertical-align:middle;    
+    overflow:hidden;	
+    
+    position:relative;
+    
+}
+.dtui-textbox-border
+{
+    background:white;
+    border: solid 1px #a5acb5;
+    width:auto;
+    height:19px;
+    display:block;    
+    
+    position:relative;overflow:hidden;
+    padding-left:1px;padding-right:1px;        
+}
+
+.dtui-textbox-input
+{
+    cursor:text;
+    background:none;
+    
+    background:url(about:blank) no-repeat\0;        
+    width:100%;
+    height:19px;
+    line-height:19px;
+    font-family: Verdana;
+    font-size: 9pt;
+    border:0;
+    padding: 0;
+    margin:0;
+    padding:0;
+    outline:none;
+    float:left;
+    _position:absolute;
+    _left:2px;
+    _top:0px;
+}
+.dtui-required .dtui-textbox-border,
+.dtui-required .dtui-buttonedit-border
+{
+    background:#FFFFE6;
+}
+
+
+
+
+body .dtui-textbox-focus .dtui-textbox-border
+{
+    border-color:#808891;
+}
+
+
+.dtui-placeholder-label
+{
+    position:absolute;left:0;top:0;padding:2px;line-height:17px;padding-left:2px;
+    color:#9a9a9a;cursor:text;white-space:nowrap;
+}
+
+
+
+.dtui-textbox-disabled
+{
+    cursor:default;
+    
+}
+body .dtui-textbox-disabled .dtui-textbox-border
+{
+    background:#f0f0f0;color:#6D6D6D;cursor:default;
+}
+
+
+body .dtui-textarea
+{
+    height:50px;
+}
+.dtui-textarea .dtui-textbox-border
+{
+    height:auto;padding-left:2px;padding-right:0px;
+}
+.dtui-textarea .dtui-textbox-input
+{
+    resize:none;
+    height:100%;
+    margin:0;padding:0;border:0;
+}
+
+.dtui-textarea .dtui-textbox-input{
+       overflow:auto;
+}
+
+
+.dtui-error .dtui-textbox-border
+{
+    margin-right:18px;
+}
+body .dtui-invalid .dtui-textbox-border,
+body .dtui-invalid .dtui-buttonedit-border
+{
+	border:red 1px solid;
+}
+
+
+.dtui-indent .dtui-textbox-border,
+.dtui-indent .dtui-buttonedit-border
+{
+    margin-right:18px;
+}
+
+.dtui-buttonedit
+{
+    width:125px;
+    height:21px;
+    display:inline-block;    
+    vertical-align:middle;    
+    overflow:hidden;	
+    
+    position:relative;
+}
+
+.dtui-buttonedit-border
+{
+    background:white;
+    border: solid 1px #a5acb5;
+    width:auto;
+    height:19px;
+    display:block;
+    
+    position:relative;overflow:hidden;
+    padding-right:22px;padding-left:1px;
+}
+.dtui-buttonedit-buttons
+{
+    clear:both;position:absolute;right:0px;top:0px;    
+    
+}
+
+.dtui-buttonedit-input
+{
+	
+    
+    background:none;
+    
+    background:url(about:blank) no-repeat\0;        
+    border: 0;     
+    line-height:19px;    
+    font-family: Verdana;
+    font-size: 9pt;        
+    padding: 0;
+    margin:0;  
+    outline:none;    
+    z-index:1;
+    cursor:text;    
+    width:100%;height:19px;float:right;
+    _position:absolute;
+    _left:2px;
+    _top:0px;
+    
+    
+}
+
+.dtui-buttonedit input::-ms-clear,
+.dtui-textbox input::-ms-clear
+{display:none;}
+
+.dtui-buttonedit-button, .dtui-buttonedit-close
+{    
+    border:0px;
+    padding:1px;
+    background:none;
+    width:15px;height:15px;
+    overflow:hidden;cursor:pointer;
+    margin-top:1px;
+    margin-right:1px;
+    display:inline-block;
+    z-index:10;    
+    vertical-align:top;
+}
+.dtui-buttonedit-close
+{
+    display:none;
+    background:url(images/buttonedit/close.gif) no-repeat 50% 5px;
+}
+
+.dtui-buttonedit-button-hover,
+.dtui-buttonedit-hover .dtui-buttonedit-button
+{
+    border:1px solid #ababab;
+    padding:0;
+    background:#dde6fe url(images/buttonedit/hover.png) repeat-x 0 0;   
+}
+.dtui-buttonedit-button-pressed,
+.dtui-buttonedit-popup .dtui-buttonedit-button
+{
+    border:1px solid #888;
+    padding:0;
+    background:#DBDDE2 url(images/buttonedit/pressed.png) repeat-x 0 0;    
+}
+
+.dtui-buttonedit-focus .dtui-buttonedit-border,
+.dtui-buttonedit-popup .dtui-buttonedit-border
+{
+    border-color:#808891;
+}
+.dtui-buttonedit-hover,
+.dtui-buttonedit-hover .dtui-buttonedit-input
+{
+    cursor:pointer;
+}
+
+.dtui-buttonedit-disabled
+{
+    cursor:default;
+
+}
+body .dtui-buttonedit-disabled .dtui-buttonedit-border,
+body .dtui-buttonedit-disabled .dtui-buttonedit-input
+{
+    background:#f0f0f0;color:#6D6D6D;cursor:default;
+}
+body .dtui-buttonedit-disabled .dtui-buttonedit-button
+{
+    cursor:default;background:#f0f0f0;border-color:#f0f0f0;
+}
+body .dtui-buttonedit-disabled .dtui-buttonedit-up,
+body .dtui-buttonedit-disabled .dtui-buttonedit-down
+{
+    cursor:default;
+}
+
+
+
+.dtui-buttonedit-empty .dtui-buttonedit-input
+{
+    color:#B1B1B8;
+}
+
+.dtui-buttonedit-icon
+{
+    display:block;
+    width:15px;
+    height:15px;
+    overflow:hidden;
+    background:url(images/buttonedit/icon1.gif) no-repeat 50% 50%;
+}
+.dtui-popupedit .dtui-buttonedit-icon
+{
+    background:url(images/buttonedit/icon2.gif) no-repeat 3px 1px;
+}
+.dtui-datepicker .dtui-buttonedit-icon
+{
+    background:url(images/datepicker/date.gif) no-repeat 50% 2px;
+}
+.dtui-autocomplete .dtui-buttonedit-icon
+{
+    
+}
+
+
+.dtui-buttonedit-up, .dtui-buttonedit-down
+{
+    overflow:hidden;
+    height:50%;    
+    display:block;
+    cursor:pointer;
+    z-index:1;
+}
+.dtui-buttonedit-up span, .dtui-buttonedit-down span
+{
+    background:url(images/buttonedit/up.gif) no-repeat 50% 2px;   
+    height:100%;
+    height:100%;
+    overflow:hidden;    
+    display:block;
+}
+.dtui-buttonedit-down span
+{
+    background:url(images/buttonedit/down.gif) no-repeat 50% 2px; 
+}
+.dtui-buttonedit-button .dtui-buttonedit-button-pressed
+{
+    border:0;
+}
+
+
+.dtui-filteredit .dtui-buttonedit-icon
+{
+    background:url(images/buttonedit/filter.png) no-repeat 50% 0px;
+}
+
+
+input.dtui-textbox,
+input.dtui-buttonedit,
+input.dtui-datepicker,
+input.dtui-spinner,
+input.dtui-timespinner,
+input.dtui-combobox,
+input.dtui-treeselect,
+input.dtui-lookup,
+input.dtui-htmlfile,
+input.dtui-password,
+input.dtui-checkbox,
+input.dtui-textarea
+{
+    visibility:hidden;
+    border:0;
+    padding:0;
+    height:21px;
+    width:125px;
+}
+input.dtui-textarea
+{   
+    height:50px;
+}
+
+
+
+
+.dtui-error .dtui-buttonedit-border
+{
+    margin-right:18px;
+}
+.dtui-panel
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;
+    overflow:hidden;
+    position:relative;
+    outline:none;
+}
+.dtui-panel-border
+{
+    border:1px solid #999999;
+    overflow:hidden;
+    position:relative;    
+    
+}
+ .dtui-panel-viewport
+ {
+     background:white;
+ }
+.dtui-panel .dtui-panel-viewport
+{
+	position:relative;
+    overflow:hidden;  
+}
+.dtui-panel-header
+{
+    width:auto;
+    height:25px;
+    overflow:hidden;
+    background:#E3E6E8 url(images/panel/header.png) repeat-x 0 0px;
+    color:#201F35;
+    border-bottom:solid 1px #bbb;
+    cursor:default;
+    position:relative;
+    zoom:1;
+}
+
+.dtui-panel-header-inner
+{	
+    padding:3px;
+    padding-bottom:2px;
+    padding-top:4px;
+    padding-left:8px;
+}
+.dtui-panel .dtui-panel-title
+{
+    padding-top:0px\9;
+    float:left;
+    line-height:16px;
+    line-height:18px\9;
+}
+.dtui-panel .dtui-panel-icon
+{
+    float:left;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    vertical-align:middle;
+    margin-right:2px;
+    display:none;
+}
+
+.dtui-panel-body
+{
+    position:relative;
+    padding:5px;
+    text-align:left;    
+    width:auto;
+    overflow:auto;
+    clear:both;
+}
+.dtui-messagebox-content table
+{
+    
+}
+
+.dtui-panel .dtui-tools
+{
+    position:absolute;
+    top:5px;right:3px;
+}
+
+.dtui-panel-toolbar
+{
+    clear:both;
+    border-bottom:solid 1px #C9C9C9;
+    background:#eff2f4;
+    
+    width:auto;
+    clear:both;
+    position:relative;overflow:hidden;
+    line-height:18px;zoom:1;    
+}
+
+.dtui-panel-footer
+{
+    border-top:solid 1px #C9C9C9;
+    background:#eff2f4;
+    
+    width:auto;
+    position:relative;overflow:hidden;
+    line-height:18px;zoom:1;
+}
+
+
+.dtui-panel-collapse .dtui-panel-header
+{
+    border-bottom:0;
+}
+.dtui-panel-collapse .dtui-tools-collapse
+{
+    background:url(images/tools/expand.gif) no-repeat 50% 50%;
+}
+
+.dtui-panel-titleclick .dtui-panel-header
+{
+    cursor:pointer;
+}
+
+
+
+.dtui-window
+{    
+    position:absolute;
+}
+.dtui-window .dtui-panel-header
+{
+    background:#E3E6E8 url(images/window/header.png) repeat-x 0 0px;    
+}
+.dtui-window .dtui-panel-footer
+{
+    background:#E3E6E8 url(images/window/footer.png) repeat-x 0 0px;
+}
+.dtui-window-drag .dtui-panel-header
+{
+    cursor:move;
+}
+
+
+.dtui-messagebox-content
+{
+    padding:5px;
+    cursor:default;
+}
+.dtui-messagebox-table
+{   
+}
+.dtui-messagebox-content td
+{
+    font-size:12px;    
+}
+.dtui-messagebox-content-text
+{
+    padding:8px;padding-right:40px;padding-left:0px;text-align:center;
+    white-space:nowrap;
+}
+.dtui-messagebox-buttons
+{
+    text-align:center;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+}
+.dtui-messagebox-info,
+.dtui-messagebox-warning,
+.dtui-messagebox-question,
+.dtui-messagebox-error,
+.dtui-messagebox-waiting
+{
+    width:40px;
+    height:40px;
+    background:url(images/messagebox/icon-info.gif) no-repeat 50% 50%;
+}
+.dtui-messagebox-warning
+{
+    background:url(images/messagebox/icon-warning.gif) no-repeat 50% 50%;
+}
+.dtui-messagebox-question
+{
+    background:url(images/messagebox/icon-question.gif) no-repeat 50% 50%;
+}
+.dtui-messagebox-error
+{
+    background:url(images/messagebox/icon-error.gif) no-repeat 50% 50%;
+}
+.dtui-messagebox-waiting
+{
+    width:40px;
+    height:30px;
+    background:url(images/messagebox/loading.gif) no-repeat 50% 50%;
+}
+
+.dtui-messagebox-input
+{
+    
+}
+
+
+
+
+.dtui-outlookbar
+{        
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;    
+    overflow:hidden;
+}
+.dtui-outlookbar-border
+{
+    border:1px solid #999999;
+    overflow:hidden;
+    position:relative;
+}
+
+.dtui-outlookbar-group 
+{
+    overflow:hidden;
+    height:auto; 
+    border-bottom:solid 1px #a7abb0;
+    position:relative;
+}
+.dtui-outlookbar-groupHeader
+{
+    position:relative;
+    background:url(images/navbar/header.png) repeat-x 0 0;        
+    cursor:pointer;    
+    overflow:hidden; 
+    height:23px;
+    padding-left:2px;
+    padding-right:25px;
+    font-weight:bold;      
+}
+.dtui-outlookbar-groupTitle
+{
+    overflow:hidden;
+    white-space:nowrap;
+    float:left; 
+    line-height:23px;
+    padding-left:4px;
+    width:80%;
+}
+.dtui-outlookbar-groupHeader .dtui-tools
+{   
+    position:absolute;
+    top:3px;right:3px;
+ 
+}
+.dtui-outlookbar-groupBody
+{    
+    clear:both;    
+    border-top:solid 1px #a7abb0;    
+    overflow:auto;
+    overflow-x:hidden;
+    overflow-y:auto;
+    position:relative;
+}
+
+.dtui-outlookbar-firstGroup 
+{
+    
+}
+
+.dtui-outlookbar .dtui-outlookbar-icon
+{
+    float:left;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    vertical-align:middle;
+    
+    margin-top:3px;
+    margin-left:4px;
+}
+
+.dtui-outlookbar-collapse .dtui-outlookbar-groupBody
+{
+    display:none;
+}
+.dtui-outlookbar-lastGroup
+{
+    border-bottom:0;
+}
+.dtui-outlookbar-lastGroup .dtui-outlookbar-groupHeader
+{
+    border-bottom:0;
+}
+
+.dtui-outlookbar .dtui-outlookbar-expand .dtui-tools-collapse
+{
+    background:url(images/tools/expand.gif) no-repeat 50% 50%;   
+}
+.dtui-outlookbar-collapse
+{
+    
+}
+.dtui-outlookbar-expand
+{    
+}
+
+
+.dtui-outlookbar-view2 .dtui-outlookbar-border
+{
+    border:0;
+}
+.dtui-outlookbar-view2 .dtui-outlookbar-group
+{
+    border:0;
+    margin-bottom:1px;
+}
+.dtui-outlookbar-view2 .dtui-outlookbar-groupHeader
+{
+    border:solid 1px #a7abb0; 
+}
+.dtui-outlookbar-view2 .dtui-outlookbar-groupBody
+{
+    border:0;
+    background:#fff;
+}
+.dtui-outlookbar-view2 .dtui-outlookbar-lastGroup 
+{
+    margin:0;
+}
+
+
+.dtui-outlookbar-view3 .dtui-outlookbar-border
+{
+    border:0;
+}
+.dtui-outlookbar-view3 .dtui-outlookbar-group
+{
+    border:solid 1px #a7abb0; 
+    margin-bottom:8px;
+}
+.dtui-outlookbar-view3 .dtui-outlookbar-groupBody
+{    
+    
+}
+.dtui-outlookbar-view3 .dtui-outlookbar-lastGroup 
+{
+    margin:0;
+    margin-bottom:0px;
+}
+
+
+.dtui-outlookbar-overflow,
+.dtui-outlookbar-overflow .dtui-tree,
+.dtui-outlookbar-overflow .dtui-menu
+{
+    overflow:hidden;
+}
+
+
+
+.dtui-outlookmenu .dtui-menu-border
+{
+    overflow-y:auto;
+}
+.dtui-outlookmenu .dtui-menu
+{
+    background:none;
+}
+.dtui-tabs
+{
+    overflow:hidden;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+    position:relative;         
+}
+.dtui-tabs-table
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+        
+    border-collapse:collapse;
+    border-collapse:separate;
+    position:relative;
+}
+.dtui-tabs-scrollCt
+{
+    position:relative;
+    border-bottom:solid 1px #A8A8A8;   
+    border:solid 1px #999999;
+    background:#f0f0f0 repeat-x 0 0;    
+    zoom:1;
+}
+.dtui-tabs-headers
+{    
+    width:auto;  
+    padding:0;
+    
+    position:relative;
+    top:1px;        
+    zoom:1;
+}
+
+.dtui-tabs-header-bottom .dtui-tabs-headers
+{
+    border-top:0;border-bottom-width:1px;padding-top:0;padding-bottom:2px;
+}
+body .dtui-tabs-plain .dtui-tabs-scrollCt
+{
+    background:none;border-left:0;border-top-width:0;border-right:0;
+}
+body .dtui-tabs-plain .dtui-tabs-headers
+{
+    padding-bottom:0;padding-top:0;
+}
+
+body .dtui-tabs-position-bottom .dtui-tabs-plain .dtui-tabs-scrollCt
+{
+    border-bottom-width:0;border-top-width:1px;
+}
+
+
+
+.dtui-tabs-position-top .dtui-tabs-headers,
+.dtui-tabs-position-bottom .dtui-tabs-headers
+{
+    width:auto;
+    overflow:hidden;
+}
+
+
+
+
+
+.dtui-tabs-body
+{
+    position:relative;
+    overflow:auto;
+    height:100%;
+}
+.dtui-tabs-hideOverflow
+{
+    overflow:hidden;
+}
+
+.dtui-tabs-bodys
+{
+    position:relative;
+    border:solid 1px #999999;
+    border-top:0;
+    background:white;
+    
+    padding:5px;    
+    	
+    text-align:left;
+    overflow:hidden;
+}
+.dtui-tabs-header
+{
+    width:100%;    
+    border-collapse:collapse;
+    border-collapse:separate;       
+    margin:0;
+    padding:0;
+    border:0;
+}
+.dtui-tabs-header2
+{
+    margin-bottom:1px;
+}
+.dtui-tabs-header2 .dtui-tabs-firstSpace,
+.dtui-tabs-header2 .dtui-tabs-lastSpace
+{
+    border-bottom:1px solid transparent;    
+    _border-color:tomato;
+    _filter:chroma(color=tomato);
+}
+.dtui-tabs-space
+{
+    width:3px;
+    border-bottom:solid 1px #999999;
+}
+.dtui-tabs-space div{
+    height:1px;width:3px;overflow:hidden;
+}
+.dtui-tabs-space2
+{
+    width:3px;
+    border-bottom:solid 1px #999999;
+}
+.dtui-tabs-space2 div{
+    height:3px;width:3px;overflow:hidden;
+}
+
+.dtui-tab
+{    
+    background: #EBEBEE url(images/tabs/tab.png) repeat-x 0 0;  
+    color: #201F35;  
+    border: 1px solid #999999;
+    color: black;
+    font: 9pt Tahoma;
+    padding: 3px 10px 3px 10px;
+    text-align: center;
+    cursor:pointer;
+    white-space:nowrap;
+    
+            
+    
+}
+.dtui-tab-hover
+{    
+    background:#E1E8FD url(images/tabs/hover.png) repeat-x 0 0; 
+}
+.dtui-tab-active
+{
+    border-bottom:solid 1px white;
+    background:white;
+    cursor:default;
+     
+}
+.dtui-tab-body
+{
+    position:relative;
+}
+.dtui-tab-text
+{
+    display:inline-block;
+    vertical-align:middle;
+    line-height:16px;
+    padding-left:2px;
+    padding-right:2px;
+}
+.dtui-tab .dtui-tab-icon
+{
+    display:inline-block;
+    width:16px;height:16px;    
+    vertical-align:middle;
+    background-position:50% 50%;
+    
+}
+.dtui-tab-close
+{
+    display:inline-block;
+    width:13px;height:13px;    
+    vertical-align:top;
+    margin-top:1px;
+
+    background:url(images/tabs/close.gif) no-repeat 3px 3px;
+    cursor:pointer;
+}
+.dtui-tab-close-hover
+{
+    background-color:#aaa;
+}
+
+
+.dtui-tabs-header-bottom
+{
+    width:auto;
+    top:-1px;   
+}
+
+
+.dtui-tabs-header-bottom .dtui-tabs-space,
+.dtui-tabs-header-bottom .dtui-tabs-space2
+{
+    border:0;
+    border-top: 1px solid #999999;
+}
+.dtui-tabs-header-bottom .dtui-tabs-headers
+{    
+    
+}
+.dtui-tabs-header-bottom .dtui-tabs-bodys
+{
+    border:solid 1px #999999;
+    border-bottom:0;
+}
+.dtui-tabs-header-bottom .dtui-tab-active
+{
+    border-top:solid 1px white;
+    border-bottom:solid 1px #999999;
+}
+
+.dtui-tabs-position-bottom .dtui-tabs-header2
+{
+    margin:0px;
+    margin-top:1px;
+}
+.dtui-tabs-header-bottom .dtui-tabs-header2 .dtui-tabs-firstSpace,
+.dtui-tabs-header-bottom .dtui-tabs-header2 .dtui-tabs-lastSpace
+{    
+    border-top:1px solid transparent;    
+    _border-color:tomato;
+    _filter:chroma(color=tomato);
+}
+
+.dtui-tabs-body-bottom
+{
+    border:solid 1px #999999;
+    border-bottom:0;
+}
+
+
+.dtui-tabs-header-left
+{
+    width:auto;
+}
+.dtui-tabs-header-left .dtui-tabs-space,
+.dtui-tabs-header-left .dtui-tabs-space2
+{
+    border:0;
+    border-right: 1px solid #999999;
+}
+.dtui-tabs-header-left .dtui-tabs-space div{
+    height:3px;width:1px;
+}
+.dtui-tabs-header-left .dtui-tabs-space2 div{
+    height:3px;width:3px;
+}
+.dtui-tabs-header-left .dtui-tabs-headers
+{   
+    vertical-align:top;
+    text-align:left;
+    padding:0;
+    padding-left:5px;
+}
+.dtui-tabs-header-left .dtui-tabs-header{
+     width:auto;
+}
+
+.dtui-tabs-header-left .dtui-tab-active
+{    
+    border:solid 1px #999999;
+    border-right:solid 1px white;
+}
+
+.dtui-tabs-position-left .dtui-tabs-header2
+{
+    margin:0px;
+    padding-right:1px;
+}
+.dtui-tabs-header-left .dtui-tabs-header2 .dtui-tabs-firstSpace,
+.dtui-tabs-header-left .dtui-tabs-header2 .dtui-tabs-lastSpace
+{    
+    border-right:1px solid transparent;    
+    _border-color:tomato;
+    _filter:chroma(color=tomato);
+}
+
+
+.dtui-tabs-body-left
+{
+    border:solid 1px #999999;
+    border-left:0;
+}
+
+
+.dtui-tabs-header-right
+{
+    width:auto;
+}
+.dtui-tabs-header-right .dtui-tabs-space,
+.dtui-tabs-header-right .dtui-tabs-space2
+{
+    border:0;
+    border-left: 1px solid #999999;
+}
+.dtui-tabs-header-right .dtui-tabs-space div{
+    height:2px;width:2px;
+}
+.dtui-tabs-header-right .dtui-tabs-space2 div{
+    height:2px;width:2px;
+}
+.dtui-tabs-header-right .dtui-tabs-headers
+{
+    vertical-align:top;
+    text-align:left;
+    padding:0;
+    padding-right:5px;
+}
+.dtui-tabs-header-right .dtui-tabs-header{
+    width:auto;
+}
+.dtui-tabs-header-right .dtui-tabs-bodys
+{
+    border:solid 1px #999999;
+    border-right:0;
+}
+.dtui-tabs-header-right .dtui-tab-active
+{    
+    border:solid 1px #999999;
+    border-left:solid 1px white;
+}
+
+.dtui-tabs-position-right .dtui-tabs-header2
+{
+    margin:0px;
+    padding-left:1px;
+}
+.dtui-tabs-position-right .dtui-tabs-header2 .dtui-tabs-firstSpace,
+.dtui-tabs-position-right .dtui-tabs-header2 .dtui-tabs-lastSpace
+{    
+    border-left:1px solid transparent;    
+    _border-color:tomato;
+    _filter:chroma(color=tomato);
+}
+.dtui-tabs-body-right
+{
+    border:solid 1px #999999;
+    border-right:0;
+}
+
+
+
+.dtui-tabs-buttons
+{
+    position:absolute;padding-right:3px;top:0px;z-index:1000;right:0;
+}
+
+
+.dtui-tabs-nav
+{
+    position:absolute;right:0px;top:4px;z-index:1000;   
+    padding-left:6px;
+    padding-right:2px;
+    display:none;
+}
+.dtui-tabs-leftnav
+{
+    display: none;
+    padding-left: 6px;
+    padding-right: 2px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    z-index: 1000;
+}
+.dtui-tabs-tabmenu
+{
+    background:#ebebee url(images/tabs/down.gif) no-repeat 50% 50%;
+    display:none;
+    height:15px;width:17px;
+    position:absolute;top: 4px;
+    border:1px solid #adadad;
+    z-index: 1000;
+}
+.dtui-tabs-leftButton, .dtui-tabs-rightButton
+{
+    border:solid 1px #adadad;
+    background:#EBEBEE url(images/tabs/allow_left.gif) no-repeat -1px 0 ;    
+    width:17px;height:15px;    
+    cursor:pointer;
+    outline:none;
+    display:inline-block;margin-right:2px;
+}
+.dtui-tabs-rightButton
+{
+    background:#EBEBEE url(images/tabs/allow_right.gif) no-repeat -1px 0 ;
+}
+a:hover.dtui-tabs-leftButton,a:hover.dtui-tabs-rightButton
+{
+    background-color:#E1E8FD;
+}
+.dtui-splitter
+{
+    width:300px;
+    height:180px;    
+    
+    overflow:hidden;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+}
+.dtui-splitter-border
+{
+    border:solid 1px #8C8C8C;
+    position:relative;
+    overflow:hidden;
+}
+.dtui-splitter-pane
+{
+    position:absolute;
+    padding:0;
+    overflow:hidden;
+    left:0px;
+    top:0px;
+}
+.dtui-splitter-pane1
+{
+    border-width:0px;    
+    border-color:#8C8C8C;
+    border-style:solid;
+    border-right:solid 1px #8C8C8C;    
+}
+.dtui-splitter-pane2{
+    border-width:0px;
+    border-color:#8C8C8C;
+    border-style:solid;    
+    border-left:solid 1px #8C8C8C;
+}
+.dtui-splitter-handler
+{
+    cursor:w-resize;
+    position:absolute;
+    width:5px;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:visible;
+}
+.dtui-splitter-nodrag
+{
+    cursor:default;
+}
+
+.dtui-splitter-handler-buttons
+{
+    position:absolute;
+    left:0;top:0px;
+    top:50%;
+    width:100%;
+    overflow:visible;
+}
+.dtui-splitter-resize-button
+{
+    width:100%;
+    height:18px;
+    display:block;
+    background:url(images/splitter/resize.gif) no-repeat 50% 50%;
+}
+.dtui-splitter-pane1-button, .dtui-splitter-pane2-button
+{
+    overflow:hidden;
+    width:100%;
+    height:35px;
+    display:block;
+    
+    background:url(images/splitter/dtui-left.gif) no-repeat 50% 50%;
+    cursor:pointer;
+}
+.dtui-splitter-pane2-button
+{
+    background:url(images/splitter/dtui-right.gif) no-repeat 50% 50%;
+}
+
+.dtui-splitter-pane1-vertical
+{
+    border:0;
+    border-bottom:solid 1px #8C8C8C;
+}
+.dtui-splitter-pane2-vertical
+{
+    border:0;
+    border-top:solid 1px #8C8C8C;
+}
+
+.dtui-splitter-handler-vertical
+{
+    cursor:n-resize;
+    position:absolute;
+    width:100%;
+    height:5px;    
+}
+
+.dtui-splitter-handler-vertical .dtui-splitter-handler-buttons
+{
+    height:6px;width:auto;top:0px;left:50%;
+}
+
+.dtui-splitter-handler-vertical .dtui-splitter-pane1-button, 
+.dtui-splitter-handler-vertical .dtui-splitter-pane2-button
+{
+    display:inline-block;
+    width:35px;height:5px;zoom:1;float:left;
+    background:url(images/splitter/dtui-top.gif) no-repeat 0px 0px;
+}
+.dtui-splitter-handler-vertical .dtui-splitter-pane2-button
+{
+    background:url(images/splitter/dtui-bottom.gif) no-repeat 0px 0px;
+}
+.dtui-splitter-handler-vertical .dtui-splitter-resize-button
+{
+    display:inline-block;
+    width:18px;height:5px;
+    background:url(images/splitter/resize_h.gif) no-repeat 50% 50%;
+}
+.dtui-layout
+{
+    width:500px;
+    height:250px;    
+    overflow:hidden;
+    
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;
+}
+.dtui-layout-border
+{
+    position:relative;
+    width:auto;
+    height:100%;
+    overflow:hidden;
+}
+.dtui-layout-split
+{
+    cursor:w-resize;
+    position:absolute;
+    width:5px;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+}
+.dtui-layout-split-north, .dtui-layout-split-south
+{
+    cursor:n-resize;
+}
+.dtui-layout-split-nodrag
+{
+    cursor:default;
+}
+
+.dtui-layout-region
+{
+    border:1px solid #A8A8A8;
+    
+    position:absolute;
+    padding:0;
+    overflow:hidden;
+    left:0px;
+    top:0px;
+}
+.dtui-layout-region-north
+{
+    border-top:0;   
+    border-left:0;  
+    border-right:0;  
+}
+.dtui-layout-region-south
+{
+    border-bottom:0; 
+    border-left:0;  
+    border-right:0;      
+}
+.dtui-layout-region-west
+{
+    border-left:0;
+}
+.dtui-layout-region-east
+{
+    border-right:0;
+}
+
+
+.dtui-layout-region-header
+{
+    font-weight:bold;    
+    line-height:22px;
+    background:url(images/layout/header.png) repeat-x 0 0;    
+    border-bottom:solid 1px #a7abb0;
+    cursor:default;    
+    overflow:hidden; 
+    height:22px;
+    padding-left:6px;
+}
+.dtui-layout-region-title
+{    
+    float:left;    
+}
+.dtui-layout-region-icon
+{
+    float:left;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    vertical-align:middle;
+    margin-right:4px;
+    margin-top:3px;
+}
+.dtui-layout-region-body
+{
+    overflow:auto;
+    position:relative;
+}
+
+.dtui-layout-proxy
+{
+    background:#e9edf1;
+    border:solid 1px #A8A8A8;
+    cursor:default;
+    overflow:hidden; 
+    height:22px;
+    width:22px;
+    padding-left:6px;
+    position:absolute;
+    z-index:100;
+    left:-500px;top:-500px;
+}
+.dtui-layout-proxy-hover
+{
+    background:#f1f5f6;    
+}
+
+.dtui-layout-proxy-east .dtui-layout-region-title,
+.dtui-layout-proxy-east .dtui-layout-region-icon,
+.dtui-layout-proxy-west .dtui-layout-region-title,
+.dtui-layout-proxy-west .dtui-layout-region-icon
+{
+    display:none;
+}
+.dtui-layout-proxy-east .dtui-tools,
+.dtui-layout-proxy-west .dtui-tools
+{
+    
+}
+.dtui-layout-proxy-north .dtui-tools,
+.dtui-layout-proxy-south .dtui-tools
+{
+    
+}
+
+
+.dtui-layout-region-header .dtui-tools
+{
+    
+}
+.dtui-layout-region-west .dtui-layout-region-header .dtui-tools-collapse
+{
+    background:url(images/layout/west.gif) no-repeat 50% 50%;
+}
+.dtui-layout-region-east .dtui-layout-region-header .dtui-tools-collapse
+{
+    background:url(images/layout/east.gif) no-repeat 50% 50%;
+}
+.dtui-layout-region-north .dtui-layout-region-header .dtui-tools-collapse
+{
+    background:url(images/layout/north.gif) no-repeat 50% 50%;
+}
+.dtui-layout-region-south .dtui-layout-region-header .dtui-tools-collapse
+{
+    background:url(images/layout/south.gif) no-repeat 50% 50%;
+}
+
+.dtui-layout-proxy-west .dtui-tools-collapse
+{
+    background:url(images/layout/east.gif) no-repeat 50% 50%;
+}
+.dtui-layout-proxy-east .dtui-tools-collapse
+{
+    background:url(images/layout/west.gif) no-repeat 50% 50%;
+}
+.dtui-layout-proxy-north .dtui-tools-collapse
+{
+    background:url(images/layout/south.gif) no-repeat 50% 50%;
+}
+.dtui-layout-proxy-south .dtui-tools-collapse
+{
+    background:url(images/layout/north.gif) no-repeat 50% 50%;
+}
+.dtui-layout-popup
+{
+    background:white;
+    z-index:101;    
+}
+.dtui-layout-maxZIndex
+{
+    z-index:200;
+}
+
+.dtui-layout-spliticon
+{
+    width:5px;
+    height:35px;
+    background:url(images/splitter/dtui-left.gif) no-repeat 50% 50%;
+    position:absolute;
+    left:0;
+    top:50%;
+    margin-top:-17px;
+    cursor:pointer;
+}
+.dtui-layout-split-east .dtui-layout-spliticon
+{
+    background:url(images/splitter/dtui-right.gif) no-repeat 50% 50%;
+}
+.dtui-layout-split-north .dtui-layout-spliticon,
+.dtui-layout-split-south .dtui-layout-spliticon
+{
+    width:35px;height:5px;left:50%;top:0;margin-left:-17px;margin-top:0px;
+    background:url(images/splitter/dtui-top.gif) no-repeat 50% 50%;
+}
+.dtui-layout-split-south .dtui-layout-spliticon
+{    
+    background:url(images/splitter/dtui-bottom.gif) no-repeat 50% 50%;
+}
+
+
+.dtui-layout-split-west .dtui-layout-spliticon-collapse
+{
+    background:url(images/splitter/dtui-right.gif) no-repeat 50% 50%;
+}
+.dtui-layout-split-east .dtui-layout-spliticon-collapse
+{
+    background:url(images/splitter/dtui-left.gif) no-repeat 50% 50%;
+}
+.dtui-layout-split-north .dtui-layout-spliticon-collapse
+{
+    background:url(images/splitter/dtui-bottom.gif) no-repeat 50% 50%;
+}
+.dtui-layout-split-south .dtui-layout-spliticon-collapse
+{
+    background:url(images/splitter/dtui-top.gif) no-repeat 50% 50%;
+}
+
+
+.dtui-layout-proxy-text{
+    position:relative;
+    top:30px;
+    left:0px;
+    width:200px;  
+    overflow:hidden;
+    line-height:20px;
+    transform-origin:10px 10px;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); 
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    background-color:#e9edf1;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    
+}
+.dtui-menu
+{    
+    background:white;
+    color:#201F35;
+    
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+    border-collapse:collapse;
+    border-collapse:separate;   
+    overflow:hidden;
+     
+}
+.dtui-menu-border
+{
+    border:1px solid #999999;overflow:hidden;position:relative;
+}
+.dtui-menu-inner
+{
+    padding:1px;overflow:hidden;position:relative;
+}
+.dtui-menu-topArrow, .dtui-menu-bottomArrow
+{
+    height:9px;overflow:hidden;display:none;
+    background:url(images/menu/top-arrow.gif) no-repeat 50% 2px;    
+}
+.dtui-menu-bottomArrow
+{
+    background:url(images/menu/bottom-arrow.gif) no-repeat 50% 2px;
+}
+.dtui-menu-float
+{
+    position:relative;overflow:hidden;
+}
+
+.dtui-menuitem
+{
+    line-height:20px;
+    
+    height:auto;
+    width:auto;
+    position:relative;
+    
+    border:0;
+    padding:1px;  
+}
+
+.dtui-menuitem-hover
+{    
+    padding:0px;    
+    border:solid 1px #9a9a9a;
+    background:#E3EBFF url(images/menu/item.png) repeat-x 0 0;    
+}
+.dtui-menu-popup
+{    
+    padding:0px;    
+    border:solid 1px #9a9a9a;
+    background:#E3EBFF url(images/menu/item.png) repeat-x 0 0;
+}
+.dtui-menuitem-selected
+{
+    padding:0px;
+    border:solid 1px #9a9a9a;     
+    background:#DBDDE2 url(images/menu/pressed.png) repeat-x 0 0;
+}
+
+.dtui-menuitem-inner
+{
+    position:relative;
+    padding-right:20px;
+    padding-left:28px;
+}
+.dtui-menuitem-text
+{        
+    cursor:default;
+    color:#201F35;
+    overflow:hidden;
+    white-space:nowrap;    
+    text-overflow:ellipsis;
+    word-break:keep-all;
+    
+}
+
+ .dtui-disabled .dtui-menuitem-text{
+       opacity: .7;
+       -moz-opacity: .7;
+       filter: alpha(opacity=70);
+ }
+     
+.dtui-menuitem-text a
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+    text-decoration:none;    
+    color:#201F35;
+}
+.dtui-menuitem-text a:hover
+{
+    text-decoration:underline;
+}
+.dtui-menuitem-icon, .dtui-menuitem-allow
+{
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    position:absolute;
+    left:3px;
+    top:2px;
+    display:none;    
+    _left:-25px;
+    _top:-1px;
+    
+    
+    
+}
+.dtui-menuitem .dtui-menuitem-icon{
+    
+    background-position:50% 50%;
+}
+.dtui-menuitem-allow
+{
+    left:auto;
+    right:3px;
+    background:url(images/menu/arrow.png) no-repeat 8px 50%;
+}
+.dtui-menu .dtui-menuitem-showcheck .dtui-menuitem-icon
+{
+    background:none;
+}
+.dtui-menu .dtui-menuitem-checked .dtui-menuitem-icon
+{
+    background:url(images/menu/checked.gif) no-repeat 50% 6px;
+}
+
+body .dtui-menuitem-icontop .dtui-menuitem-inner
+{
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:7px;
+    line-height:14px;
+    margin-right:10px;
+}
+body .dtui-menuitem-icontop .dtui-menuitem-text
+{
+    +height:16px;
+}
+.dtui-menuitem-icontop .dtui-menuitem-icon
+{
+    position:static;
+    margin:auto;    
+}
+.dtui-menuitem-icontop .dtui-menuitem-text
+{        
+    padding:0;
+    padding-top:5px;
+}
+
+
+.dtui-menu-horizontal .dtui-menu-border
+{
+    background:#F1F2F6 url(images/menu/hmenubg.png) repeat-x 0 0;
+}
+.dtui-menu-horizontal .dtui-menu-inner
+{
+    margin:0;
+    border:0;
+    padding:3px; 
+    
+    height:auto;
+    overflow:hidden;
+    
+}
+.dtui-menu-horizontal .dtui-menuitem
+{
+    float:left;
+    display:inline;
+}
+.dtui-menu-horizontal .dtui-menuitem-inner
+{
+    padding-left:6px;
+    padding-right:6px;
+}
+.dtui-menu-horizontal .dtui-menuitem-icon, 
+.dtui-menu-horizontal .dtui-menuitem-text,
+.dtui-menu-horizontal .dtui-menuitem-allow
+{
+    position:static;
+    float:left;
+    vertical-align:middle;
+}
+.dtui-menu-horizontal .dtui-menuitem-icon
+{
+    margin-top:2px;
+}
+.dtui-menu-horizontal .dtui-menuitem-allow
+{
+    background:url(images/menu/hallow.gif) no-repeat 50% 0px;
+    width:5px;height:3px;overflow:hidden;
+    margin-top:9px;
+    margin-right:2px;
+    margin-left:2px;
+}
+.dtui-menu-horizontal .dtui-menuitem-text
+{
+    padding:0;
+    padding-left:3px;
+    padding-right:3px;
+    
+}
+.dtui-separator
+{
+    display:block;
+    border-top:solid 1px #9b9b9b;
+    margin-top:1px;
+    margin-bottom:1px;
+    margin-right:1px;
+    margin-left:26px;
+}
+.dtui-menu-horizontal .dtui-separator
+{
+    float:left;
+    display:inline;    
+    border:0;
+    border-left:solid 1px #9b9b9b;
+    margin:1px;
+    margin-top:6px;    
+    height:12px; 
+}
+
+
+.dtui-menu-toolbar
+{
+    display:none;
+    float:right;
+}
+.dtui-menu-horizontal .dtui-menu-toolbar
+{
+    display:none;
+}
+.dtui-menu-horizontal .dtui-menu-float
+{
+    float:left;
+}
+
+.dtui-menu-overflow .dtui-menu-float
+{
+    width:20000px;
+    
+}
+
+.dtui-menu-overflow .dtui-menu-topArrow,
+.dtui-menu-overflow .dtui-menu-bottomArrow
+{
+    position:absolute;top:3px;left:0;
+    width: 17px;height:20px;
+    z-index:1000;
+    background: url("images/tabs/allow_left.gif") no-repeat scroll -1px 50% ;
+}
+
+.dtui-menu-overflow .dtui-menu-bottomArrow
+{
+    left:auto;right:0;
+    background: url("images/tabs/allow_right.gif") no-repeat scroll -1px 50%;
+}
+.dtui-calendar
+{    
+    border:1px solid #999999;
+       
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+    border-collapse:collapse;
+    border-collapse:separate;  
+    
+}
+body .dtui-calendar td
+{
+    line-height:14px;
+}
+.dtui-calendar-views
+{
+    width:100%;
+    height:100%;    
+}
+.dtui-calendar-view
+{
+    width:100%;
+    height:100%;
+    border-collapse:collapse;
+    border-collapse:separate;
+    
+    display:table;       
+}
+.dtui-calendar-daysheader td
+{
+    padding:3px;
+    border-bottom:solid 1px #CFCFCF;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+    cursor:default;
+    font-weight:400;
+    text-align:center;
+    vertical-align:middle;
+}
+.dtui-calendar td.dtui-calendar-weeknumber
+{
+    border:0;
+    font-size:10px;
+    color:#BFBFBF;
+    cursor:default;
+}
+.dtui-calendar-days td
+{
+    text-align:center;
+    vertical-align:middle;
+    padding:2px;
+    padding-left:3px;
+    padding-right:3px;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+    cursor:default;
+}
+.dtui-calendar .dtui-calendar-weekend
+{
+    color:#C00000;
+}
+.dtui-calendar .dtui-calendar-othermonth{
+    color:#888888;
+}
+.dtui-calendar .dtui-calendar-disabled
+{
+    color:#aaa;
+    text-decoration:line-through;
+}
+.dtui-calendar-space
+{
+    width:3px;
+}
+.dtui-calendar-bottom td
+{
+    height:3px;
+}
+.dtui-calendar-date
+{
+    border:solid 1px white;
+}
+
+.dtui-calendar-header
+{
+    height:25px;        
+    text-align:center;        
+    background:#E7EBEF url(images/calendar/header.png) repeat-x 0 0;    
+    border-bottom:solid 1px #a7abb0;      
+}
+.dtui-calendar-headerInner
+{    
+    position:relative;
+    height:100%;
+}
+.dtui-calendar-title
+{
+    line-height:25px;
+    font-weight:400;
+    font-size:12px;
+    cursor:pointer;
+}
+.dtui-calendar-prev, .dtui-calendar-next
+{
+    position:absolute;
+    left:8px;top:6px;
+    overflow:hidden;
+}
+.dtui-calendar-next
+{
+    left:auto;right:8px;
+}
+.dtui-calendar-yearPrev, .dtui-calendar-yearNext,
+.dtui-calendar-monthPrev, .dtui-calendar-monthNext
+{
+    display:inline-block;margin-right:8px;cursor:pointer;
+    width:11px;height:12px;overflow:hidden;
+    background:url(images/calendar/prev.gif) no-repeat 50% 3px;
+}
+.dtui-calendar-yearNext
+{
+    margin:0;
+    margin-left:8px;
+    background:url(images/calendar/next.gif) no-repeat 50% 3px;
+}
+.dtui-calendar-monthPrev
+{
+    background:url(images/calendar/months.gif) no-repeat 0 50%;    
+}
+.dtui-calendar-monthNext
+{
+    margin:0;
+    margin-left:8px;
+    background:url(images/calendar/months.gif) no-repeat right 50%;    
+}
+
+.dtui-calendar-footer
+{
+    padding:4px;
+    padding-bottom:5px;
+    background:#efefef;
+    border-top:solid 1px #c9c9c9;
+    text-align:center;
+    
+}
+.dtui-calendar-menu .dtui-calendar-footer
+{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:0;
+    padding-top:8px;
+    padding-bottom:8px;    
+}
+.dtui-calendar-footerSpace
+{    
+    display:inline-block;
+    width:10px;
+}
+.dtui-calendar-tadayButton, .dtui-calendar-clearButton,
+.dtui-calendar-okButton, .dtui-calendar-cancelButton
+{        
+    border:1px solid #A9ACB5;
+    background:#EBEDF2 url(images/calendar/button.png) repeat-x 0 0;
+    color:#201F35;    
+    
+    display:inline-block;    
+    font-size:9pt;
+    font-family:Tahoma,Verdana,宋体;
+    text-decoration:none;
+    padding:3px;
+    padding-left:0px;
+    padding-right:0px;
+    width:52px;
+    text-align: center;  
+    outline:none;
+    cursor:pointer; 
+    vertical-align:middle;
+}
+body a:hover.dtui-calendar-tadayButton, body a:hover.dtui-calendar-clearButton,
+body a:hover.dtui-calendar-okButton, body a:hover.dtui-calendar-cancelButton
+{
+    text-decoration:none;
+}
+
+.dtui-calendar-okButton
+{
+    margin-left:10px;
+}
+.dtui-calendar-okButton, .dtui-calendar-cancelButton
+{
+    line-height:14px;
+}
+.dtui-calendar .dtui-calendar-today
+{    
+    border:1px solid #C00000;
+}
+.dtui-calendar .dtui-calendar-selected
+{    
+    color:black;
+    background:#e2ecf7;
+    border:solid 1px #999999;
+}
+
+.dtui-calendar-menu
+{
+    width:250px;
+    border:#9f9f9f 1px solid;
+    background:white;
+    position:absolute;
+    z-index:10000000;
+    overflow:hidden;
+}
+.dtui-calendar-menu-months
+{
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left:15px;
+    margin-right:0px;    
+    height:70px;
+}
+.dtui-calendar-menu-month
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;       
+    display:inline;
+    float:left;        
+    text-align:center;
+    width:46px;height:22px;
+    line-height:22px;    
+    color:#000000;
+    text-decoration:none;
+    border:solid 1px white;
+    outline:none;
+    margin-bottom:2px;
+}
+a:hover.dtui-calendar-menu-month
+{
+    background:#e5e5d5;
+    border:solid 1px #d6d6d5;
+}
+.dtui-calendar-menu-years
+{
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+    padding-left:18px;
+    padding-right:15px;
+    position:relative;
+    height:50px;
+    margin-bottom:5px;
+}
+.dtui-calendar-menu-year
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;       
+    display:inline;
+    float:left;
+    text-align:center;
+    width:32px;height:21px;
+    margin-bottom:3px;
+    line-height:20px;    
+    color:#000000;
+    text-decoration:none;
+    border:solid 1px white;
+}
+a:hover.dtui-calendar-menu-year
+{
+    background:#e5e5d5;
+    border:solid 1px #d6d6d5;
+}
+
+.dtui-calendar-menu-prevYear,
+.dtui-calendar-menu-nextYear
+{
+    position:absolute;
+    left:0;top:15px;
+    width:18px;
+    height:15px;
+    cursor:pointer;
+    background:url(images/calendar/months.gif) no-repeat 0 50%;   
+}
+.dtui-calendar-menu-nextYear
+{
+    left:auto;right:0;
+    background:url(images/calendar/months.gif) no-repeat right 50%;   
+}
+.dtui-calendar-menu-selected, a:hover.dtui-calendar-menu-selected
+{    
+    color:#333;
+    background:#e2ecf7;
+    border:solid 1px #999999;
+}
+.dtui-listbox
+{                
+    background:white;
+    overflow:hidden;
+    position:relative;  
+}
+.dtui-listbox-border
+{
+    border:1px solid #999999;    
+    overflow:hidden;
+    border-spacing: 1px;
+}
+.dtui-listbox td
+{
+    white-space:nowrap;text-overflow:ellipsis;word-break:keep-all;
+    overflow:hidden;    
+    line-height:22px;
+    cursor:default;
+    padding-left:4px;
+    padding-right:2px;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;       
+    text-align:left; 
+}
+.dtui-listbox-showColumns .dtui-listbox-header td
+{
+    padding-left:4px;
+    padding-right:4px;
+    
+}
+.dtui-listbox-showColumns .dtui-listbox-view td
+{
+    padding-left:4px;
+    padding-right:4px;
+    border:0;
+    border-right:solid 1px #cfcfcf;
+    border-bottom:solid 1px #cfcfcf;
+}
+
+.dtui-listbox-header
+{
+    overflow:hidden;
+    background:#E7EBEF url(images/listbox/header.png) repeat-x 0 0;    
+    border-bottom:solid 1px #A5ACB5;
+}
+.dtui-listbox-header td
+{
+    border-right:solid 1px #A5ACB5;    ;
+}
+
+.dtui-listbox-view
+{
+    width:100%;
+    overflow:auto;   
+    position:relative;
+}
+.dtui-listbox-items, .dtui-listbox-headerInner
+{
+    text-align:left;
+    width:100%;
+    border-collapse:collapse;
+    border-collapse:separate;    
+    
+    display:table;    
+}
+.dtui-listbox-showcolumns .dtui-listbox-items,
+.dtui-listbox-showcolumns .dtui-listbox-headerInner
+{
+    table-layout:fixed!important;
+}
+
+
+.dtui-listbox .dtui-listbox-checkbox
+{
+    text-overflow:clip;
+    text-align:center;
+    width:14px;
+    height:14px;
+    padding:0;
+}
+.dtui-listbox .dtui-listbox-checkbox input
+{
+    width:14px;
+    height:14px;
+}
+.dtui-listbox-hideCheckBox .dtui-listbox-checkbox
+{
+    display:none;    
+    width:0;
+}
+
+.dtui-listbox-item-hover{	
+	background:#e2ecf7;
+}
+.dtui-listbox-item-selected{	
+	background:#ecedef;
+	color:Black;
+}
+
+.dtui-error .dtui-list-inner
+{
+    margin-right:20px;
+}
+
+
+
+.dtui-checkboxlist
+{    
+    overflow:hidden;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+    position:relative;
+}
+
+.dtui-checkboxlist-item
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    margin-right:8px;
+}
+.dtui-checkboxlist table label
+{
+    padding-left:2px;
+    line-height:16px;
+    display:inline-block;
+}
+.dtui-checkboxlist input,
+.dtui-radiobuttonlist input
+{
+    overflow:hidden;
+    vertical-align:middle;
+    +vertical-align:bottom;
+    
+    margin:0;
+    padding:0;
+}
+
+
+.dtui-radiobuttonlist
+{    
+    position:relative;
+    overflow:hidden;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;   
+}
+
+.dtui-radiobuttonlist-item
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    margin-right:8px;
+}
+.dtui-radiobuttonlist table label
+{
+    padding-left:2px;
+    line-height:14px;
+    display:inline-block;
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;      
+    vertical-align:middle; 
+}
+.dtui-radiobuttonlist input
+{
+    overflow:hidden;
+    vertical-align:middle;
+    width:14px;
+    height:14px;
+    
+    *vertical-align:top;
+    *height:14px;
+    +vertical-align:bottom;
+    
+    margin:0;
+    padding:0;
+    
+}
+
+
+.dtui-tooltip
+{
+    position:absolute;
+    z-index:1030;        
+    font-size:12px;
+    line-height:1.4;       
+    display:none;         
+}
+.dtui-tooltip-inner {    
+    padding: 3px 8px;
+    
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    border:solid 1px #888;
+    border-radius: 4px;
+    vertical-align:middle;
+}
+.dtui-tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;    
+    
+    overflow:hidden;
+    font-size:0;
+    
+  _border-left-style:dashed;
+  _border-right-style:dashed;    
+  
+}
+.dtui-tooltip-left .dtui-tooltip-arrow,
+.dtui-tooltip-right .dtui-tooltip-arrow
+{
+  _border-left-style:solid;
+  _border-right-style:solid;	
+  _border-top-style:dashed;
+  _border-bottom-style:dashed;	
+}
+    
+.dtui-tooltip-top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+
+.dtui-tooltip-right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+
+.dtui-tooltip-bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.dtui-tooltip-left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+
+
+.dtui-tooltip-top .dtui-tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #666;
+  border-width: 5px 5px 0;
+}
+
+
+.dtui-tooltip-left .dtui-tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-left-color: #666;
+  border-width: 5px 0 5px 5px;
+}
+
+.dtui-tooltip-right .dtui-tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #888;
+  border-width: 5px 5px 5px 0;
+}
+
+
+
+.dtui-tooltip-bottom .dtui-tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #666;
+  border-width: 0 5px 5px;
+}
+
+
+
+.dtui-tooltip-bottomleft {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+
+.dtui-tooltip-bottomleft .dtui-tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-bottom-color: #666;
+  border-width: 0 5px 5px;
+}
+
+.dtui-tooltip-bottomright {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+
+.dtui-tooltip-bottomright .dtui-tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-bottom-color: #666;
+  border-width: 0 5px 5px;
+}
+
+.dtui-tooltip-topleft {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+.dtui-tooltip-topleft .dtui-tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-top-color: #666;
+  border-width: 5px 5px 0;
+}
+
+.dtui-tooltip-topright {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+.dtui-tooltip-topright .dtui-tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-top-color: #666;
+  border-width: 5px 5px 0;
+}
+
+
+.dtui-tooltip-loading
+{
+    width:16px;height:16px;
+    background:url(images/tooltip/wait.gif) no-repeat 50% 50%;
+}
+
+
+.dtui-progressbar
+{
+    height:22px;
+    width:150px;
+    position:relative;
+    border:1px solid #a5acb5;
+}
+.dtui-progressbar-border
+{
+    position:relative;
+    height:20px;
+    border:1px solid #a5acb5;
+}
+
+
+.dtui-progressbar-bar
+{
+    background:rgb(195,211,293);
+    height:100%;
+    width:0;
+    text-align:center;
+    position:relative;
+}
+.dtui-progressbar-text
+{
+    position:absolute;
+    left:0;top:0;
+    width:100%;height:100%;
+    text-align:center;
+    line-height:20px;
+    color:#222;
+    font-size:9pt;
+    font-family:Tahoma,Verdana,宋体;
+}
+
+.dtui-grid, .dtui-datagrid
+{
+    display:none;    
+}
+.dtui-grid-viewport
+{
+    background:white;
+    
+}
+
+
+.dtui-grid-columns
+{
+    
+        
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+.dtui-grid-columns-view
+{
+    position:relative;overflow:hidden;z-index:9;width:100%;
+}
+.dtui-grid-columns-view .dtui-grid-table
+{
+    z-index:100;
+}
+
+.dtui-grid-rows
+{
+    overflow:hidden;width:100%;padding:0;z-index:0;
+} 
+.dtui-grid-rows-view
+{
+    position:relative;z-index:9;
+    overflow:auto;height:100%;
+    width:auto;
+    _width:100%;
+    
+}
+.dtui-grid-rows-content
+{
+    zoom:1;padding:0;margin:0;border:0;
+}
+.dtui-grid-autoheight .dtui-grid-rows-view,
+.dtui-grid-hidden-y
+{
+    overflow-y:hidden;
+}
+
+.dtui-grid-table
+{
+    position:relative;
+    text-align:left;
+    
+    table-layout:fixed;
+    display:table;
+    width:100%; 
+    height:1px;
+}
+.dtui-grid-rowstable
+{
+    padding-bottom:1px;
+}
+.dtui-grid-cell, .dtui-grid-headerCell,
+.dtui-grid-filterCell, .dtui-grid-summaryCell
+{
+    overflow: hidden;
+    padding:0px;
+    border:0;
+    border-right:#d2d2d2 1px solid;
+    border-bottom:#d2d2d2 1px solid;
+    cursor:default;    
+    text-align:left;   
+    overflow:hidden;
+    _text-overflow:ellipsis; 
+    
+    padding-left:4px;	
+    padding-right:4px;        
+}
+.dtui-grid-summaryCell
+{
+    border-bottom:0;
+    border-top:#d2d2d2 1px solid;
+}
+.dtui-grid-cell-inner, .dtui-grid-headerCell-inner
+{
+    font-size:9pt;
+    font-family:Tahoma, Verdana, 宋体;
+    line-height:18px;    
+    padding:0px;
+    padding-top:2px;
+    padding-bottom:2px;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    white-space:normal;
+    
+    
+    word-break:break-all;
+}
+
+.dtui-grid-cell-nowrap
+{
+    overflow:hidden;  
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    word-break:keep-all;      
+}
+body .dtui-grid-headerCell-nowrap
+{
+    white-space:nowrap;
+    
+    word-break:keep-all;        
+}
+.dtui-grid-headerCell
+{   
+    background:#E7EBEF url(images/grid/header.png) repeat-x 0 0;
+    border-right:#A5ACB5 1px solid;
+    border-bottom:#A5ACB5 1px solid;
+    overflow:visible;       
+    padding:0;
+}
+.dtui-grid-headerCell-outer
+{
+    position:relative;
+    padding-left:4px;
+    padding-right:2px;
+}
+.dtui-grid-headerCell-inner
+{
+    word-break:break-all;
+    padding-top:0;
+    padding-bottom:0;
+    line-height:22px; 
+    overflow:hidden;
+}
+.dtui-grid .dtui-grid-bottomCell
+{
+    
+}
+.dtui-grid .dtui-grid-rightCell
+{
+    border-right-width:1px;
+}
+.dtui-grid-topRightCell
+{
+    background:#E7EBEF url(images/grid/header.png) repeat-x 0 0;
+    border-right:#A5ACB5 1px solid;
+    border-bottom:#A5ACB5 1px solid;
+    position:absolute;
+    left:0;top:0;width:20000px;height:100%;z-index:9;
+    margin-left:-2px;
+    margin-top:-1px;
+    _top:auto;
+    _bottom:-1px;
+}
+.dtui-grid-scrollHeaderCell
+{
+    position:absolute;left:20000px;top:0;width:1px;height:1px;overflow:hidden;
+}
+body .dtui-grid .dtui-grid-cell-error
+{
+    background:#fee2f0;
+}
+.dtui-grid-cell-dirty
+{
+    background:url(images/grid/dirty.gif) no-repeat right 4px;  
+}
+
+body .dtui-grid-deleteRow
+{
+    text-decoration:line-through;
+}
+.dtui-grid-newRow
+{
+    background:#fefee9;
+}
+.dtui-grid-emptyText
+{
+    padding:15px;
+    text-align:left;
+    padding-left:35px;
+    
+}
+
+
+.dtui-grid-groupCell
+{
+    height:30px;
+    border-right:#d2d2d2 1px solid;
+    border-bottom:solid 2px #A5ACB5;
+    background:#fff;    
+    cursor:pointer;
+}
+.dtui-grid-groupHeader
+{
+    position:relative;height:30px;
+}
+.dtui-grid-groupTitle
+{
+    background:url(images/grid/expand.gif) no-repeat 4px 6px;
+    color:#333;
+    font-family:Tahoma, Verdana, 宋体;
+    font-size:9pt;
+    font-weight:bold;    
+    padding:4px;
+    padding-top:6px;
+    border-bottom-width:1px;
+    border-right-width:1px;    
+    padding-left:23px;
+    overflow:visible;
+    white-space:nowrap;
+}
+.dtui-grid-group-collapse .dtui-grid-groupTitle
+{
+    background:url(images/grid/collapse.gif) no-repeat 3px 6px;
+}
+
+
+.dtui-grid-detailRow
+{
+    background:#F7F7F8;position:relative;zoom:1;
+}
+.dtui-grid-detailCell
+{    
+    position:relative;zoom:1;
+    padding: 8px 10px 10px;
+    border-right:#cfcfcf 1px solid;
+    border-bottom:#cfcfcf 1px solid;
+}
+
+
+.dtui-grid-filterRow
+{
+    overflow:hidden;background:#f6f6f6;position:relative;zoom:1;width:100%;
+}
+.dtui-grid-filterRow-view
+{
+    position:relative;overflow:hidden;z-index:9;width:100%;
+}
+.dtui-grid-filterCell
+{
+    border-right:0;
+    padding:2px;
+}
+
+
+.dtui-grid-summaryRow
+{
+    overflow:hidden;background:#f6f6f6;position:relative;zoom:1;width:100%;
+}
+.dtui-grid-summaryRow-view
+{
+    position:relative;overflow:hidden;z-index:9;width:100%;
+}
+.dtui-grid-summaryCell
+{
+    line-height:16px;
+    border-right:0;
+    padding:2px;
+}
+
+
+
+.dtui-grid-columns-lock
+{
+    position:absolute;left:-10px;top:0;width:0px;overflow:hidden;z-index:10;    
+}
+.dtui-grid-columns-lock .dtui-grid-topRightCell
+{
+    display:none;
+}
+.dtui-grid-rows-lock
+{
+    position:absolute;left:-10px;top:0;overflow:hidden;width:0px;z-index:10;    
+}
+.dtui-grid-columns-lock , .dtui-grid-rows-lock
+{
+    border-right:#d2d2d2 1px solid;
+}
+.dtui-grid-rows-lock .dtui-grid-rows-content
+{
+    padding-bottom:30px;
+}
+.dtui-grid-rows-lock .dtui-grid-emptyText
+{
+    visibility:hidden;
+}
+
+.dtui-grid-filterRow-lock
+{
+    position:absolute;left:-10px;top:0;width:0px;overflow:hidden;z-index:10;    
+}
+.dtui-grid-summaryRow-lock
+{
+    position:absolute;left:-10px;top:0;width:0px;overflow:hidden;z-index:10;    
+}
+
+
+
+.dtui-grid-vscroll
+{
+    width:18px;overflow:hidden;z-index:100;position:absolute;top:0;right:0;
+    height:100%;overflow-y:scroll;
+}
+.dtui-grid-vscroll-content
+{
+    width:1px;overflow:hidden;position:absolute;left:0;top:0;
+}
+.dtui-grid-virtualscroll-top
+{
+    vertical-align:bottom;
+}
+.dtui-grid-virtualscroll-bottom
+{
+    vertical-align:top;
+}
+
+
+.dtui-grid-row-alt
+{
+    background:#f7f4fd;
+}
+
+
+html body .dtui-grid-row-selected
+{
+    background:#dfe8f6;
+}
+
+html body .dtui-grid .dtui-grid-cell-selected
+{
+    background:#addffe;
+}
+body .dtui-grid-row-hover
+{
+    background:#ecedef;  
+}
+
+
+
+
+.dtui-grid-topPager
+{
+	position:relative;
+    overflow:hidden;
+    border-bottom:solid 1px #C9C9C9;
+    background:#E7EAEE url(images/grid/footer.png) repeat-x 0 0;
+}
+.dtui-grid-pager
+{
+	position:relative;
+    overflow:hidden;
+    border-top:solid 1px #C9C9C9;
+    background:#E7EAEE url(images/grid/footer.png) repeat-x 0 0;
+}
+
+
+
+.dtui-grid-resizeColumns-no .dtui-grid-column-splitter
+{
+    display:none;
+}
+.dtui-grid-column-splitter
+{
+    position:absolute;
+    overflow:hidden;
+    background:white;    
+    cursor: e-resize;
+    
+    opacity: .0;-moz-opacity: .0;filter: alpha(opacity=0);
+    z-index:100;
+    top:0px;right:-3px;
+    height:100%;width:5px;
+}
+
+
+
+.dtui-grid-sortIcon
+{
+    width:9px;
+    height:10px;
+    overflow:hidden;
+    display:inline-block;    
+    margin-left:2px;
+    margin-right:2px;
+    
+    background:url(images/grid/icons.png) no-repeat -19px -18px;
+}
+.dtui-grid-asc .dtui-grid-sortIcon
+{
+    
+    background-position:-19px -18px;
+}
+.dtui-grid-desc .dtui-grid-sortIcon
+{
+    
+    background-position:-19px 0;
+}
+.dtui-grid-asc .dtui-grid-cellInner, .dtui-grid-desc .dtui-grid-cellInner
+{
+    position:relative;
+    padding-right:18px;
+}
+
+
+.dtui-grid-rowEdit
+{
+    background:#f9f9fc;
+}
+.dtui-grid-rowEdit .dtui-grid-cell
+{
+    padding-left:1px;    
+    padding-right:1px;        
+}
+
+
+.dtui-checkcolumn
+{
+    padding:0;text-align:center;
+}
+.dtui-checkcolumn .dtui-grid-cell-inner
+{
+    padding-top:2px;
+    padding-bottom:1px;
+}
+
+
+.dtui-grid-expandCell .dtui-grid-cell-inner
+{
+    padding:0;
+}
+.dtui-grid-ecIcon
+{
+    display:inline-block;
+    width:18px;
+    height:20px;    
+    background:no-repeat 50% 50%;  
+    outline:none;
+    background-image:url(images/tree/collapse.gif);
+}
+.dtui-grid-expandRow .dtui-grid-ecIcon
+{
+    background-image:url(images/tree/expand.gif);
+    background-position:2px 50%;
+}
+
+
+.dtui-grid-proxy
+{
+    position:absolute;
+    overflow:hidden;
+    background:gray;
+    opacity: .30;-moz-opacity: .30;filter: alpha(opacity=30);
+    border:solid 1px black;
+    z-index:100000000;
+    box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box;
+    
+}
+.dtui-grid-columnproxy
+{
+    position:absolute;
+    overflow:hidden;
+    line-height:28px;
+    padding:6px;
+    padding-right:10px;
+    padding-top:0;
+    padding-bottom:0;
+    z-index:1000000;
+    font-family:Tahoma, Verdana, 宋体;
+    font-size:9pt;
+    
+    background:#E7EBEF url(images/grid/header.png) repeat-x 0 0;
+    border:#A5ACB5 1px solid;    
+    width:100px;    
+}
+.dtui-grid-movetop, .dtui-grid-movebottom
+{
+    position:absolute;
+    overflow:hidden;
+    width:9px;height:9px;
+    background:url(images/grid/col-move-top.gif) no-repeat;
+    display:none;
+    z-index:100000;
+}
+.dtui-grid-movebottom
+{
+    background:url(images/grid/col-move-bottom.gif) no-repeat;
+}
+.dtui-grid-no .dtui-grid-columnproxy-inner
+{
+    padding-left:20px;background:url(images/grid/no.gif) no-repeat 0 6px;
+}
+.dtui-grid-ok .dtui-grid-columnproxy-inner
+{
+    padding-left:20px;background:url(images/grid/ok.gif) no-repeat 0 6px;
+}
+
+
+.dtui-grid-fixwidth .dtui-grid-table
+{
+	width:0px;
+}
+
+
+.dtui-grid-radio-mask
+{
+    position:absolute;left:0;top:0;width:100%;height:100%;z-index:100;
+    background: white;
+    opacity: .0;
+    -moz-opacity: .0;
+    filter: alpha(opacity=0);
+}
+
+.dtui-tree .dtui-grid-viewport{
+    background:none;
+}
+
+
+
+.dtui-treegrid, .dtui-tree
+{
+    display:none;
+}
+.dtui-tree-nodes
+{
+    position:relative;overflow:hidden;
+}
+.dtui-tree-treecell .dtui-grid-cell-inner
+{
+    padding:0;
+}
+
+.dtui-tree-indent
+{
+    display:inline-block;
+    width:18px;
+    height:23px;
+}
+.dtui-tree-nodetitle
+{
+    margin-top:0px;margin-right:2px;overflow:hidden;
+    cursor:default;white-space:nowrap;      
+    height:22px;    line-height:16px;
+}
+
+.dtui-tree .dtui-tree-icon
+{
+    display:inline-block;
+    width:18px;height:20px;overflow:hidden;    
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    vertical-align:middle;
+    
+ -moz-user-select: none; 
+-webkit-user-select: none;
+-ms-user-select: none;
+-khtml-user-select: none; 
+user-select: none;
+    
+}
+.dtui-tree-nodetext
+{	
+    height:18px;
+    line-height:18px;   
+    +line-height:19px;   
+    vertical-align:middle;
+    
+    _vertical-align:top;
+    
+    display:inline-block;
+    padding-left:3px;    
+    padding-right:3px;    
+    white-space:nowrap;
+}
+
+.dtui-tree-nodetext a
+{
+    text-decoration:none;
+    color:#000;
+    outline:none;
+    display:inline-block;
+    margin-bottom:2px;
+    margin-top:1px\9\0;  
+    +line-height:16px;       
+    _margin-top:2px;      
+    
+}
+.dtui-tree-nodetext a:hover
+{
+    
+}
+
+
+.dtui-tree-node-ecicon
+{
+    display:inline-block;
+    width:18px;
+    height:22px;    
+    background:no-repeat 2px 0px;
+    outline:none;
+}
+
+.dtui-tree-collapse .dtui-tree-node-ecicon
+{
+    background-image:url(images/tree/collapse.gif);
+}
+.dtui-tree-expand .dtui-tree-node-ecicon
+{
+    background-image:url(images/tree/expand.gif);
+    background-position: 3px 0px;
+}
+.dtui-tree-leaf
+{
+    background-image:url(images/tree/leaf.gif);
+}
+.dtui-tree-folder
+{
+    background-image:url(images/tree/folder.gif);
+}
+.dtui-tree-expand .dtui-tree-folder
+{
+    background-image:url(images/tree/folder-open.gif);
+}
+
+.dtui-tree-checkbox
+{
+	width:16px\9;height:14px\9;margin:0;padding:0;
+	vertical-align:middle;
+}
+
+body .dtui-tree .dtui-tree-loading .dtui-tree-node-ecicon,
+body .dtui-tree-loading .dtui-treegrid-ec-icon
+{
+    background:#fff url(images/tree/loading.gif) no-repeat scroll 50% 50%;
+}
+
+
+.dtui-tree-nodeshow
+{
+    display:inline-block;
+    vertical-align:top;
+    padding:1px;
+    padding-left:2px;
+    padding-right:3px;
+    border:0;
+    cursor:pointer;
+}
+
+.dtui-treegrid .dtui-tree-nodeshow
+{
+    cursor:default;
+}
+
+.dtui-tree-node-hover .dtui-tree-nodeshow
+{
+    padding:0;
+    padding-left:1px;
+    padding-right:2px;
+    border:1px solid #A9ACB5;
+    background:#dde6fe url(images/tree/hover.png) repeat-x 0 0;        
+}
+
+.dtui-tree-selectedNode .dtui-tree-nodeshow
+{
+    padding:0;
+    padding-left:1px;
+    padding-right:2px;
+    border:1px solid #A9ACB5;
+    background:#EBEDF2 url(images/tree/button.png) repeat-x 0 0;
+    zoom:1;
+}
+
+
+.dtui-tree-treeLine .dtui-tree-indent{
+    background:transparent url(images/tree/treeline.gif) repeat-y 9px 0px; 
+}
+
+.dtui-tree-treeLine .dtui-tree-node-ecicon
+{
+    background:transparent url(images/tree/treeNodeLine.gif) no-repeat 1px -4px; 
+}
+
+.dtui-tree-treeLine .dtui-tree-expand .dtui-tree-node-ecicon{
+    background:transparent url(images/tree/expandLine.gif) no-repeat 2px -1px;
+}
+.dtui-tree-treeLine .dtui-tree-collapse .dtui-tree-node-ecicon{
+    background:transparent url(images/tree/collapseLine.gif) no-repeat 1px -1px;
+}
+.dtui-tree-treeLine .dtui-tree-node-ecicon-last
+{
+    background:transparent url(images/tree/lastline.gif) no-repeat 2px -5px; 
+}
+
+
+.dtui-tree-treeLine .dtui-tree-expand .dtui-tree-node-ecicon-first
+{
+    background:transparent url(images/tree/firstExpandNode.gif) no-repeat 2px 0;
+}
+.dtui-tree-treeLine .dtui-tree-expand .dtui-tree-node-ecicon-last
+{
+    background:transparent url(images/tree/lastExpandNode.gif) no-repeat 2px -1px;
+}
+.dtui-tree-treeLine .dtui-tree-collapse .dtui-tree-node-ecicon-first
+{
+    background:transparent url(images/tree/firstCollapseNode.gif) no-repeat 1px 0;
+}
+.dtui-tree-treeLine .dtui-tree-collapse .dtui-tree-node-ecicon-last
+{
+    background:transparent url(images/tree/lastCollapseNode.gif) no-repeat 1px -1px;
+}
+
+
+.dtui-tree-treeLine .dtui-tree-expand .dtui-tree-node-ecicon-firstLast
+{
+    background:transparent url(images/tree/expand.gif) no-repeat 1px 0;
+}
+.dtui-tree-treeLine .dtui-tree-collapse .dtui-tree-node-ecicon-firstLast
+{
+    background:transparent url(images/tree/collapse.gif) no-repeat 0px 0;
+}
+
+
+.dtui-tree-treeLine .dtui-tree-expand .dtui-tree-node-ecicon-firstAndlast
+{
+    background-position:50% 70%;
+    background-image:url(images/tree/firstAndlastexpand.gif);
+}
+.dtui-tree-treeLine .dtui-tree-collapse .dtui-tree-node-ecicon-firstAndlast
+{
+    background-position:50% 50%;
+    background-image:url(images/tree/firstAndlastcollapse.gif);
+}
+.dtui-tree-treeLine .dtui-tree-node-ecicon-firstAndlast
+{
+    background-position:50% 50%;
+    background-image:url(images/tree/lastline.gif);
+}
+
+
+
+.dtui-tree-editinput
+{
+    border-style: solid;
+    border-width: 1px;
+    background:white;    
+    border-color: #9DA0AA #C2C4CB #D9DAE0;   
+    font-size:12px;
+    
+    padding-top:1px;
+    _padding-top:0px;
+    padding-left:2px;
+    padding-right:2px;
+    margin-top:0px;
+    
+    width:80px;
+    height:15px;
+    line-height:15px;
+    vertical-align:top;
+}
+
+
+
+body .dtui-tree-showArrows .dtui-tree-collapse .dtui-tree-node-ecicon
+{
+    background:url(images/tree/arrows.gif) no-repeat 0px 2px;
+}
+body .dtui-tree-showArrows .dtui-tree-expand .dtui-tree-node-ecicon
+{
+    background:url(images/tree/arrows.gif) no-repeat -16px 2px;
+}
+body .dtui-tree-showArrows .dtui-tree-indent,
+body .dtui-tree-showArrows .dtui-tree-node-ecicon
+{
+    background:none;
+}
+
+
+.dtui-tree-nodeclick .dtui-tree-parentNode .dtui-tree-nodeshow
+{
+    cursor:pointer;
+}
+
+
+
+
+
+.dtui-tree-nowrap  .dtui-tree-nodetext
+{
+    overflow:visible; 
+}
+.dtui-tree-nowrap .dtui-grid-table
+{
+    table-layout:auto;    
+}
+.dtui-tree-nowrap .dtui-tree-nodetitle
+{
+    overflow:visible;
+}
+
+
+.dtui-tree-radio
+{
+    display:inline-block;
+    width:16px;height:20px;overflow:hidden;    
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    vertical-align:middle;
+    background-image:url(images/tree/radio_unchecked.gif);
+}
+.dtui-tree-selectedNode .dtui-tree-radio
+{
+    background-image:url(images/tree/radio_checked.gif);
+}
+.dtui-pager
+{   
+    width:auto;
+    height:28px;
+    overflow:hidden;  
+    font-size:9pt;
+    font-family: Tahoma, Verdana;
+    position:relative;
+    
+}
+
+.dtui-pager-left
+{
+    padding-top:3px;
+    padding-top:2px\9;
+    _padding:2px;
+    
+    line-height:25px;
+    height:25px;
+    overflow:hidden;
+    padding-left:2px;
+    float:left;
+    position:relative;
+    top:-1px;        
+    
+}
+:root .dtui-pager-left {top:-1px\9; }  
+
+
+.dtui-pager-right
+{
+    float:right;
+    line-height:28px;
+    padding-right:5px;
+}
+
+.dtui-pager .dtui-button
+{
+    margin-right:0px;
+}
+
+.dtui-pager .dtui-button-iconOnly
+{
+    padding-top:0;
+    padding-bottom:0;
+    height:20px;
+}
+
+body .dtui-pager-size .dtui-buttonedit .dtui-buttonedit-border
+{
+    border-color:#ccc;
+}
+
+body .dtui-pager-num
+{    
+	border:1px solid #ccc;
+	margin:0 2px;
+	width:35px;
+	text-align:center;	
+	outline:none;
+	+vertical-align:middle;
+	position:relative;
+	_left:0;_top:-1px;
+	height:14px;
+	
+
+}
+.dtui-pager-pages
+{
+    padding-left:5px;
+    padding-right:5px;
+    display:inline-block;
+}
+.dtui-pager-size
+{
+    display:inline-block;
+    height:20px;
+    padding-left:2px;
+    vertical-align:middle;
+    position:relative;left:0;    
+    _top:-1px;
+    
+    font-size: 0;   
+    line-height:0px;	    
+}
+.dtui-pager-index
+{
+    vertical-align:middle;
+    height:25px;
+    overflow:hidden;
+    
+}
+
+.dtui-pager-first
+{    
+    background:url(images/pager/first.gif) no-repeat;
+}
+.dtui-pager-prev
+{
+    background-image:url(images/pager/prev.gif);
+}
+.dtui-pager-next
+{
+    background-image:url(images/pager/next.gif);
+}
+.dtui-pager-last
+{
+    background-image:url(images/pager/last.gif);
+}
+.dtui-pager-reload
+{
+    background-image:url(images/pager/reload.png);
+}
+
+.dtui-page-buttons .dtui-button,
+.dtui-page-buttons .dtui-textbox,
+.dtui-page-buttons .dtui-buttonedit
+{
+    vertical-align:middle;
+}
+.dtui-page-buttons
+{
+    position:relative;
+    top:-1px;
+    +top:0px;
+}
+
+
+.dtui-pager-left table
+{
+    float:left;
+}
+
+.dtui-pager-sizetext
+{
+    vertical-align:middle;
+    padding:2px;
+}
+
+.dtui-htmlfile
+{
+    position:relative;
+    width:180px;
+}
+.dtui-htmlfile-file
+{    
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:100;
+    width:10px;
+    height:10px;
+    overflow:hidden;
+    cursor:default;
+    opacity: .0;-moz-opacity: .0;filter: alpha(opacity=0);
+    
+}
+.dtui-htmlfile .dtui-buttonedit-button
+{
+    font-size:8pt;
+    font-size:9pt\9;
+    font-family: Tahoma, Verdana;    
+    white-space:nowrap;
+        
+    border:1px solid #A9ACB5; 
+    background:#EBEDF2 url(images/buttonedit/button.png) repeat-x 0 0;
+    color:#201F35;
+    padding:0;
+    width:50px;
+    text-align:center;
+    line-height:16px;
+}
+
+.dtui-fileupload .swfupload,.dtui-uploadify .swfupload
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background:#efefef;
+    opacity: .0;-moz-opacity: .0;filter: alpha(opacity=0);
+    cursor:pointer;
+}
+
+.dtui-buttonedit-disabled object
+{
+    display:none;
+}
+.dtui-fileupload-progressbar
+{
+    width:100%;
+    height:4px;
+    position:absolute;
+}
+.dtui-fileupload-complete
+{
+    width:0;
+    height:100%;
+    background-color:#2fd85e;
+}
+.dtui-textboxlist
+{
+    width:125px;
+    height:24px;
+    
+    display:inline-table;
+    *display:inline;
+    zoom:1;
+    
+    table-layout:fixed;
+    border-collapse:collapse;
+    border-collapse:separate;
+    vertical-align:middle;
+    
+    font: 9pt Verdana;
+}
+.dtui-textboxlist-border
+{
+    border-style: solid;
+    border-width: 1px;
+    background:white;    
+    border-color: #9DA0AA #C2C4CB #D9DAE0;       
+         
+    width:100%;
+    cursor:text;
+    vertical-align:top;
+}
+body .dtui-textboxlist-focus .dtui-textboxlist-border
+{
+    border-color: #434756 #7D808D #AAACB9;
+}
+
+.dtui-textboxlist ul
+{
+    zoom: 1; overflow: hidden; margin: 0; padding: 2px;padding-bottom:0;
+}
+.dtui-textboxlist li
+{
+    list-style-type: none; float: left; display:inline-block; padding: 0; margin: 0 3px 0px 0; cursor: default;       
+}
+.dtui-textboxlist .dtui-textboxlist-inputLi
+{
+    margin-right:2px;    
+    margin-bottom:2px;
+}
+.dtui-textboxlist .dtui-textboxlist-input
+{
+    border: 0; padding: 0; font: 9pt "Lucida Grande", Verdana;
+    outline:none;
+    width:20px;
+    height: 16px;
+    margin-top:2px;
+    *+margin-top:0px; 
+}
+
+
+.dtui-textboxlist .dtui-textboxlist-item
+{
+    position: relative; padding: 0 6px; -moz-border-radius: 9px; -webkit-border-radius: 9px; border-radius: 9px; border: 1px solid #CAD8F3; background: #DEE7F8; cursor: default;
+    padding-right: 15px;
+    height:16px;
+    line-height: 16px;
+    margin-bottom:2px;
+    white-space:nowrap;
+}
+.dtui-textboxlist .dtui-textboxlist-item-hover
+{
+    background: #BBCEF1; border: 1px solid #6D95E0;
+}
+.dtui-textboxlist .dtui-textboxlist-item-selected
+{
+    border-color: #598BEC; background: #598BEC; color: #fff;
+}
+.dtui-textboxlist-close { position: absolute; right: 4px;top:5px; display: block; width: 7px; height: 7px; font-size: 1px; background: url(images/textboxlist/close.gif); cursor:pointer; }
+.dtui-textboxlist-close-hover, .dtui-textboxlist-item-selected .dtui-textboxlist-close{ background-position: bottom; }
+
+.dtui-textboxlist .dtui-errorIcon
+{
+    margin-left:2px;
+    margin-top:2px;
+}
+
+.dtui-textboxlist-popup-loading
+{
+    background:url(images/textboxlist/loading.gif) no-repeat 0 5px;
+    padding-left:20px;
+    line-height:25px;
+    display:block;
+}
+.dtui-textboxlist-popup-error
+{
+    background:url(images/textboxlist/error.gif) no-repeat 0 5px;
+    padding-left:20px;
+    line-height:25px;
+    display:block;
+}
+.dtui-textboxlist-popup-noresult
+{
+    padding-left:20px;
+    line-height:25px;
+    display:block;
+}
+
+.dtui-textboxlist-popup .dtui-listbox-item td
+{
+    white-space:nowrap;
+}
+
+
+.dtui-required .dtui-textboxlist-border,.dtui-required .dtui-textboxlist-input{
+    background: #ffffe6;
+}
+.dtui-tips
+{
+    *zoom:1;
+    cursor:default;
+    position:relative;
+    padding-left: 10px;
+    padding-top:5px;
+    padding-bottom:5px;    
+    padding-right:30px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    
+    font-family:Verdana;
+    font-size:12px;      
+        
+    color: #777;
+    background-color: #f5f5f5;
+    border-color: #eee;   
+}
+    
+.dtui-tips-success
+{
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;        
+}
+.dtui-tips-info {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.dtui-tips-warning {
+    color: #c09853;
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+}
+.dtui-tips-danger {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}    
+
