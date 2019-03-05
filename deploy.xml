@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<platform-dynamic-module>
+  <web>
+    <bundle-context-path>/exam</bundle-context-path>
+    <servlet-extensions>/rest/*</servlet-extensions>
+    <resource extension-names="/*.xsl,/*.css,/*.ini,/*.gif,/*.png,/*.xsd,/*.eot,/*.jar,/*.fla,/*.jpg,/*.htm,/*.swf,/*.js,/*.html,/*.xml,/*.properties">
+      <virtual-resource context-path="/mx">
+        <location extension-names="/*.jpg,/*.xsl,/*.htm,/*.swf,/*.js,/*.html,/*.css,/*.gif,/*.png,/*.eot">mx</location>
+      </virtual-resource>
+    </resource>
+    <use-platform-component>true</use-platform-component>
+  </web>
+</platform-dynamic-module>

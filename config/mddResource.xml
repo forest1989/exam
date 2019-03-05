@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:module="http://www.sgcc.com.cn/schema/platform/module" xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans.xsd    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context.xsd    http://www.sgcc.com.cn/schema/platform/module    http://www.sgcc.com.cn/schema/platform/module/module.xsd   http://www.springframework.org/schema/mvc    http://www.springframework.org/schema/mvc/spring-mvc.xsd">  
+  <!-- 元数据查询服务引用  -->
+  <module:reference id="metadataService" targetName="com.sgcc.uap.mdd.runtime.meta.IMetadataService" filter="platform_service_idname=metadataServiceService"/>
+  <!-- 数据查询服务引用  -->
+  <module:reference id="runtimeDataService" targetName="com.sgcc.uap.mdd.runtime.data.IDataService" filter="platform_service_idname=runtimeDataServiceService"/>
+  <!-- 校验服务引用 -->
+  <module:reference id="validateService" targetName="com.sgcc.uap.mdd.runtime.validate.IValidateService" filter="platform_service_idname=validateServiceService"/>
+  <!-- SessionFactory引用 -->
+  <module:reference id="sessionFactory" targetName="org.hibernate.SessionFactory" filter="platform_service_idname=sessionFactoryService"/>
+  <bean class="com.sgcc.uap.mdd.runtime.utils.BeanUtilsConfig"/>
+  <bean id="coverter" class="com.sgcc.uap.mdd.runtime.utils.HttpMessageConverter">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+</beans>
