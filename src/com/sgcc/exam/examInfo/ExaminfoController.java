@@ -106,14 +106,13 @@ public class ExaminfoController {
 		return null;
 	}
 
-	
 	@RequestMapping("/{id}")
     public @ItemResponseBody QueryResultObject get(@PathVariable String id) {
 		Examinfo examinfo ;
 		if("null".equals(id)){
 			examinfo = null;
 		}else {
-			examinfo = examinfoBizc.get(java.lang.String.valueOf(id));
+			examinfo = examinfoBizc.get(java.lang.Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();

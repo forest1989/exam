@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<!-- Generated 2019-3-6 10:30:23 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2019-3-6 11:30:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping> 
   <class name="com.sgcc.exam.examInfo.po.Examinfo" table="EXAMINFO"> 
     <id name="examId" type="java.lang.Integer"> 
