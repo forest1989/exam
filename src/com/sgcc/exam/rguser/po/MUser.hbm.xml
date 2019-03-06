@@ -4,9 +4,9 @@
 <!-- Generated 2019-3-6 12:57:11 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping auto-import="false"> 
   <class name="com.sgcc.exam.rguser.po.MUser" table="M_USER"> 
-    <id name="mUserId" type="java.lang.String"> 
+    <id name="mUserId" type="java.lang.Integer"> 
       <column name="M_USER_ID" length="10"/>  
-      <generator class="assigned"/> 
+      <generator class="increment"/> 
     </id>  
     <property name="openId" type="java.lang.String" lazy="true"> 
       <column name="OPEN_ID" precision="1000" scale="0"/> 

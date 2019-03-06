@@ -13,7 +13,7 @@ public class MUser implements java.io.Serializable {
     
 	/** 用户ID*/
 	
-	private String mUserId;
+	private Integer mUserId;
 	
 	/** 微信用户唯一标识*/
 	
@@ -50,17 +50,17 @@ public class MUser implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public MUser(String mUserId) {
+	public MUser(Integer mUserId) {
 	    this.mUserId = mUserId;
 	 }
 	 	   
 	
-	
-    public String getmUserId() {
+
+    public Integer getmUserId() {
         return this.mUserId;
     }
     
-    public void setmUserId(String mUserId) {
+    public void setmUserId(Integer mUserId) {
         this.mUserId = mUserId;
     }
 	
