@@ -1336,11 +1336,7 @@ function addTab(_tile,_icon,_url){
 var _data_test ='<xmlmenu>'+
 '<menu id="01100" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 	'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="01102" url="../ggl/index.jsp" text="热门公告" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt1"/>'+
-		'<menu id="01103" url="../xwzx/index.jsp" text="新闻资讯" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt2"/>'+
-		'<menu id="01104" url="../bddt/index.jsp" text="本地动态" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt3"/>'+
-		'<menu id="01105" url="../swkx/index.jsp" text="通知" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt4"/>'+
-		'<menu id="01106" url="../sxzx/index.jsp" text="书讯中心" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
+		'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
 	'</menu>'+
 '</menu>'+
 	'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+

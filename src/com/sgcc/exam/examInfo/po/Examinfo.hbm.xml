@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-6 10:30:23 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.examInfo.po.Examinfo" table="EXAMINFO"> 
+    <id name="examId" type="java.lang.Integer"> 
+      <column name="EXAM_ID" length="10"/>  
+      <generator class="increment"/> 
+    </id>  
+    <property name="struId" type="java.lang.String" lazy="true"> 
+      <column name="STRU_ID" precision="255" scale="0"/> 
+    </property>  
+    <property name="areaId" type="java.lang.String" lazy="true"> 
+      <column name="AREA_ID" precision="10" scale="0"/> 
+    </property>  
+    <property name="readingId" type="java.lang.String" lazy="true"> 
+      <column name="READING_ID" precision="10" scale="0"/> 
+    </property>  
+    <property name="examContentText" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_CONTENT_TEXT" precision="4000" scale="0" sql-type="text"/> 
+    </property>  
+    <property name="examContentImg" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_CONTENT_IMG" precision="4000" scale="0" sql-type="text"/> 
+    </property>  
+    <property name="examAnswer" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_ANSWER" precision="64" scale="0"/> 
+    </property>  
+    <property name="answerAnalyze" type="java.lang.String" lazy="true"> 
+      <column name="ANSWER_ANALYZE" precision="4000" scale="0" sql-type="text"/> 
+    </property>  
+    <property name="examSubject" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_SUBJECT" precision="32" scale="0"/> 
+    </property>  
+    <property name="examGrades" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_GRADES" precision="32" scale="0"/> 
+    </property>  
+    <property name="examMark" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_MARK" precision="10" scale="0"/> 
+    </property>  
+    <property name="examTypeId" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_TYPE_ID" precision="10" scale="0"/> 
+    </property>  
+    <property name="createDate" type="java.util.Date" lazy="true"> 
+      <column name="CREATE_DATE" scale="0"/> 
+    </property>  
+    <property name="createBy" type="java.lang.String" lazy="true"> 
+      <column name="CREATE_BY" precision="64" scale="0"/> 
+    </property>  
+    <property name="updateBy" type="java.lang.String" lazy="true"> 
+      <column name="UPDATE_BY" precision="64" scale="0"/> 
+    </property>  
+    <property name="updateDate" type="java.util.Date" lazy="true"> 
+      <column name="UPDATE_DATE" scale="0"/> 
+    </property>  
+    <property name="delFlag" type="java.lang.String" lazy="true"> 
+      <column name="DEL_FLAG" precision="1" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>
