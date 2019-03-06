@@ -1,4 +1,5 @@
 package com.sgcc.exam.etype;
+import com.sgcc.uap.rest.support.DicItems;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
 import com.sgcc.uap.rest.annotation.VoidResponseBody;
@@ -119,15 +120,25 @@ public class ExamTypeController {
 		items.add(examtype);
 		qObject.setItems(items);
 
-    	return qObject;
+    	return qObject.addDicItems(wrapDictList());
     }
 
 
-	@RequestMapping("/")
+	private List<DicItems> wrapDictList() {
+		List<DicItems> dicts = new ArrayList<DicItems>();
+		DicItems dictExamTypeParentId = new DicItems();
+		dictExamTypeParentId.setName("parentId");
+		dictExamTypeParentId.setValues(dataDictionaryBizC.translateFromDB("com.sgcc.exam.etype.po.ExamType ExamType", "value", "text", "examTypeId", "typeName",""));
+
+		dicts.add(dictExamTypeParentId);
+		return dicts;
+	}
+
+@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
 	    QueryResultObject queryResult = examtypeBizc.query(queryCondition);
 
-	    return queryResult;
+	    return queryResult.addDicItems(wrapDictList());
     }
 
 

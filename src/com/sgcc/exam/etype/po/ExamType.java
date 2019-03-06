@@ -1,5 +1,7 @@
 package com.sgcc.exam.etype.po;
 
+import org.hibernate.validator.constraints.NotBlank;
+import com.sgcc.uap.service.validator.constraints.Unique;
 import java.util.Date;
 
 /**
@@ -13,18 +15,18 @@ public class ExamType implements java.io.Serializable {
     
 	/** 试题分类ID*/
 	
-	private String examTypeId;
+	private Integer examTypeId;
 	
 	/** 父级编号*/
 	
-	private String parentId;
+	private Integer parentId;
 	
 	/** 分类名称*/
-	
+	@NotBlank(message="不能为空") 
 	private String typeName;
 	
 	/** 分类编码*/
-	
+	@NotBlank(message="不能为空") @Unique(message="违反唯一性约束",primarykey="examTypeId") 
 	private String typeCode;
 	
 	/** 备注*/
@@ -66,26 +68,26 @@ public class ExamType implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public ExamType(String examTypeId) {
+	public ExamType(Integer examTypeId) {
 	    this.examTypeId = examTypeId;
 	 }
 	 	   
 	
 	
-    public String getExamTypeId() {
+    public Integer getExamTypeId() {
         return this.examTypeId;
     }
     
-    public void setExamTypeId(String examTypeId) {
+    public void setExamTypeId(Integer examTypeId) {
         this.examTypeId = examTypeId;
     }
 	
 	
-    public String getParentId() {
+    public Integer getParentId() {
         return this.parentId;
     }
     
-    public void setParentId(String parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 	
