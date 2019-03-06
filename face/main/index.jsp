@@ -1133,6 +1133,7 @@ body {
 	font-weight: normal;
 	margin-top: 0px;
 	margin-left: 50px;
+	line-height: 26px;
 }
 </style>
 <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
@@ -1352,19 +1353,9 @@ var _data_test ='<xmlmenu>'+
 		'<menu id="03103" url="../order/index.jsp" text="图书订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 		'</menu>'+
 	'</menu>'+
-	'<menu id="04101" url="../hdglmovie/index.jsp" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="04102" url="../hdglmovie/index.jsp" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-		'<menu id="04103" url="../sjtjhd/index.jsp" text="读书活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04104" url="../hdgl/index.jsp" text="征文活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04105" url="../dcwjg/index.jsp" text="调查问卷" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04106" url="../zsjd/index.jsp" text="知识竞答" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04107" url="../artShoot/index.jsp" text="摄影活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04108" url="../artPainting/index.jsp" text="书法美术" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04109" url="../hdglmovie/index.jsp" text="微电影" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04110" url="../hdgldance/index.jsp" text="歌舞比赛" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04111" url="../hdglm/index.jsp" text="原创音乐" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04112" url="../sports/index.jsp" text="体育比赛" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="04113" url="../pwgl/index.jsp" text="评委管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="04103" url="../sjtjhd/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 	'</menu>'+
 '</menu>'+
 '</xmlmenu>';
