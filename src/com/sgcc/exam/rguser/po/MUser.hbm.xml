@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-6 12:57:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping auto-import="false"> 
+  <class name="com.sgcc.exam.rguser.po.MUser" table="M_USER"> 
+    <id name="mUserId" type="java.lang.String"> 
+      <column name="M_USER_ID" length="10"/>  
+      <generator class="assigned"/> 
+    </id>  
+    <property name="openId" type="java.lang.String" lazy="true"> 
+      <column name="OPEN_ID" precision="1000" scale="0"/> 
+    </property>  
+    <property name="areaId" type="java.lang.String" lazy="true"> 
+      <column name="AREA_ID" precision="10" scale="0"/> 
+    </property>  
+    <property name="nickName" type="java.lang.String" lazy="true"> 
+      <column name="NICK_NAME" precision="1000" scale="0"/> 
+    </property>  
+    <property name="photoUrl" type="java.lang.String" lazy="true"> 
+      <column name="PHOTO_URL" precision="1000" scale="0"/> 
+    </property>  
+    <property name="gender" type="java.lang.String" lazy="true"> 
+      <column name="GENDER" precision="1" scale="0"/> 
+    </property>  
+    <property name="loginDate" type="java.util.Date" lazy="true"> 
+      <column name="LOGIN_DATE" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>

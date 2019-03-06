@@ -198,6 +198,14 @@
 			'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
 			'</menu>'+
+			
+		'</menu>'+
+		
+			'<menu id="01100" url="../ggl/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+			'<menu id="01101" url="../ggl/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+				'<menu id="01106" url="../rguser/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt6"/>'+
+			'</menu>'+
+			
 		'</menu>'+
 			'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
