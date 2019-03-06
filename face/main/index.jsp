@@ -425,14 +425,7 @@
 		$(document).ready(function() {
 			var url = getContextPath();
 			changeMenu(document.getElementById('m1'), null);
-			$.ajax({
-				url : url + "/rest/userControl/power",
-				type : "post",
-				success : function() {
-				},
-				error : function() {
-				}
-			})
+			
 			function getContextPath() {
 				var pathName = document.location.pathname;
 				var index = pathName.substr(1).lastIndexOf("/");
