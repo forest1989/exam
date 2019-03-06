@@ -203,7 +203,7 @@
 		
 			'<menu id="01100" url="../ggl/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 			'<menu id="01101" url="../ggl/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-				'<menu id="01106" url="../rguser/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
+				'<menu id="01106" url="../rguser/index.jsp" text="用户管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt6"/>'+
 			'</menu>'+
 			
 		'</menu>'+
