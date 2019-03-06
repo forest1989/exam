@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <!-- Generated 2019-3-6 11:30:15 by Hibernate Tools 3.4.0.CR1 -->
-<hibernate-mapping auto-import="false"> 
+<hibernate-mapping> 
   <class name="com.sgcc.exam.examInfo.po.Examinfo" table="EXAMINFO"> 
     <id name="examId" type="java.lang.Integer"> 
       <column name="EXAM_ID" length="10"/>  
