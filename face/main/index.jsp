@@ -41,6 +41,7 @@
  	//ISCOrgInfo add = new ISCOrgInfo();
  	//== 
  	String xml11 = null ;//add.test(request);
+
  	//== 
  	//List<String> syss = add.getOrgInfo(userId);
  	//== 
@@ -1317,7 +1318,7 @@ function addTab(_tile,_icon,_url){
 	if(_tab){
 		$('#main-tabs').tabs("select",_tile);
 	}else{
-		debugger;
+		//debugger;
 		$('#main-tabs').tabs('add',{
 		    title:_tile,
 		    height:'900px',
@@ -1331,6 +1332,147 @@ function addTab(_tile,_icon,_url){
 }
 </script>
 <script>
+var _data_test ='<xmlmenu>'+
+'<menu id="01100" url="../ggl/index.jsp" text="内容管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="01101" url="../ggl/index.jsp" text="内容管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="01102" url="../ggl/index.jsp" text="热门公告" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt1"/>'+
+		'<menu id="01103" url="../xwzx/index.jsp" text="新闻资讯" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt2"/>'+
+		'<menu id="01104" url="../bddt/index.jsp" text="本地动态" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt3"/>'+
+		'<menu id="01105" url="../swkx/index.jsp" text="通知" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt4"/>'+
+		'<menu id="01106" url="../sxzx/index.jsp" text="书讯中心" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
+	/*//'<menu id="0025" url="" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	//'<menu id="00251" url="../hdgl/index.jsp" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	
+	//'<menu id="00253" url="../hdglm/index.jsp" text="原创音乐活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	
+
+	//'</menu>'+
+	/* '<menu id="0026" url="" text="新书上架" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="00261" url="../xssj/index.jsp" text="实体书籍" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+	'<menu id="00262" url="../xssje/index.jsp" text="电子书籍" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+	'</menu>'+ */
+	/* '<menu id="0027" url="" text="热门推荐" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="00271" url="../rmtj/index.jsp" text="实体书籍" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+	'<menu id="00272" url="../rmtje/index.jsp" text="电子书籍" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+	'</menu>'+
+	'<menu id="0028" url="../phb/index.jsp" text="排行榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	
+	'<menu id="0029" url="../wjtz/xx" text="评论管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="00291" url="../sjpl/index.jsp" text="书籍评论" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'<menu id="00292" url="../hdpl/index.jsp" text="活动评论" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+ */ 
+	'</menu>'+
+	'<menu id="01201" url="../ggl/index.jsp" text="图书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="001202" url="../xssjt/index.jsp" text="新书上架" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="001203" url="../tsdjbd/index.jsp" text="阅读榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="001204" url="../tstjbd/index.jsp" text="推荐榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="001205" url="../tsscbd/index.jsp" text="收藏榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+	'<menu id="01301" url="../ggl/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="01302" url="../xssje/index.jsp" text="新书上架" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01303" url="../djbd/index.jsp" text="阅读榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01304" url="../tjbd/index.jsp" text="推荐榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01305" url="../scbd/index.jsp" text="收藏榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01306" url="../rmts/index.jsp" text="热门图书" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01307" url="../plbd/index.jsp" text="读者推荐榜" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01308" url="../rmzz/index.jsp" text="热门作者" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+	'<menu id="01401" url="../ggl/index.jsp" text="书刊音像管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="01402" url="../tszz/index.jsp"   text="报刊杂志" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01403" url="../tsyxzp/index.jsp" text="影音制品" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		//'<menu id="00563" url="../dizz/index.jsp"   text="电子报刊杂志" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		//'<menu id="00564" url="../yxzp/index.jsp"   text="电子影音制品" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	
+	'</menu>'+
+	'<menu id="01501" url="../ggl/index.jsp" text="其他管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="01502" url="../tspl/index.jsp" text="图书评论管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01503" url="../dzpl/index.jsp" text="电子书评论管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01504" url="../zppl/index.jsp" text="作品评论管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01505" url="../rwmm/index.jsp" text="二维码管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01506" url="../yqlj/index.jsp" text="友情链接管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01507" url="../hotword/index.jsp" text="热搜词汇管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="01508" url="../sytp/index.jsp" text="推广图维护" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+'</menu>'+
+	'<menu id="02101" url="../bookInfoYD/index.jsp" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="02103" url="../bookInfoYD/index.jsp" text="借阅源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="02104" url="../bookInfo/index.jsp" text="图书源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="02105" url="../bookInfoE/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="02106" url="../tslxgl/index.jsp" text="职工书屋分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'</menu>'+
+	'</menu>'+
+/* '<menu id="001" url="../gysgl/index.jsp" text="图书编目" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+'<menu id="00025" url="../wjtz/xx" text="图书编目" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+'<menu id="00026" url="../gysgl/index.jsp" text="供应商管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+'<menu id="00027" url="../bqgl/index.jsp" text="版权管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+'<menu id="00028" url="../cbsgl/index.jsp" text="出版社管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+'<menu id="000292" url="../ddcg/index.jsp" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+'</menu>'+
+'</menu>'+ */
+	'<menu id="03101" url="../order/index.jsp" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="03102" url="../order/xx" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="03103" url="../order/index.jsp" text="图书订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'</menu>'+
+	'</menu>'+
+	'<menu id="04101" url="../hdglmovie/index.jsp" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="04102" url="../hdglmovie/index.jsp" text="活动管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="04103" url="../sjtjhd/index.jsp" text="读书活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04104" url="../hdgl/index.jsp" text="征文活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04105" url="../dcwjg/index.jsp" text="调查问卷" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04106" url="../zsjd/index.jsp" text="知识竞答" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04107" url="../artShoot/index.jsp" text="摄影活动" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04108" url="../artPainting/index.jsp" text="书法美术" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04109" url="../hdglmovie/index.jsp" text="微电影" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04110" url="../hdgldance/index.jsp" text="歌舞比赛" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04111" url="../hdglm/index.jsp" text="原创音乐" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04112" url="../sports/index.jsp" text="体育比赛" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04113" url="../pwgl/index.jsp" text="评委管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+'</menu>'+
+'<menu id="05100" url="../yygl/index.jsp" text="借阅管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="05101" url="../wjtz/xx" text="借阅资料管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		//'<menu id="05102" url="../tbseqnum/index.jsp" text="打印中心" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05102" url="../fjxz/fjxz.jsp" text="打印中心" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05103" url="../tbbookdatamanage/index.jsp" text="资料信息维护" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05104" url="../tbbookdatamanagebk/index.jsp" text="报刊信息维护" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05105" url="../tbbookdatamanageyx/index.jsp" text="音像制品维护" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05106" url="../ztffl/index.jsp" text="中图法分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="05107" url="../tbbookdown/index.jsp" text="下架管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+	'<menu id="0003" url="../wjtz/xx" text="借阅管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="00031" url="../yygl/index.jsp" text="预约信息管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00046" url="../jydj/index.jsp" text="借阅登记" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00047" url="../xjsh/index.jsp" text="续借管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00048" url="../ghdj/index.jsp" text="归还登记" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00049" url="../ghcq/index.jsp" text="归还超期" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00038" url="../gsdj/index.jsp" text="挂失登记" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00033" url="../gsdjlb/index.jsp" text="挂失记录" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00034" url="../jygz/index.jsp" text="借阅规则" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+	'<menu id="0580" url="../wjtz/xx" text="借阅统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="00581" url="../jycx/index.jsp" text="借阅查询" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00582" url="../jyls/index.jsp" text="借阅历史查询" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00583" url="../xjqd/index.jsp" text="下架清单" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00584" url="../lsjy/index.jsp" text="操作记录" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+	'<menu id="0590" url="../wjtz/xx" text="读者信息查询" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="00591" url="../dzxx/index.jsp" text="读者信息" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	'</menu>'+
+'</menu>'+
+'<menu id="001" url="../sjxxtj/index.jsp" text="统计信息" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+	'<menu id="0004" url="../wjtz/xx" text="统计信息" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+		'<menu id="00041" url="../hdxxtj/index.jsp" text="活动信息统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+		'<menu id="00042" url="../jyxxtj/index.jsp" text="借阅信息统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="00043" url="../hdzztj/index.jsp" text="机构信息统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		//'<menu id="00043" url="../ztffl/index.jsp" text="电子书统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		//'<menu id="00041" url="../sjxxtj/index.jsp" text="书籍信息统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false"/>'+
+		//'<menu id="00042" url="../EntitySjtj/index.jsp" text="实体书统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		//'<menu id="00043" url="../ztffl/index.jsp" text="电子书统计" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+ 
+	'</menu>'+
+'</menu>'+
+'</xmlmenu>';
 	var parseXml;
 	if (typeof window.DOMParser != "undefined") {
 	    parseXml = function(xmlStr) {
@@ -1376,6 +1518,7 @@ function addTab(_tile,_icon,_url){
 	}
 	
 	var _data='<%=xml11%>';
+	_data = _data_test;
 	top.menuData = loadData(_data, 1);
 	if (top.menuData == null) {
 		//document.location=document.location;
