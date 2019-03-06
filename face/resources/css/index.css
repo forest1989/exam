@@ -996,79 +996,7 @@ body {
 	background-size: 16px 16px;
 }
 
-.accordion {
-	overflow: hidden;
-	border-width: 1px;
-	border-style: solid;
-}
 
-.accordion .accordion-header {
-	border-width: 0 0 1px;
-	cursor: pointer;
-}
-
-.accordion .accordion-body {
-	border-width: 0 0 1px;
-}
-
-.accordion-noborder {
-	border-width: 0;
-}
-
-.accordion-noborder .accordion-header {
-	border-width: 0 0 1px;
-}
-
-.accordion-noborder .accordion-body {
-	border-width: 0 0 1px;
-}
-
-.accordion-collapse {
-	background: url('../resources/images/accordion_arrows.png') no-repeat 0 0;
-}
-
-.accordion-expand {
-	background: url('../resources/images/accordion_arrows.png') no-repeat -16px 0;
-}
-
-.accordion {
-	background: #ffffff;
-	border-color: #7bb6b4;
-}
-
-.accordion .accordion-header {
-	background: #d9eeeb;
-	filter: none;
-	height: 26px;
-	background-image: url(../resources/images2/s_30.jpg);
-	background-repeat: no-repeat;
-}
-
-.accordion .accordion-header-selected {
-	background: #f9e9bd;
-	height: 26px;
-	background-image: url(../resources/images2/s_344.jpg);
-	background-repeat: no-repeat;
-}
-
-.accordion .accordion-header-selected .panel-title {
-	color: #000000;
-	font-size: 14px;
-	font-family: "宋体";
-	font-weight: normal;
-	margin-top: 0px;
-	margin-left: 50px;
-}
-
-.accordion .accordion-header .panel-title {
-	color: #000000;
-	font-size: 14px;
-	font-family: "宋体";
-	font-weight: normal;
-	margin-top: 0px;
-	margin-left: 50px;
-	line-height: 26px;
-}
 
 .ztree li span.button.pIcon01_ico_open {
 	margin-right: 2px;

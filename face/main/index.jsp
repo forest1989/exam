@@ -57,15 +57,14 @@
 <meta charset="UTF-8">
 <title>信息安全考试管理系统</title>
 <link href="../resources/css/index.css" rel="stylesheet" type="text/css" />
-<link href="../resources/scripts/easy/themes/stategrid1/easyui.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
 <link href="../resources/css/top.css" rel="stylesheet" type="text/css" />
-
+<link href="../resources/scripts/easy/themes/stategrid1/easyui.css" rel="stylesheet" type="text/css" />
+<link href="css/zTreeStyle/zTreeStyle.css" type="text/css" rel="stylesheet" >
 <script type="text/javascript" src="../resources/js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../resources/scripts/project/start.js"></script>
 <script type="text/javascript" src="../resources/js/jquery.ztree.core-3.5.js"></script>
 <style type="text/css">
-
+	.accordion{overflow:hidden;border-width:1px;border-style:solid;}.accordion .accordion-header{border-width:0 0 1px;cursor:pointer;}.accordion .accordion-body{border-width:0 0 1px;}.accordion-noborder{border-width:0;}.accordion-noborder .accordion-header{border-width:0 0 1px;}.accordion-noborder .accordion-body{border-width:0 0 1px;}.accordion-collapse{background:url('../resources/images/accordion_arrows.png') no-repeat 0 0;}.accordion-expand{background:url('../resources/images/accordion_arrows.png') no-repeat -16px 0;}.accordion{background:#ffffff;border-color:#7bb6b4;}.accordion .accordion-header{background:#d9eeeb;filter:none;height:26px;background-image:url(../resources/images2/s_30.jpg);background-repeat:no-repeat;}.accordion .accordion-header-selected{background:#f9e9bd;height:26px;background-image:url(../resources/images2/s_344.jpg);background-repeat:no-repeat;}.accordion .accordion-header-selected .panel-title{color:#000000;font-size:14px;font-family:"宋体";font-weight:normal;margin-top:0px;margin-left:50px;}.accordion .accordion-header .panel-title{color:#000000;font-size:14px;font-family:"宋体";font-weight:normal;margin-top:0px;margin-left:50px;line-height:26px;}
 </style>
 </head>
 <body id='bbb' class="easyui-layout">
@@ -364,7 +363,7 @@ var _data_test ='<xmlmenu>'+
 			for (var i = 0; i < xmldoc.childNodes.length; i++) {
 				var onode = xmldoc.childNodes[i];
 				if (i != 0) {
-					_htmlStr += '<td width="1%" align="center"><img src="images2/f_26.png" alt="" width="6" height="31" /></td>';
+					_htmlStr += '<td width="1%" align="center"><img src="../resources/images2/f_26.png" alt="" width="6" height="31" /></td>';
 				}
 				var selectedCls = "btnFont2";
 				var onMouseOver_Str = "onMouseOver=\"menuMouseOver(this)\"";
