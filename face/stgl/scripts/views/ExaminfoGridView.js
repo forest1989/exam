@@ -98,7 +98,7 @@ stgl.views.ExaminfoGridView=function(){
 				{dataType:"string",name:"createBy",width:"120",caption:"创建者",readOnly:false,id:"createBy",editorType:"TextEditor"},
 				{dataType:"string",name:"updateBy",width:"120",caption:"更新者",readOnly:false,id:"updateBy",editorType:"TextEditor"},
 				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"updateDate",width:"120",caption:"更新时间",readOnly:false,id:"updateDate",editorType:"DateTimeEditor"},
-				{dataType:"string",name:"delFlag",width:"120",caption:"删除标记",readOnly:false,id:"delFlag",editorType:"TextEditor"}
+				{dataType:"string",name:"delFlag",width:"120",caption:"删除标记",readOnly:true,id:"delFlag",editorType:"TextEditor",value:"0"}
 			],
 			
 			allowEditing:true,
