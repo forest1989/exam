@@ -101,7 +101,7 @@ public class MUserController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			muserBizc.delete(java.lang.String.valueOf(id));
+			muserBizc.delete(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
