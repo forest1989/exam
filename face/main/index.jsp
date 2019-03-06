@@ -101,7 +101,7 @@
 	</div>
 	<div id="addDlg"></div>
 <script type="text/javascript">
-function banBackSpace(e){   
+function banBackSpace(e){ 
     var ev = e || window.event;//获取event对象   
 	var obj = ev.target || ev.srcElement;//获取事件源   
 	var t = obj.type || obj.getAttribute('type');//获取事件源类型  
@@ -146,11 +146,11 @@ window.onload=function(){
 		}
 	};
 	function cascadeTree( xmlTreeNode, ztreeArray,_i,expandLevel){
-    	var obj=xmlTreeNode.childNodes;
+    	var obj = xmlTreeNode.childNodes;
 	    if(obj){
-	  	  var expend=false;  
-		  for(var i=0;i<obj.length;i++){
-			  if(i==0){
+	  	  var expend = false;  
+		  for(var i = 0; i < obj.length; i++){
+			  if(i == 0){
 				  if(!expandLevel[1])expandLevel[1]=0;
 	      			expandLevel[1]=expandLevel[1]+1;
 	      			if(expandLevel[1]<expandLevel[0]) expend=true;
@@ -160,12 +160,11 @@ window.onload=function(){
 	
 			  if("查询我的个人信息"==_text||"我的个性化菜单"==_text||"管理人力资源组织结构"==_text||"组织结构回溯"==_text){				    
 	              continue;
-			   }
-			 
+			  }
 			  if(_text.length>11){ _text=(_text.substr(0,11))+".."  ;}
 			  if(expend){
 			  		ztreeArray.push({ id:onode.getAttribute("id") ,open:true, pId:_i, name:_text,uurl:onode.getAttribute("url"),pnode:xmlTreeNode.getAttribute("id"),tget:onode.getAttribute("targetframe"),iconImg:onode.getAttribute("iconImg"),icon:'../resources/images/icons/16/Outline.ico',iconOpen:"../resources/images/icons/16/Folder.ico", iconClose:"../resources/images/icons/16/Folder-Closed.ico" });
-			  	} else
+			  } else
 			  ztreeArray.push({ id:onode.getAttribute("id") , pId:_i, name:_text,uurl:onode.getAttribute("url"),pnode:xmlTreeNode.getAttribute("id"),tget:onode.getAttribute("targetframe"),iconImg:onode.getAttribute("iconImg") ,icon:'../resources/images/icons/16/Outline.ico',iconOpen:"../resources/images/icons/16/Folder.ico", iconClose:"../resources/images/icons/16/Folder-Closed.ico" });
 			    
 			 cascadeTree(onode,ztreeArray,onode.getAttribute("id"),expandLevel); 
@@ -194,32 +193,32 @@ function addTab(_tile,_icon,_url){
 }
 </script>
 <script>
-var _data_test ='<xmlmenu>'+
-'<menu id="01100" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-	'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
-	'</menu>'+
-'</menu>'+
-	'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-		'<menu id="02103" url="../bookInfoYD/index.jsp" text="借阅源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="02104" url="../bookInfo/index.jsp" text="图书源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="02105" url="../bookInfoE/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="02106" url="../tslxgl/index.jsp" text="职工书屋分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-		'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+	var _data_test ='<xmlmenu>'+
+	'<menu id="01100" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+		'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+			'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
 		'</menu>'+
 	'</menu>'+
-	'<menu id="03101" url="../order/index.jsp" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="03102" url="../order/xx" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-		'<menu id="03103" url="../order/index.jsp" text="图书订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+			'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+			'<menu id="02103" url="../bookInfoYD/index.jsp" text="借阅源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'<menu id="02104" url="../bookInfo/index.jsp" text="图书源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'<menu id="02105" url="../bookInfoE/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'<menu id="02106" url="../tslxgl/index.jsp" text="职工书屋分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'</menu>'+
+		'</menu>'+
+		'<menu id="03101" url="../order/index.jsp" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+			'<menu id="03102" url="../order/xx" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+			'<menu id="03103" url="../order/index.jsp" text="图书订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+			'</menu>'+
+		'</menu>'+
+		'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
+			'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+			'<menu id="04103" url="../etype/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 		'</menu>'+
 	'</menu>'+
-	'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-		'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-		'<menu id="04103" url="../etype/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-	'</menu>'+
-'</menu>'+
-'</xmlmenu>';
+	'</xmlmenu>';
 	var parseXml;
 	if (typeof window.DOMParser != "undefined") {
 	    parseXml = function(xmlStr) {
@@ -288,165 +287,166 @@ var _data_test ='<xmlmenu>'+
 			try {
 				$('#leftAccordion').accordion('remove', _text);
 			} catch (e) {}
-			}
-			//将样式统一设置为默认状态
-			for (var i = 1; i < 100; i++) {
-				var m = document.getElementById('m' + i);
-				if (m) {
-					//菜单为灰色
-					//if(i==4||i==5||i==6){
-					//	m.className = 'btnFont_disable';
-					//}else{
-					m.className = 'btnFont2';
-					//}
+		}
+		//将样式统一设置为默认状态
+		for (var i = 1; i < 100; i++) {
+			var m = document.getElementById('m' + i);
+			if (m) {
+				//菜单为灰色
+				//if(i==4||i==5||i==6){
+				//	m.className = 'btnFont_disable';
+				//}else{
+				m.className = 'btnFont2';
+				//}
 
-				}
 			}
-			_this.className = 'btnFont22';
-			_currM = _this;
-			top.currentMenuIndex = 0;
-			var _numStr = _this.id + "";
-			_numStr = _numStr.substr(1, _numStr.length);
-			var _num = _numStr - 1;
-			top.currentMenuIndex = _num;
-			ooj = xmldoc.childNodes[top.currentMenuIndex];
-			for (var i = 0; i < ooj.childNodes.length; i++) {
-				var onode = ooj.childNodes[i];
-				var _text = onode.getAttribute("text") + "";
-				//var _id=  onode.getAttribute("id")+"";
-				var zNodes_sub = [];
-				cascadeTree(onode, zNodes_sub, 0, [ 2, 0 ]);//不全部展开
-				var _html = "<div style=\"padding:10px\">";
-				for (var _ii = 0; _ii < zNodes_sub.length; _ii++) {
-					_html += "<a id='menu_btn_"
-							+ zNodes_sub[_ii].name
-							+ "'class=\"easyui-linkbutton\" data-options=\"plain:true,iconCls:'"
-							+ zNodes_sub[_ii].iconImg
-							+ "',size:'large',iconAlign:'top'\" style=\"width:48%;  \" onclick=\"toggle_btn(this);addTab('"
-							+ zNodes_sub[_ii].name + "','bt1_mini','"
-							+ zNodes_sub[_ii].uurl + "')\">"
-							+ zNodes_sub[_ii].name + "</a>";
-				}
-				_html += "</div>";
-				var isSelect = (i == 0);
-				try {
-					$('#leftAccordion').accordion('add', {
-						title : _text,
-						content : _html,
-						/*
-						content:"<div style=\"padding:10px\">"+
-						"<ul   id=\"tree"+_text+"\" class=\"ztree\"></ul>"+
-						"</div>",  
-						 */
-						selected : isSelect
+		}
+		_this.className = 'btnFont22';
+		_currM = _this;
+		top.currentMenuIndex = 0;
+		var _numStr = _this.id + "";
+		_numStr = _numStr.substr(1, _numStr.length);
+		var _num = _numStr - 1;
+		top.currentMenuIndex = _num;
+		ooj = xmldoc.childNodes[top.currentMenuIndex];
+		for (var i = 0; i < ooj.childNodes.length; i++) {
+			var onode = ooj.childNodes[i];
+			var _text = onode.getAttribute("text") + "";
+			//var _id=  onode.getAttribute("id")+"";
+			var zNodes_sub = [];
+			cascadeTree(onode, zNodes_sub, 0, [ 2, 0 ]);//不全部展开
+			var _html = "<div style=\"padding:10px\">";
+			for (var _ii = 0; _ii < zNodes_sub.length; _ii++) {
+				_html += "<a id='menu_btn_"
+						+ zNodes_sub[_ii].name
+						+ "'class=\"easyui-linkbutton\" data-options=\"plain:true,iconCls:'"
+						+ zNodes_sub[_ii].iconImg
+						+ "',size:'large',iconAlign:'top'\" style=\"width:48%;  \" onclick=\"toggle_btn(this);addTab('"
+						+ zNodes_sub[_ii].name + "','bt1_mini','"
+						+ zNodes_sub[_ii].uurl + "')\">"
+						+ zNodes_sub[_ii].name + "</a>";
+			}
+			_html += "</div>";
+			var isSelect = (i == 0);
+			try {
+				$('#leftAccordion').accordion('add', {
+					title : _text,
+					content : _html,
+					/*
+					content:"<div style=\"padding:10px\">"+
+					"<ul   id=\"tree"+_text+"\" class=\"ztree\"></ul>"+
+					"</div>",  
+					 */
+					selected : isSelect
+				});
+			} catch (e) {
+				alert(e)
+			}
+			//$.fn.zTree.init($(("#tree"+_text)), setting, zNodes_sub);
+		}
+	}
+
+	function menuMouseOver(_this) {
+		_this.className = 'btnFont22';
+	}
+	function menuMouseOut(_this) {			
+		if (_this != _currM) {
+			_this.className = 'btnFont2';
+		}
+	}
+	var zNodes2 = [];
+	function createFileds() {
+		var xmldoc = top.menuData;
+		if (typeof xmldoc == "undefined")
+			return;
+		var _htmlStr = '<table width="100%" height="44px" border="0" class="kj_head_bg2"><tr valign=middle><td width="3%" align="center"> </td>';
+		for (var i = 0; i < xmldoc.childNodes.length; i++) {
+			var onode = xmldoc.childNodes[i];
+			if (i != 0) {
+				_htmlStr += '<td width="1%" align="center"><img src="../resources/images2/f_26.png" alt="" width="6" height="31" /></td>';
+			}
+			var selectedCls = "btnFont2";
+			var onMouseOver_Str = "onMouseOver=\"menuMouseOver(this)\"";
+			var onMouseOut_Str = "onMouseOut=\"menuMouseOut(this)\"";
+			if (i == 0) {
+				selectedCls = "btnFont22";
+			}
+			//限定是否为灰色 i ==3||i ==4||i ==5
+			if (i == 100) {
+				selectedCls = "btnFont_disable";
+				onMouseOut_Str = "";
+				onMouseOver_Str = "";
+				_htmlStr += '<td width="8%" align="center"  ><table  id="m'
+						+ (i + 1) + '"  class="' + selectedCls + '" '
+						+ onMouseOver_Str + onMouseOut_Str
+						+ ' ><tr align=center><td>'
+						+ onode.getAttribute("text")
+						+ '</td></tr></table></td>';
+			} else {
+				_htmlStr += '<td width="8%" align="center"  ><a href="#" style="cursor:hand;text-decoration: none;"><table  id="m'
+						+ (i + 1)
+						+ '"  class="'
+						+ selectedCls
+						+ '" '
+						+ onMouseOver_Str
+						+ ' onClick="changeMenu(this,\''
+						+ onode.getAttribute("url")
+						+ '\')" '
+						+ onMouseOut_Str
+						+ ' ><tr align=center><td>'
+						+ onode.getAttribute("text")
+						+ '</td></tr></table></a></td>';
+			}
+		}
+		_htmlStr += '<td width="20%" align="center"></td></tr></table>';
+		document.getElementById("top_row").innerHTML = _htmlStr;
+	}
+	function toggle_btn(_this) {
+		var xmldoc = top.menuData;
+		var ooj = xmldoc.childNodes[top.currentMenuIndex];
+		for (var i = 0; i < ooj.childNodes.length; i++) {
+			var onode = ooj.childNodes[i];
+			var _text = onode.getAttribute("text") + "";
+			var zNodes_sub = [];
+			cascadeTree(onode, zNodes_sub, 0, [ 2, 0 ]);//不全部展开			 
+			var _html = "<div style=\"padding:10px\">";
+			for (var _ii = 0; _ii < zNodes_sub.length; _ii++) {
+				var _id = 'menu_btn_' + zNodes_sub[_ii].name;
+				if (_this.id == _id) {
+					$('#' + _id).linkbutton({
+						selected : true
 					});
-				} catch (e) {
-					alert(e)
-				}
-				//$.fn.zTree.init($(("#tree"+_text)), setting, zNodes_sub);
-			}
-		}
-		function menuMouseOver(_this) {
-			_this.className = 'btnFont22';
-		}
-		function menuMouseOut(_this) {			
-			if (_this != _currM) {
-				_this.className = 'btnFont2';
-			}
-		}
-		var zNodes2 = [];
-		function createFileds() {
-			var xmldoc = top.menuData;
-			if (typeof xmldoc == "undefined")
-				return;
-			var _htmlStr = '<table width="100%" height="44px" border="0" class="kj_head_bg2"><tr valign=middle><td width="3%" align="center"> </td>';
-			for (var i = 0; i < xmldoc.childNodes.length; i++) {
-				var onode = xmldoc.childNodes[i];
-				if (i != 0) {
-					_htmlStr += '<td width="1%" align="center"><img src="../resources/images2/f_26.png" alt="" width="6" height="31" /></td>';
-				}
-				var selectedCls = "btnFont2";
-				var onMouseOver_Str = "onMouseOver=\"menuMouseOver(this)\"";
-				var onMouseOut_Str = "onMouseOut=\"menuMouseOut(this)\"";
-				if (i == 0) {
-					selectedCls = "btnFont22";
-				}
-				//限定是否为灰色 i ==3||i ==4||i ==5
-				if (i == 100) {
-					selectedCls = "btnFont_disable";
-					onMouseOut_Str = "";
-					onMouseOver_Str = "";
-					_htmlStr += '<td width="8%" align="center"  ><table  id="m'
-							+ (i + 1) + '"  class="' + selectedCls + '" '
-							+ onMouseOver_Str + onMouseOut_Str
-							+ ' ><tr align=center><td>'
-							+ onode.getAttribute("text")
-							+ '</td></tr></table></td>';
 				} else {
-					_htmlStr += '<td width="8%" align="center"  ><a href="#" style="cursor:hand;text-decoration: none;"><table  id="m'
-							+ (i + 1)
-							+ '"  class="'
-							+ selectedCls
-							+ '" '
-							+ onMouseOver_Str
-							+ ' onClick="changeMenu(this,\''
-							+ onode.getAttribute("url")
-							+ '\')" '
-							+ onMouseOut_Str
-							+ ' ><tr align=center><td>'
-							+ onode.getAttribute("text")
-							+ '</td></tr></table></a></td>';
-				}
-			}
-			_htmlStr += '<td width="20%" align="center"></td></tr></table>';
-			document.getElementById("top_row").innerHTML = _htmlStr;
-		}
-		function toggle_btn(_this) {
-			var xmldoc = top.menuData;
-			var ooj = xmldoc.childNodes[top.currentMenuIndex];
-			for (var i = 0; i < ooj.childNodes.length; i++) {
-				var onode = ooj.childNodes[i];
-				var _text = onode.getAttribute("text") + "";
-				var zNodes_sub = [];
-				cascadeTree(onode, zNodes_sub, 0, [ 2, 0 ]);//不全部展开			 
-				var _html = "<div style=\"padding:10px\">";
-				for (var _ii = 0; _ii < zNodes_sub.length; _ii++) {
-					var _id = 'menu_btn_' + zNodes_sub[_ii].name;
-					if (_this.id == _id) {
-						$('#' + _id).linkbutton({
-							selected : true
-						});
-					} else {
-						$('#' + _id).linkbutton({
-							selected : false
-						});
-					}
+					$('#' + _id).linkbutton({
+						selected : false
+					});
 				}
 			}
 		}
-		//创建菜单
-		createFileds();
-		//激活第一个菜单 必须要等leftAccordion初始化后才能进行
-		$(document).ready(function() {
-			var url = getContextPath();
-			changeMenu(document.getElementById('m1'), null);
-			$.ajax({
-				url : url + "/rest/userControl/power",
-				type : "post",
-				success : function() {
-				},
-				error : function() {
-				}
-			})
-			function getContextPath() {
-				var pathName = document.location.pathname;
-				var index = pathName.substr(1).lastIndexOf("/");
-				var result = pathName.substr(0, index + 1);
-				index = result.substr(1).lastIndexOf("/");
-				result = result.substr(0, index + 1);
-				return result;
+	}
+	//创建菜单
+	createFileds();
+	//激活第一个菜单 必须要等leftAccordion初始化后才能进行
+	$(document).ready(function() {
+		var url = getContextPath();
+		changeMenu(document.getElementById('m1'), null);
+		$.ajax({
+			url : url + "/rest/userControl/power",
+			type : "post",
+			success : function() {
+			},
+			error : function() {
 			}
-		});
-	</script>
+		})
+		function getContextPath() {
+			var pathName = document.location.pathname;
+			var index = pathName.substr(1).lastIndexOf("/");
+			var result = pathName.substr(0, index + 1);
+			index = result.substr(1).lastIndexOf("/");
+			result = result.substr(0, index + 1);
+			return result;
+		}
+	});
+</script>
 </body>
 </html>
