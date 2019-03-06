@@ -106,6 +106,7 @@ public class ExaminfoController {
 		return null;
 	}
 
+	
 	@RequestMapping("/{id}")
     public @ItemResponseBody QueryResultObject get(@PathVariable String id) {
 		Examinfo examinfo ;
