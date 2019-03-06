@@ -208,11 +208,6 @@
 				'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 				'</menu>'+
 			'</menu>'+
-			'<menu id="03101" url="../order/index.jsp" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-				'<menu id="03102" url="../order/xx" text="订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-				'<menu id="03103" url="../order/index.jsp" text="图书订单管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'</menu>'+
-			'</menu>'+
 			'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
 				'<menu id="04103" url="../etype/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
