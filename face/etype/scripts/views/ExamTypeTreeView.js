@@ -75,7 +75,7 @@ etype.views.ExamTypeTreeView=function(){
 	function _DataTree_RootNodes() {
 		var rootNodes = {nodes:[
 				{
-					itemType:"8830b32f-ec68-422a-b5d3-8ce9edc4b2c5",
+					itemType:"2cbe6fa7-e5af-435b-985e-33591d98c795",
 					classDisplayName:"ExamType",
 					nodeTextProp:"typeName",
 					className:"ExamType",

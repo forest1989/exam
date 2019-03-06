@@ -38,7 +38,7 @@ etype.views.ExamTypeTreeViewController = function() {
     	
     	if (_form == null) return;
 		//响应左侧树某一类节点的单击操作，在右侧展示相关表单信息。
-    	if (e.node.itemType == "8830b32f-ec68-422a-b5d3-8ce9edc4b2c5") {
+    	if (e.node.itemType == "2cbe6fa7-e5af-435b-985e-33591d98c795") {
 			selectedNode = e.node;
     		//form对象中保存树节点id值
     		_form.objID = e.node.id;

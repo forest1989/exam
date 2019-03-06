@@ -1422,7 +1422,6 @@ function changeMenu(_this,_url){
 				selectedCls = "btnFont22";
 			}
 			
-			
 			//限定是否为灰色 i ==3||i ==4||i ==5
 			if(i ==100){
 				  
@@ -1447,23 +1446,14 @@ function changeMenu(_this,_url){
 					+ onode.getAttribute("url")
 					+ '\')" '+onMouseOut_Str+' ><tr align=center><td>'
 					+ onode.getAttribute("text") + '</td></tr></table></a></td>'; 
-				
-				
-				
-				
 			}
-			 		
- 
-		}
 
+		}
 		_htmlStr += '<td width="20%" align="center"></td></tr></table>';
 
 		document.getElementById("top_row").innerHTML = _htmlStr;
 
 	}
-	
-	
-	
 	
 	function toggle_btn(_this){
 		var xmldoc=top.menuData; 
@@ -1504,34 +1494,13 @@ function changeMenu(_this,_url){
 		}
 		
 	}
-	
-	
-
 	//创建菜单
 	createFileds();
-	//激活第一个菜单 必须要等leftAccordion初始化后才能进行
-	 
+	//激活第一个菜单 必须要等leftAccordion初始化后才能进行 
  $(document).ready(function(){
      changeMenu(document.getElementById('m1'),null);
 
  });
- 
-	
-	
-	
-	
-	  
 </script>
- 
-
-
- 
-      
- 
- 
-
 </body>
-
-
-
 </html>

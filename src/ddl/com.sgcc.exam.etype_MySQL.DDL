@@ -12,5 +12,6 @@
         UPDATE_BY varchar(64) comment '更新者',
         UPDATE_DATE datetime comment '更新时间',
         DEL_FLAG varchar(1) comment '删除标记',
+        STRU_ID varchar(255) comment '组织ID',
         primary key (EXAM_TYPE_ID)
     ) comment='ExamType';

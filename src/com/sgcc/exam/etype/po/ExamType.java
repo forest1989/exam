@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * ExamType
  * @author forest
- * @date 2019-03-05
+ * @date 2019-03-06
  */
 public class ExamType implements java.io.Serializable {
 	
@@ -50,6 +50,10 @@ public class ExamType implements java.io.Serializable {
 	/** 删除标记*/
 	
 	private String delFlag;
+	
+	/** 组织ID*/
+	
+	private String struId;
 	
 	
 	/**虚拟主键*/
@@ -158,6 +162,15 @@ public class ExamType implements java.io.Serializable {
     }
 	
 	
+    public String getStruId() {
+        return this.struId;
+    }
+    
+    public void setStruId(String struId) {
+        this.struId = struId;
+    }
+	
+	
     public String getMxVirtualId() {
         return this.mxVirtualId;
     }
@@ -181,6 +194,7 @@ public class ExamType implements java.io.Serializable {
 		 buffer.append("updateBy").append("='").append(getUpdateBy()).append("' ");			
 		 buffer.append("updateDate").append("='").append(getUpdateDate()).append("' ");			
 		 buffer.append("delFlag").append("='").append(getDelFlag()).append("' ");			
+		 buffer.append("struId").append("='").append(getStruId()).append("' ");			
 		 buffer.append("mxVirtualId").append("='").append(getMxVirtualId()).append("' ");			
 		 buffer.append("]");
       
@@ -203,6 +217,7 @@ public class ExamType implements java.io.Serializable {
  && ( (this.getUpdateBy()==castOther.getUpdateBy()) || ( this.getUpdateBy()!=null && castOther.getUpdateBy()!=null && this.getUpdateBy().equals(castOther.getUpdateBy()) ) )
  && ( (this.getUpdateDate()==castOther.getUpdateDate()) || ( this.getUpdateDate()!=null && castOther.getUpdateDate()!=null && this.getUpdateDate().equals(castOther.getUpdateDate()) ) )
  && ( (this.getDelFlag()==castOther.getDelFlag()) || ( this.getDelFlag()!=null && castOther.getDelFlag()!=null && this.getDelFlag().equals(castOther.getDelFlag()) ) )
+ && ( (this.getStruId()==castOther.getStruId()) || ( this.getStruId()!=null && castOther.getStruId()!=null && this.getStruId().equals(castOther.getStruId()) ) )
  && ( (this.getMxVirtualId()==castOther.getMxVirtualId()) || ( this.getMxVirtualId()!=null && castOther.getMxVirtualId()!=null && this.getMxVirtualId().equals(castOther.getMxVirtualId()) ) );
    }
    
@@ -219,6 +234,7 @@ public class ExamType implements java.io.Serializable {
 		result = 37 * result + ( getUpdateBy() == null ? 0 : this.getUpdateBy().hashCode() );
 		result = 37 * result + ( getUpdateDate() == null ? 0 : this.getUpdateDate().hashCode() );
 		result = 37 * result + ( getDelFlag() == null ? 0 : this.getDelFlag().hashCode() );
+		result = 37 * result + ( getStruId() == null ? 0 : this.getStruId().hashCode() );
 		result = 37 * result + ( getMxVirtualId() == null ? 0 : this.getMxVirtualId().hashCode() );
 		return result;
    }   
