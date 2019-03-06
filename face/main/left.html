@@ -24,19 +24,19 @@ body {
 </style>
 <style type="text/css">
 .menu_title {
-	background: url(images2/s_30.jpg);
+	background: url(../resources/images2/s_30.jpg);
 }
 
 .menu_title2 {
-	background: url(images2/s_32.jpg);
+	background: url(../resources/images2/s_32.jpg);
 }
 </style>
 
 
-<link rel="stylesheet" href="css/demo.css" type="text/css">
-<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
-<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="js/jquery.ztree.core-3.5.js"></script>
+<link rel="stylesheet" href="../resources/css/demo.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="../resources/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.ztree.core-3.5.js"></script>
 <SCRIPT type="text/javascript">
 	function cascadeTree(xmlTreeNode, ztreeArray, _i, expandLevel) {
 		var obj = xmlTreeNode.childNodes;
@@ -82,9 +82,9 @@ body {
 								uurl : onode.getAttribute("url"),
 								pnode : xmlTreeNode.getAttribute("id"),
 								tget : onode.getAttribute("targetframe"),
-								icon : '../../resources/images/icons/16/Outline.ico',
-								iconOpen : "../../resources/images/icons/16/Folder.ico",
-								iconClose : "../../resources/images/icons/16/Folder-Closed.ico"
+								icon : '../resources/images/icons/16/Outline.ico',
+								iconOpen : "../resources/images/icons/16/Folder.ico",
+								iconClose : "../resources/images/icons/16/Folder-Closed.ico"
 							});
 
 				cascadeTree(onode, ztreeArray, onode.getAttribute("id"),
@@ -147,7 +147,7 @@ body {
 		_htmlStr += '</td>';
 		_htmlStr += '</tr>';
 		_htmlStr += '<tr>';
-		_htmlStr += '<td background="images/main_51.gif" '+_hideStr2+'  id="submenu'+i+'"> ';
+		_htmlStr += '<td background="../resources/images/main_51.gif" '+_hideStr2+'  id="submenu'+i+'"> ';
 		_htmlStr += '<div class="sec_menu" >   ';
 		_htmlStr += '<ul id="tree'+i+'" class="ztree"></ul>';
 		_htmlStr += '</div> ';
@@ -308,7 +308,7 @@ body {
 <style type="text/css">
 .ztree li span.button.pIcon01_ico_open {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/1_open.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/1_open.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -316,7 +316,7 @@ body {
 
 .ztree li span.button.pIcon01_ico_close {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/1_close.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/1_close.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -325,7 +325,7 @@ body {
 .ztree li span.button.pIcon02_ico_open, .ztree li span.button.pIcon02_ico_close
 	{
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/2.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/2.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -333,7 +333,7 @@ body {
 
 .ztree li span.button.icon01_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/3.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/3.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -341,7 +341,7 @@ body {
 
 .ztree li span.button.icon02_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/4.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/4.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -349,7 +349,7 @@ body {
 
 .ztree li span.button.icon03_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/5.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/5.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -357,7 +357,7 @@ body {
 
 .ztree li span.button.icon04_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/6.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/6.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -365,7 +365,7 @@ body {
 
 .ztree li span.button.icon05_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/7.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/7.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -373,7 +373,7 @@ body {
 
 .ztree li span.button.icon06_ico_docu {
 	margin-right: 2px;
-	background: url(css/zTreeStyle/img/diy/8.png) no-repeat scroll 0 0
+	background: url(../resources/css/zTreeStyle/img/diy/8.png) no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 	*vertical-align: middle
@@ -392,16 +392,16 @@ body {
 					if (i == sid) {
 						if (whichEl.style.display == "none") {
 							whichEl.style.display = "";
-							imgmenu.background = "images2/s_34.jpg";
+							imgmenu.background = "../resources/images2/s_34.jpg";
 							imgmenu.className = "";
 						} else {
 							whichEl.style.display = "none";
-							imgmenu.background = "images2/s_30.jpg";
+							imgmenu.background = "../resources/images2/s_30.jpg";
 							imgmenu.className = "";
 						}
 					} else {
 						whichEl.style.display = "none";
-						imgmenu.background = "images2/s_30.jpg";
+						imgmenu.background = "../resources/images2/s_30.jpg";
 						imgmenu.className = "";
 
 					}
@@ -410,12 +410,12 @@ body {
 
 		}
 		function _onMouseOver(_this) {
-			if (_this.background != "images2/s_34.jpg") {
+			if (_this.background != "../resources/images2/s_34.jpg") {
 				_this.className = 'menu_title2';
 			}
 		}
 		function _onMouseOut(_this) {
-			if (_this.background != "images2/s_34.jpg") {
+			if (_this.background != "../resources/images2/s_34.jpg") {
 				_this.className = 'menu_title';
 			}
 		}
