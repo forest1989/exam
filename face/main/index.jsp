@@ -1359,7 +1359,7 @@ var _data_test ='<xmlmenu>'+
 	'</menu>'+
 	'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 		'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-		'<menu id="04103" url="../sjtjhd/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+		'<menu id="04103" url="../etype/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 	'</menu>'+
 '</menu>'+
 '</xmlmenu>';
