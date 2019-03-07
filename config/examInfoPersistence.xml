@@ -3,5 +3,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:module="http://www.sgcc.com.cn/schema/platform/module" xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.sgcc.com.cn/schema/platform/module  http://www.sgcc.com.cn/schema/platform/module/module.xsd">  
   <module:entity id="examInfo" sessionFactory="sessionFactory"> 
     <module:mappingFile>classpath:com/sgcc/exam/examInfo/po/Examinfo.hbm.xml</module:mappingFile>
+    <module:mappingFile>classpath:com/sgcc/exam/examInfo/po/ExamOptions.hbm.xml</module:mappingFile>
   </module:entity> 
 </beans>

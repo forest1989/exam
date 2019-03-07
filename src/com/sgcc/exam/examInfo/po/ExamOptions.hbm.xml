@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-7 15:06:02 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.examInfo.po.ExamOptions" table="EXAM_OPTIONS"> 
+    <id name="optionsId" type="java.lang.Integer"> 
+      <column name="OPTIONS_ID" length="10"/>  
+      <generator class="increment"/> 
+    </id>  
+    <property name="examId" type="java.lang.Integer" lazy="true"> 
+      <column name="EXAM_ID" precision="10" scale="0"/> 
+    </property> 
+    <property name="optionsAText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_A_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsAImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_A_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsBText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_B_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsBImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_B_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsCText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_C_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsCImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_C_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsDText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_D_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsDImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_D_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsEText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_E_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsEImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_E_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsFText" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_F_TEXT" precision="1000" scale="0"/> 
+    </property>  
+    <property name="optionsFImg" type="java.lang.String" lazy="true"> 
+      <column name="OPTIONS_F_IMG" precision="1000" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>

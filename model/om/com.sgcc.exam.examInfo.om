@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Model id="5911977dbd74455884c6eff341cd6d09" name="examInfo" displayName="examInfo" stereotype="3" nameSpace="com.sgcc.exam">
+<Model id="b820903eee554f8182b54445304a80da" name="examInfo" displayName="examInfo" stereotype="3" nameSpace="com.sgcc.exam">
   <VersionInfo>
-    <CreatedTime>2019-03-06 11:29:36</CreatedTime>
-    <ChangedTime>2019-03-06 11:30:06</ChangedTime>
+    <CreatedTime>2019-03-07 17:11:35</CreatedTime>
+    <ChangedTime>2019-03-07 17:11:39</ChangedTime>
     <Description>This is a demo model.</Description>
     <Version>1.0</Version>
     <Creator>tyg</Creator>
     <Modifier>tyg</Modifier>
   </VersionInfo>
-  <Package id="fc83f03e8b63468f9a05cf101a9b7605" name="examInfo" displayName="examInfo" stereotype="3">
+  <Package id="0bfd7d282dbf4f4c95c3cec569dbbfb2" name="examInfo" displayName="examInfo" stereotype="3">
     <Diagrams>
-      <Diagram id="06544a2b62474b9284841a04951105c7" name="examInfo" displayName="examInfo" stereotype="3">
+      <Diagram id="a51ea34816544841a08823582715d682" name="examInfo" displayName="examInfo" stereotype="3">
         <DiagramStyle>
           <BackGroundColor>white</BackGroundColor>
           <GridStyle>false</GridStyle>
@@ -19,7 +19,7 @@
           <Layout></Layout>
         </DiagramStyle>
         <Elements>
-          <Element id="b7f714fb30bd4c91a7e0d93713774fde" objectId="f7a5cf0558634be58a9c1a372aad8fb2">
+          <Element id="ca6a45cf94db4f7d9ef0f5936281d533" objectId="2a81b79271494d8f9162f901cb4174ba">
             <ElementStyle>
               <FontFamily></FontFamily>
               <FontSize>0</FontSize>
@@ -39,15 +39,15 @@
       </Diagram>
     </Diagrams>
     <BusinessClasses>
-      <BusinessClass id="f7a5cf0558634be58a9c1a372aad8fb2" name="Examinfo" displayName="Examinfo" stereotype="1">
+      <BusinessClass id="2a81b79271494d8f9162f901cb4174ba" name="Examinfo" displayName="Examinfo" stereotype="1">
         <TableName>examinfo</TableName>
         <IsAbstract>false</IsAbstract>
         <Properties>
-          <Property id="7cf022fb9a0a41fe88a3c1478b08b9c0" name="examId" displayName="试题ID" stereotype="3">
+          <Property id="f052fd06212744e5ac407b6133c5ca30" name="examId" displayName="试题ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>0</OrderNum>
-            <Editor id="4ac81d8d33ee4ae69aa3514cbb20de42" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="44b248a8b6c5499293e2ac60b5a2964c" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -63,11 +63,11 @@
             <PkName></PkName>
             <PrimaryKeyPloy>ASSIGNED</PrimaryKeyPloy>
           </Property>
-          <Property id="fccf35fa2db54bddb4cdf9e8ee06d6db" name="struId" displayName="组织ID" stereotype="3">
+          <Property id="491d6d039a474b3c81cb66566bc7c614" name="struId" displayName="组织ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>1</OrderNum>
-            <Editor id="5838c7f315e3418fb0df5371a1a2eacf" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="22f3d1214e0f488c81b088bafd0a6eba" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>STRU_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -81,11 +81,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="05fd78aee75449d8a6a7b54e6554ca90" name="areaId" displayName="区域ID" stereotype="3">
+          <Property id="571c03dc003f4396a98759f0787927f2" name="areaId" displayName="区域ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>2</OrderNum>
-            <Editor id="41f723f8fd7f41f6bf6d07e239232176" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="9b549b6c4ddc489997f41b0a895d5f25" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>AREA_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -99,11 +99,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="57ae00b201bf45e6b245025b87beda67" name="readingId" displayName="阅读内容ID" stereotype="3">
+          <Property id="ac8416fa1bc04051a97be5c47633c120" name="readingId" displayName="阅读内容ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>3</OrderNum>
-            <Editor id="c33233883eec4c4b91e7443e56ba9946" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="7f0d56d73b5d406fbb562a39a2b76a4b" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>READING_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -117,11 +117,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="67fafa632d3c4b7ba6c7eea90a97f079" name="examContentText" displayName="试题内容(文本)" stereotype="3">
+          <Property id="abf9c1b7d2584133b9026f033a7e4357" name="examContentText" displayName="试题内容(文本)" stereotype="3">
             <GroupId></GroupId>
             <DataType>clob</DataType>
             <OrderNum>4</OrderNum>
-            <Editor id="3583349965ab41c2803df07800155f9a" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
+            <Editor id="fe32bd6478974112bb6db78a7f786546" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_CONTENT_TEXT</DBColumnName>
             <DBDataType></DBDataType>
@@ -135,11 +135,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="91021446fb6f412dbd2fd2192ebd98b0" name="examContentImg" displayName="试题内容(图片)" stereotype="3">
+          <Property id="d02706aae0fb4faa938787ad4ba6a013" name="examContentImg" displayName="试题内容(图片)" stereotype="3">
             <GroupId></GroupId>
             <DataType>clob</DataType>
             <OrderNum>5</OrderNum>
-            <Editor id="610e255b4ce24fdf8dec74ae7b671cd8" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
+            <Editor id="a4664e3076c84028b323503d6df5599d" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_CONTENT_IMG</DBColumnName>
             <DBDataType></DBDataType>
@@ -153,11 +153,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="d45e01ad2f304724aa8c0ca3c495d0bd" name="examAnswer" displayName="试题答案" stereotype="3">
+          <Property id="9881bce2e3964491ac597160e3e36a7c" name="examAnswer" displayName="试题答案" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>6</OrderNum>
-            <Editor id="96e4b1e73a674681b70f4980fbf56020" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="0811e680a84544d2bff49f5092589f18" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_ANSWER</DBColumnName>
             <DBDataType></DBDataType>
@@ -171,11 +171,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="99a89fa0116a49378452b87e6f67d68f" name="answerAnalyze" displayName="答案解析" stereotype="3">
+          <Property id="71b2c7a115cf43a3a55c90603be7cb48" name="answerAnalyze" displayName="答案解析" stereotype="3">
             <GroupId></GroupId>
             <DataType>clob</DataType>
             <OrderNum>7</OrderNum>
-            <Editor id="3a60054fbea04f65bb8d3c2ede75ceea" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
+            <Editor id="b65b18b8ad1844a98883ba49b88482d5" name="" displayName="" stereotype="3" editorType="RichTextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>ANSWER_ANALYZE</DBColumnName>
             <DBDataType></DBDataType>
@@ -189,11 +189,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="e12b82770ac442e89f91c7f58996d3f3" name="examSubject" displayName="试题类型单选多选" stereotype="3">
+          <Property id="5dbccc5317434025a0f5c6ec3305c141" name="examSubject" displayName="试题类型单选多选" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>8</OrderNum>
-            <Editor id="62432e941c964bf8bd5acf3379fd1573" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="d4fa55ee822949b5b8e64d36f19c69ed" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_SUBJECT</DBColumnName>
             <DBDataType></DBDataType>
@@ -207,11 +207,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="6b476f2c1c104ae69630c33f68da7017" name="examGrades" displayName="难易程度难度等级暂定" stereotype="3">
+          <Property id="c03e8ea04e2244058eab23e0c495f170" name="examGrades" displayName="难易程度难度等级暂定" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>9</OrderNum>
-            <Editor id="a606490fa44648c5b194ed8ce78db3cf" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="0e63422cd08241d8a9353c13d356122a" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_GRADES</DBColumnName>
             <DBDataType></DBDataType>
@@ -225,11 +225,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="d299a8aca45748e09d67f5931ff03111" name="examMark" displayName="试题分数" stereotype="3">
+          <Property id="3c2f6eb69fb9464fa58b328e836d1077" name="examMark" displayName="试题分数" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>10</OrderNum>
-            <Editor id="aa1aa85a685647499bf818e601fe4de9" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="58d3fe913bb64dc79d8d2770e708323b" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_MARK</DBColumnName>
             <DBDataType></DBDataType>
@@ -243,11 +243,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="902c70151a3a45c7ad0b7632fec88c0a" name="examTypeId" displayName="试题分类ID" stereotype="3">
+          <Property id="a7225ed63e3642a784e86c2601341eff" name="examTypeId" displayName="试题分类ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>11</OrderNum>
-            <Editor id="e4e61ce70fe744a2b0e2f5e3ae9f940a" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="fb014a08991f4841b46a01f3e2763d9b" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>EXAM_TYPE_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -261,11 +261,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="c570d97a727e4df3868539d78ba52a84" name="createDate" displayName="创建时间" stereotype="3">
+          <Property id="927a0021af294ea19c36a4ff9b5bdd05" name="createDate" displayName="创建时间" stereotype="3">
             <GroupId></GroupId>
             <DataType>timestamp</DataType>
             <OrderNum>12</OrderNum>
-            <Editor id="007a6bef48ea4e40b990327ab3668c1c" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <Editor id="60581b94744d411c8e944740e6ec5495" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>CREATE_DATE</DBColumnName>
             <DBDataType></DBDataType>
@@ -279,11 +279,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="294b96e6ea67483895606e8d5dfa2e9f" name="createBy" displayName="创建者" stereotype="3">
+          <Property id="8b6bc8342d9b4215a8a973d9fb79f493" name="createBy" displayName="创建者" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>13</OrderNum>
-            <Editor id="c38bc1de861e4da6a800a53765d226d5" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="29606509073f4dec9b12500435abdcfb" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>CREATE_BY</DBColumnName>
             <DBDataType></DBDataType>
@@ -297,11 +297,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="c6a9844c112a42e7b063d45d3535b4b6" name="updateBy" displayName="更新者" stereotype="3">
+          <Property id="e50ad9242062479d80355ab3784e03e6" name="updateBy" displayName="更新者" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>14</OrderNum>
-            <Editor id="0e3e1a6ce46d4a27bd1eadbcee5afc7d" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="62db9a4b1a5644c99156f881c52643f1" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>UPDATE_BY</DBColumnName>
             <DBDataType></DBDataType>
@@ -315,11 +315,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="d09ad4fb46b34ef9a4af7be606cf1688" name="updateDate" displayName="更新时间" stereotype="3">
+          <Property id="dba99f347c4e49dbb0ce38a2b7614594" name="updateDate" displayName="更新时间" stereotype="3">
             <GroupId></GroupId>
             <DataType>timestamp</DataType>
             <OrderNum>15</OrderNum>
-            <Editor id="17941c76253444f6a1aefdd019bff6ef" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <Editor id="5122edc25160451eaf13973dca2734a4" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>UPDATE_DATE</DBColumnName>
             <DBDataType></DBDataType>
@@ -333,11 +333,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="fc944019d1184416b868b638acad494d" name="delFlag" displayName="删除标记" stereotype="3">
+          <Property id="677e2a424e194b1aa58d82eee15bac94" name="delFlag" displayName="删除标记" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>16</OrderNum>
-            <Editor id="b96afbaa87f14e9dab83a9c2bfcd7d44" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="9511ca0cc63f4f56b22408add2426ea5" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue>0</DefaultValue>
             <DBColumnName>DEL_FLAG</DBColumnName>
             <DBDataType></DBDataType>
@@ -354,11 +354,11 @@
         </Properties>
         <ExtendAttributies/>
         <Operations>
-          <Operation id="c2fbe387149f4f8d96141bf84682816a" name="add" displayName="新增" stereotype="3" operationType="standard"/>
-          <Operation id="2f1fb01e93be48809471748815d7804c" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
-          <Operation id="c07f41cc2a2847f2a66d1003970c28cc" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
-          <Operation id="690c36ba77cb42428a520f79c182ca6c" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
-          <Operation id="9ef561e1d877405db5f475e61de4b6ba" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
+          <Operation id="5c772ac4dbdc4043a0aaf298be1c5856" name="add" displayName="新增" stereotype="3" operationType="standard"/>
+          <Operation id="fbebf7f8b2e74608b8cf8e85c88c1e95" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
+          <Operation id="47301a4ce97a4725b586e30852475114" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
+          <Operation id="4b1d4f581f074e76baa6efc492bb1832" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
+          <Operation id="f9cded5fd279480da0fc017eb9cb6d91" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
         </Operations>
       </BusinessClass>
     </BusinessClasses>

@@ -1,11 +1,15 @@
 $ns("stgl.views");
 
-//stgl、ExaminfoGridView在编译时将替换为实际值，设计过程中不要随意修改
+//stgl、ExaminfoGridView在编译时将自动替换为实际值，设计过程中不要随意修改
 
-stgl.views.ExaminfoGridViewController = function() {
+stgl.views.ExaminfoGridViewController = function(){
 	var me = $extend(mx.views.ViewController);
-	me.getView = function() {
-		if (me.view == null) {
+	me.typeName="stgl.views.ExaminfoGridViewController";
+	me.getController=function(key){
+		return me.getLinkViewController("stgl.views."+key+"Controller");
+	};
+	me.getView = function(){
+		if (me.view == null){
 			me.view = new stgl.views.ExaminfoGridView({ controller: me });
 		}
 		return me.view;
@@ -18,6 +22,15 @@ stgl.views.ExaminfoGridViewController = function() {
 	if(typeof(me.utils)=="undefined"||me.utils==null)
 		me.utils={};
 	/*************公共函数*******************************/
+	/*展示详细信息View对话框*/
+	me.utils.showDetailViewWindow = function(primaryValue,detailController,formId,title){		
+		var detailForm = detailController.getView().findControlById(formId);
+		detailForm.load(primaryValue);
+		var _win = detailController.getView().getWindow();	
+		if(typeof(title) == "string")
+			_win.setTitle(title);
+		_win.showDialog();
+	};
 	/*移除DataGrid的选中记录*/
 	me.utils.removeDataGridSelections = function(datagrid){
 		if(datagrid.displayCheckBox) {//数据项之前带选择框
@@ -41,22 +54,46 @@ stgl.views.ExaminfoGridViewController = function() {
 	/*************公共函数库结束****************************/
 	
 	var dataGrid = null;
-	me._onactivate = function(e) {
+	me._onactivate = function(e){
 		dataGrid = me.getView().findControlById("DataGrid");
-		dataGrid.load();
+		dataGrid.load();		
 	};
 
-	//事件处理函数写在这里
-	me._NewButton_onclick = function(e) {
-		dataGrid.appendItem();
+	/**
+     * 新增
+     */
+	me._NewButton_onclick = function() {
+		var detailController = me.getController("ExaminfoFormView");
+		me.utils.showDetailViewWindow(null, detailController, "DataForm");
 	};
 
-	me._SaveButton_onclick = function(e) {
-		dataGrid.save();
-	};
-
-	me._DelButton_onclick = function(e) {
+	/**
+     * 删除
+     */
+	me._DelButton_onclick = function() {
 		me.utils.removeDataGridSelections(dataGrid);
+	};
+	
+	/**
+     * 修改
+     */
+	me._EditButton_onclick = function() {
+		if(dataGrid.selection == null) {
+			mx.indicate("info", "请选择一条待编辑记录。");
+			return;
+		}
+		
+		var primaryKey = dataGrid.entityContainer.primaryKey;
+		var primaryValue = dataGrid.selection.getValue(primaryKey);
+		var detailController = me.getController("ExaminfoFormView");
+		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
+	};
+	
+	/**
+     * 双击进行修改
+     */
+	me._DataGrid_onitemdoubleclick = function(e){
+		me._EditButton_onclick();
 	};
 	
 	/**
@@ -65,6 +102,7 @@ stgl.views.ExaminfoGridViewController = function() {
 	me._PrintButton_onclick = function(e) {
 		dataGrid.printGrid(true);
 	};
-
+	
+	
 	return me.endOfClass(arguments);
 };

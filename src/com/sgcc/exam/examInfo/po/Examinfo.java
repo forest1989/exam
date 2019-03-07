@@ -82,13 +82,179 @@ public class Examinfo implements java.io.Serializable {
 	
 	/**虚拟主键*/
 	private String mxVirtualId;
+/** 试题选项A内容(文本)*/
 	
+	private String optionsAText;
+	
+	/** 试题选项A内容((图片)*/
+	
+	private String optionsAImg;
+	
+	/** 试题选项B内容(文本)*/
+	
+	private String optionsBText;
+	
+	/** 试题选项B内容((图片)*/
+	
+	private String optionsBImg;
+	
+	/** 试题选项C内容(文本)*/
+	
+	private String optionsCText;
+	
+	/** 试题选项C内容((图片)*/
+	
+	private String optionsCImg;
+	
+	/** 试题选项D内容(文本)*/
+	
+	private String optionsDText;
+	
+	/** 试题选项D内容((图片)*/
+	
+	private String optionsDImg;
+	
+	/** 试题选项E内容(文本)*/
+	
+	private String optionsEText;
+	
+	/** 试题选项E内容((图片)*/
+	
+	private String optionsEImg;
+	
+	/** 试题选项F内容(文本)*/
+	
+	private String optionsFText;
+	
+	/** 试题选项F内容((图片)*/
+	
+	private String optionsFImg;
 
     /** 无参构造方法 */
     public Examinfo() {
     } 
     
 		
+	public String getOptionsAText() {
+		return optionsAText;
+	}
+
+
+	public void setOptionsAText(String optionsAText) {
+		this.optionsAText = optionsAText;
+	}
+
+
+	public String getOptionsAImg() {
+		return optionsAImg;
+	}
+
+
+	public void setOptionsAImg(String optionsAImg) {
+		this.optionsAImg = optionsAImg;
+	}
+
+
+	public String getOptionsBText() {
+		return optionsBText;
+	}
+
+
+	public void setOptionsBText(String optionsBText) {
+		this.optionsBText = optionsBText;
+	}
+
+
+	public String getOptionsBImg() {
+		return optionsBImg;
+	}
+
+
+	public void setOptionsBImg(String optionsBImg) {
+		this.optionsBImg = optionsBImg;
+	}
+
+
+	public String getOptionsCText() {
+		return optionsCText;
+	}
+
+
+	public void setOptionsCText(String optionsCText) {
+		this.optionsCText = optionsCText;
+	}
+
+
+	public String getOptionsCImg() {
+		return optionsCImg;
+	}
+
+
+	public void setOptionsCImg(String optionsCImg) {
+		this.optionsCImg = optionsCImg;
+	}
+
+
+	public String getOptionsDText() {
+		return optionsDText;
+	}
+
+
+	public void setOptionsDText(String optionsDText) {
+		this.optionsDText = optionsDText;
+	}
+
+
+	public String getOptionsDImg() {
+		return optionsDImg;
+	}
+
+
+	public void setOptionsDImg(String optionsDImg) {
+		this.optionsDImg = optionsDImg;
+	}
+
+
+	public String getOptionsEText() {
+		return optionsEText;
+	}
+
+
+	public void setOptionsEText(String optionsEText) {
+		this.optionsEText = optionsEText;
+	}
+
+
+	public String getOptionsEImg() {
+		return optionsEImg;
+	}
+
+
+	public void setOptionsEImg(String optionsEImg) {
+		this.optionsEImg = optionsEImg;
+	}
+
+
+	public String getOptionsFText() {
+		return optionsFText;
+	}
+
+
+	public void setOptionsFText(String optionsFText) {
+		this.optionsFText = optionsFText;
+	}
+
+
+	public String getOptionsFImg() {
+		return optionsFImg;
+	}
+
+
+	public void setOptionsFImg(String optionsFImg) {
+		this.optionsFImg = optionsFImg;
+	}
+
+
 	/** 构造方法 */
 	public Examinfo(Integer examId) {
 	    this.examId = examId;

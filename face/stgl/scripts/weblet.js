@@ -9,6 +9,11 @@ $import("mx.windows.Window");
 $import("stgl.views.ExaminfoGridView");				
 $import("stgl.views.ExaminfoGridViewController");				
 $import("stgl.views.ExaminfoGridViewUserController");				
+$import("mx.datacontrols.DataForm");
+$import("mx.datacontainers.FormEntityContainer");				
+$import("stgl.views.ExaminfoFormView");				
+$import("stgl.views.ExaminfoFormViewController");				
+$import("stgl.views.ExaminfoFormViewUserController");				
 
 mx.weblets.WebletManager.register(
 {

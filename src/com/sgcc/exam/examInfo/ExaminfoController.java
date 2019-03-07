@@ -1,5 +1,7 @@
 package com.sgcc.exam.examInfo;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.sgcc.exam.examInfo.bizc.IExamOptionsBizc;
 import com.sgcc.exam.examInfo.bizc.IExaminfoBizc;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
 import com.sgcc.uap.rest.annotation.VoidResponseBody;
@@ -8,6 +10,7 @@ import org.springframework.http.server.ServletServerHttpRequest;
 import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
 import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
+import com.sgcc.exam.examInfo.po.ExamOptions;
 import com.sgcc.exam.examInfo.po.Examinfo;
 import com.sgcc.uap.mdd.runtime.validate.IValidateService;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +44,8 @@ public class ExaminfoController {
 
 	@Resource
 	private IExaminfoBizc examinfoBizc;
-	
+	@Resource
+	private IExamOptionsBizc examoptionsBizc;
 	@Resource
 	private IDataDictionaryBizC dataDictionaryBizC;
 	
@@ -102,6 +106,7 @@ public class ExaminfoController {
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
 			examinfoBizc.delete(java.lang.Integer.valueOf(id));
+			examoptionsBizc.deleteExid(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
@@ -113,6 +118,22 @@ public class ExaminfoController {
 			examinfo = null;
 		}else {
 			examinfo = examinfoBizc.get(java.lang.Integer.valueOf(id));
+			Object mp = examoptionsBizc.getOpId(java.lang.Integer.valueOf(id));
+			if(mp!=null){
+				ExamOptions	wp=(ExamOptions)mp;
+				examinfo.setOptionsAImg(wp.getOptionsAImg());
+				examinfo.setOptionsAText(wp.getOptionsAText());
+				examinfo.setOptionsBImg(wp.getOptionsBImg());
+				examinfo.setOptionsBText(wp.getOptionsBText());
+				examinfo.setOptionsCImg(wp.getOptionsCImg());
+				examinfo.setOptionsCText(wp.getOptionsCText());
+				examinfo.setOptionsDImg(wp.getOptionsDImg());
+				examinfo.setOptionsDText(wp.getOptionsDText());
+				examinfo.setOptionsEImg(wp.getOptionsEImg());
+				examinfo.setOptionsEText(wp.getOptionsEText());
+				examinfo.setOptionsFImg(wp.getOptionsFImg());
+				examinfo.setOptionsFText(wp.getOptionsFText());
+			}
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();
