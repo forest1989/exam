@@ -90,8 +90,18 @@ public class ExamOptionsBizc extends BizCDefaultImpl<ExamOptions, Serializable> 
 	}
 
 	@Override
-	public void deleteExid(Serializable id) {
-		this.hibernateDao.update("delete  from  ExamOptions where examId=?", new Object[]{id});
+	public int deleteExid(Serializable id) {
+		return this.hibernateDao.update("delete  from  ExamOptions where examId=?", new Object[]{id});
+	}
+
+	@Override
+	public ExamOptions getInfo(Serializable pkValue) {
+		int n=this.hibernateDao.queryForIntWithSql("select count(*) from  exam_options where EXAM_ID=?", new Object[]{pkValue});
+		if(n>0){
+			return (ExamOptions) this.hibernateDao.queryForObjectWithSql("select * from  exam_options where EXAM_ID=?", new Object[]{pkValue}, ParameterizedBeanPropertyRowMapper.newInstance(ExamOptions.class));
+		}else{
+			return null;
+		}
 	}
 	
 }

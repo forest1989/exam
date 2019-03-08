@@ -1,6 +1,8 @@
 package com.sgcc.exam.examInfo;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sgcc.exam.etype.bizc.IExamTypeBizc;
+import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.exam.examInfo.bizc.IExamOptionsBizc;
 import com.sgcc.exam.examInfo.bizc.IExaminfoBizc;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
@@ -14,13 +16,8 @@ import com.sgcc.exam.examInfo.po.ExamOptions;
 import com.sgcc.exam.examInfo.po.Examinfo;
 import com.sgcc.uap.mdd.runtime.validate.IValidateService;
 import javax.servlet.http.HttpServletRequest;
-import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
-import java.net.URL;
-import org.osgi.framework.FrameworkUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.sgcc.uap.rest.annotation.ItemsRequestBody;
 import com.sgcc.uap.rest.annotation.QueryRequestParam;
-import org.osgi.framework.Bundle;
 import com.sgcc.uap.rest.annotation.ColumnResponseBody;
 import com.sgcc.uap.rest.annotation.IdRequestBody;
 import org.springframework.web.client.RestClientException;
@@ -46,6 +43,8 @@ public class ExaminfoController {
 	private IExaminfoBizc examinfoBizc;
 	@Resource
 	private IExamOptionsBizc examoptionsBizc;
+	@Resource
+	private IExamTypeBizc examtypeBizc;
 	@Resource
 	private IDataDictionaryBizC dataDictionaryBizC;
 	
@@ -81,16 +80,32 @@ public class ExaminfoController {
 				Serializable pkValue = examinfo.getExamId();
 				Map<String,Object> changedProperty = coverter.flatHandle(Examinfo.class,changedProperies.get(i));
 				if (null != pkValue) {
+					int examId = examinfo.getExamId();
 					Examinfo old = examinfoBizc.get(pkValue);
-
 	 				BeanUtils.populate(old, changedProperty);
-	 				
 	                examinfoBizc.update(old, pkValue);
+	                //试题选项表判断
+	                ExamOptions oldEx = examoptionsBizc.getInfo(examId);
+	                if(oldEx==null){
+	                	oldEx=new ExamOptions();
+	                	oldEx.setExamId(examId);
+		 				BeanUtils.populate(oldEx, changedProperty);
+		 				examoptionsBizc.add(oldEx);
+	                }else{
+	                	BeanUtils.populate(oldEx, changedProperty);
+		 				examoptionsBizc.update(oldEx, examId);
+	                }
+	                
 					voList.add(examinfo);
-	
 				}else{
 					BeanUtils.populate(examinfo, changedProperty);
 					examinfoBizc.add(examinfo);
+				    //试题选项表判断
+					/*Examinfo exinfo = examinfoBizc.select();*/
+                    ExamOptions oldEx =new ExamOptions();
+                	oldEx.setExamId(examinfo.getExamId());
+	 				BeanUtils.populate(oldEx, changedProperty);
+	 				examoptionsBizc.add(oldEx);
 					voList.add(examinfo);
 				}
 			}
@@ -105,8 +120,10 @@ public class ExaminfoController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			examinfoBizc.delete(java.lang.Integer.valueOf(id));
-			examoptionsBizc.deleteExid(java.lang.Integer.valueOf(id));
+			int n=examoptionsBizc.deleteExid(java.lang.Integer.valueOf(id));
+			if(n>0){
+				examinfoBizc.delete(java.lang.Integer.valueOf(id));
+			}
 		}
 		return null;
 	}
@@ -119,6 +136,7 @@ public class ExaminfoController {
 		}else {
 			examinfo = examinfoBizc.get(java.lang.Integer.valueOf(id));
 			Object mp = examoptionsBizc.getOpId(java.lang.Integer.valueOf(id));
+			ExamType et = examtypeBizc.getExamtype(Integer.valueOf(examinfo.getExamTypeId()));
 			if(mp!=null){
 				ExamOptions	wp=(ExamOptions)mp;
 				examinfo.setOptionsAImg(wp.getOptionsAImg());
@@ -134,6 +152,9 @@ public class ExaminfoController {
 				examinfo.setOptionsFImg(wp.getOptionsFImg());
 				examinfo.setOptionsFText(wp.getOptionsFText());
 			}
+			if(et!=null){
+				examinfo.setExamTypeId(et.getTypeName());
+			}
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();
@@ -147,7 +168,16 @@ public class ExaminfoController {
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
 	    QueryResultObject queryResult = examinfoBizc.query(queryCondition);
-
+        List<Examinfo> lit=queryResult.getItems();
+        List<Examinfo> items =new ArrayList<Examinfo>();
+        for (int i = 0; i < lit.size(); i++) {
+        	Examinfo sExaminfo=lit.get(i);
+        	ExamType et = examtypeBizc.getExamtype(Integer.valueOf(sExaminfo.getExamTypeId()));
+        	sExaminfo.setExamTypeId(et.getTypeName());
+        	items.add(sExaminfo);
+        	sExaminfo=new Examinfo();
+		}
+        queryResult.setItems(items);
 	    return queryResult;
     }
 

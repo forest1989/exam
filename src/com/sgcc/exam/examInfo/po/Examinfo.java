@@ -2,6 +2,8 @@ package com.sgcc.exam.examInfo.po;
 
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * Examinfo
  * @author tyg

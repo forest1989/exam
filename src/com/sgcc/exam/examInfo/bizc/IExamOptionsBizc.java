@@ -22,7 +22,9 @@ public interface IExamOptionsBizc extends IBizC<ExamOptions,Serializable>{
 
 	public Object getOpId(Serializable id);
 
-	public void deleteExid(Serializable id);
+	public int deleteExid(Serializable id);
+
+	public ExamOptions getInfo(Serializable pkValue);
 	
 	
 }
