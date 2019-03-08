@@ -79,6 +79,7 @@ stgl.views.ExaminfoFormView=function(){
 			[
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentText",caption:"试题内容(文本)"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentImg",caption:"试题内容(图片)"},
+				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examTypeId",caption:"试题分类"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examAnswer",caption:"试题答案"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"answerAnalyze",caption:"答案解析"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examSubject",caption:"试题类型单选多选"},
