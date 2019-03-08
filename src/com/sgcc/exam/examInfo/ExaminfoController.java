@@ -81,16 +81,32 @@ public class ExaminfoController {
 				Serializable pkValue = examinfo.getExamId();
 				Map<String,Object> changedProperty = coverter.flatHandle(Examinfo.class,changedProperies.get(i));
 				if (null != pkValue) {
+					int examId = examinfo.getExamId();
 					Examinfo old = examinfoBizc.get(pkValue);
-
 	 				BeanUtils.populate(old, changedProperty);
-	 				
 	                examinfoBizc.update(old, pkValue);
+	                //试题选项表判断
+	                ExamOptions oldEx = examoptionsBizc.getInfo(examId);
+	                if(oldEx==null){
+	                	oldEx=new ExamOptions();
+	                	oldEx.setExamId(examId);
+		 				BeanUtils.populate(oldEx, changedProperty);
+		 				examoptionsBizc.add(oldEx);
+	                }else{
+	                	BeanUtils.populate(oldEx, changedProperty);
+		 				examoptionsBizc.update(oldEx, examId);
+	                }
+	                
 					voList.add(examinfo);
-	
 				}else{
 					BeanUtils.populate(examinfo, changedProperty);
 					examinfoBizc.add(examinfo);
+				    //试题选项表判断
+					/*Examinfo exinfo = examinfoBizc.select();*/
+                    ExamOptions oldEx =new ExamOptions();
+                	oldEx.setExamId(examinfo.getExamId());
+	 				BeanUtils.populate(oldEx, changedProperty);
+	 				examoptionsBizc.add(oldEx);
 					voList.add(examinfo);
 				}
 			}
@@ -105,8 +121,10 @@ public class ExaminfoController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			examinfoBizc.delete(java.lang.Integer.valueOf(id));
-			examoptionsBizc.deleteExid(java.lang.Integer.valueOf(id));
+			int n=examoptionsBizc.deleteExid(java.lang.Integer.valueOf(id));
+			if(n>0){
+				examinfoBizc.delete(java.lang.Integer.valueOf(id));
+			}
 		}
 		return null;
 	}
