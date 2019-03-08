@@ -77,14 +77,17 @@ stgl.views.ExaminfoFormView=function(){
 			primaryKey:"examId",
 			meta:
 			[
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"readingId",caption:"阅读内容ID"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentText",caption:"试题内容(文本)"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentImg",caption:"试题内容(图片)"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examTypeId",caption:"试题分类"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"examTypeId",caption:"试题分类"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examAnswer",caption:"试题答案"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"answerAnalyze",caption:"答案解析"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examSubject",caption:"试题类型单选多选"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examGrades",caption:"难易程度难度等级"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examMark",caption:"试题分数"}
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"examSubject",caption:"试题类型单选多选"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"examGrades",caption:"难易程度难度等级"},
+				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examMark",caption:"试题分数"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",caption:"创建时间",name:"createDate"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"updateBy",caption:"更新者"}
 			]
 		});
 		
@@ -98,8 +101,10 @@ stgl.views.ExaminfoFormView=function(){
 			[
 				[
 					"[默认]",true,
+					{lineBreak:false,name:"readingId",caption:"阅读内容ID",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,name:"examContentText",caption:"试题内容(文本)",labelWidth:120,readOnly:false,id:"examContentText",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"100",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,name:"examAnswer",caption:"试题答案",labelWidth:120,readOnly:false,id:"examAnswer",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"answerAnalyze",caption:"答案解析",labelWidth:120,readOnly:false,id:"answerAnalyze",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examSubject",caption:"试题类型单选多选",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"DropDownEditor",nullable:false,
@@ -116,18 +121,8 @@ stgl.views.ExaminfoFormView=function(){
 									         { name:"复杂", id: "05" }
 									       ]},
 					{lineBreak:false,name:"examMark",caption:"试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"optionsAText",caption:"试题选项A内容(文本)",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsAImg",caption:"试题选项A内容(图片)",labelWidth:120,readOnly:false,id:"optionsAImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsBText",caption:"试题选项B内容(文本)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsBImg",caption:"试题选项B内容(图片)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsCText",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsCImg",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsDText",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsDImg",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsEText",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsEImg",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsFText",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsFImg",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"}
+					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor",nullable:false},
+					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor",nullable:false}
 				]
 			],
 			entityContainer: formEntityContainer
