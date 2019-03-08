@@ -82,7 +82,7 @@ stgl.views.ExaminfoFormView=function(){
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examAnswer",caption:"试题答案"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"answerAnalyze",caption:"答案解析"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examSubject",caption:"试题类型单选多选"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examGrades",caption:"难易程度难度等级暂定"},
+				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examGrades",caption:"难易程度难度等级"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examMark",caption:"试题分数"}
 			]
 		});
@@ -101,8 +101,19 @@ stgl.views.ExaminfoFormView=function(){
 					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examAnswer",caption:"试题答案",labelWidth:120,readOnly:false,id:"examAnswer",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"answerAnalyze",caption:"答案解析",labelWidth:120,readOnly:false,id:"answerAnalyze",height:"100",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"examSubject",caption:"试题类型单选多选",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"examGrades",caption:"难易程度难度等级暂定",labelWidth:120,readOnly:false,id:"examGrades",height:"22",editorType:"TextEditor"},
+					{lineBreak:false,name:"examSubject",caption:"试题类型单选多选",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"DropDownEditor",nullable:false,
+						displayMember: "name", valueMember: "id",  
+						items: [ { name: "单选", id: "1" }, 
+						         { name:"多选", id: "2" }
+						       ]},
+					{lineBreak:false,name:"examGrades",caption:"难易程度难度等级",labelWidth:120,readOnly:false,id:"examGrades",height:"22",editorType:"DropDownEditor",nullable:false,
+									displayMember: "name", valueMember: "id",  
+									items: [ { name: "容易", id: "01" },
+										     { name: "偏易", id: "02" },
+										     { name: "适中", id: "03" },
+										     { name: "偏难", id: "04" },
+									         { name:"复杂", id: "05" }
+									       ]},
 					{lineBreak:false,name:"examMark",caption:"试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"optionsAText",caption:"试题选项A内容(文本)",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsAImg",caption:"试题选项A内容(图片)",labelWidth:120,readOnly:false,id:"optionsAImg",height:"120",editorType:"RichTextEditor"},

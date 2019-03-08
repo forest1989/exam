@@ -81,13 +81,57 @@ stgl.views.ExaminfoGridView=function(){
 		});
 		
 		_DataGrid = new mx.datacontrols.DataGrid({
+			searchBox:new mx.datacontrols.DataGridSearchBox({
+				width:"100%",
+				id:"DataGridSearchBox1",
+				fields:[
+					{lineBreak:false,valueType:"string",name:"examGrades",caption:"难易程度",labelWidth:100,readOnly:false,id:"examGrades",editorType:"DropDownEditor",nullable:false,
+						displayMember: "name", valueMember: "id",  
+						items: [ { name: "容易", id: "01" },
+							     { name: "偏易", id: "02" },
+							     { name: "适中", id: "03" },
+							     { name: "偏难", id: "04" },
+						         { name:"复杂", id: "05" }
+						       ],height:"22"},
+					{lineBreak:false,valueType:"string",name:"examSubject",caption:"试题类型",labelWidth:100,readOnly:false,id:"examSubject",editorType:"DropDownEditor",nullable:false,
+									displayMember: "name", valueMember: "id",  
+									items: [ { name: "单选", id: "1" }, 
+									         { name:"多选", id: "2" }
+									       ],height:"22"}
+    			]
+			}),
 			columns:[
 				{dataType:"clob",name:"examContentText",width:"120",caption:"试题内容(文本)",readOnly:false,id:"examContentText",editorType:"RichTextEditor"},
 				{dataType:"clob",name:"examContentImg",width:"120",caption:"试题内容(图片)",readOnly:false,id:"examContentImg",editorType:"RichTextEditor"},
 				{dataType:"string",name:"examAnswer",width:"120",caption:"试题答案",readOnly:false,id:"examAnswer",editorType:"TextEditor"},
 				{dataType:"clob",name:"answerAnalyze",width:"120",caption:"答案解析",readOnly:false,id:"answerAnalyze",editorType:"RichTextEditor"},
-				{dataType:"string",name:"examSubject",width:"120",caption:"试题类型单选多选",readOnly:false,id:"examSubject",editorType:"TextEditor"},
-				{dataType:"string",name:"examGrades",width:"120",caption:"难易程度难度等级暂定",readOnly:false,id:"examGrades",editorType:"TextEditor"},
+				{dataType:"string",name:"examSubject",width:"120",caption:"试题类型单选多选",readOnly:false,id:"examSubject",editorType:"TextEditor",
+					renderCell: function(p_item, $p_cell) { 
+					var value = null;
+					if (p_item.getValue("examSubject") == '1') { 
+						
+						value = "单选";
+					}else if(p_item.getValue("examSubject") == '2') { 
+						value = "多选";
+					}
+					$p_cell.text(value);  
+				} },
+				{dataType:"string",name:"examGrades",width:"120",caption:"难易程度难度等级",readOnly:false,id:"examGrades",editorType:"TextEditor",
+					renderCell: function(p_item, $p_cell) { 
+						var value = null;
+						if (p_item.getValue("examGrades") == '01') { 
+							value = "容易";
+						}else if(p_item.getValue("examGrades") == '02') { 
+							value = "偏易";
+						}else if(p_item.getValue("examGrades") == '03') { 
+							value = "适中";
+						}else if(p_item.getValue("examGrades") == '04') { 
+							value = "偏难";
+						}else if(p_item.getValue("examGrades") == '05') { 
+							value = "复杂";
+						}
+						$p_cell.text(value);  
+					} },
 				{dataType:"string",name:"examMark",width:"120",caption:"试题分数",readOnly:false,id:"examMark",editorType:"TextEditor"}
 			],
 			
