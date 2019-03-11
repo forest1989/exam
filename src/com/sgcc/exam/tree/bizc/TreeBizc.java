@@ -24,7 +24,7 @@ public class TreeBizc implements ITreeBizc{
     	List list = null;
 		if (pidName != null && pidName != "") {
     		if (nodeValue == null) {
-    			qc.addWhere("",pidName, "is", null);
+    			qc.addWhere("", pidName, "=", 0);
     		} else if (!nodeValue.equals("")) {
     			qc.addWhere("", pidName, "=", nodeValue);
     		}
