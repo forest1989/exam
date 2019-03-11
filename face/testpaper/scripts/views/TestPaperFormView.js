@@ -92,12 +92,6 @@ testpaper.views.TestPaperFormView=function(){
 			]
 		});
 		
-		
-		var d_item1=[ { name: "自动", id: "1" }, 
-	         { name:"手动", id: "2" },
-	    
-	       ];
-		
 		_DataForm = new mx.datacontrols.DataForm({
 			width:"100%",
 			layoutConfigs:{},
@@ -110,12 +104,10 @@ testpaper.views.TestPaperFormView=function(){
 					"[默认]",true,
 					{lineBreak:false,name:"testPaperId",caption:"试卷ID",labelWidth:120,readOnly:false,id:"testPaperId",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"areaId",caption:"区域ID",labelWidth:120,readOnly:false,id:"areaId",height:"22",editorType:"TextEditor",nullable:false
-						},
+					{lineBreak:false,name:"areaId",caption:"区域ID",labelWidth:120,readOnly:false,id:"areaId",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"struId",caption:"组织ID",labelWidth:120,readOnly:false,id:"struId",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"DateTimeEditor"},
-					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor"
-						,displayMember: "name", valueMember: "id",items: d_item1},
+					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型(自动手动)",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"remarks",caption:"备注",labelWidth:120,readOnly:false,id:"remarks",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor"},
 					{lineBreak:false,name:"createBy",caption:"创建者",labelWidth:120,readOnly:false,id:"createBy",height:"22",editorType:"TextEditor"},

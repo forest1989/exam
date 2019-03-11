@@ -53,7 +53,7 @@ public class TestPaperController {
 	private HttpMessageConverter coverter;
 	@RequestMapping("/meta")
 	public @ColumnResponseBody List<ViewAttributeData> getPropertyMeta(@ColumnRequestParam("params") String[] filterPropertys) throws Exception {
-	
+	System.out.println("kankan:"+filterPropertys.toString());
 		List<ViewAttributeData> datas = null;
 		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.testpaper.po.TestPaper", filterPropertys);
 		return datas;

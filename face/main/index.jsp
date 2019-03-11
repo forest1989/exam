@@ -208,12 +208,9 @@
 			
 		'</menu>'+
 			'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-				'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-				'<menu id="02103" url="../bookInfoYD/index.jsp" text="借阅源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02104" url="../bookInfo/index.jsp" text="图书源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02105" url="../bookInfoE/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02106" url="../tslxgl/index.jsp" text="职工书屋分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+				'<menu id="02102" url="../wjtz/xx" text="试卷库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+				'<menu id="02103" url="../testpaper/index.jsp" text="试卷列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
+
 				'</menu>'+
 			'</menu>'+
 			'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
