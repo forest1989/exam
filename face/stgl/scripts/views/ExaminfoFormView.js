@@ -121,6 +121,18 @@ stgl.views.ExaminfoFormView=function(){
 									         { name:"复杂", id: "05" }
 									       ]},
 					{lineBreak:false,name:"examMark",caption:"试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
+					{lineBreak:false,name:"optionsAText",caption:"试题选项A内容(文本)",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsAImg",caption:"试题选项A内容(图片)",labelWidth:120,readOnly:false,id:"optionsAImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsBText",caption:"试题选项B内容(文本)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsBImg",caption:"试题选项B内容(图片)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsCText",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsCImg",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsDText",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsDImg",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsEText",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsEImg",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsFText",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsFImg",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor",nullable:false},
 					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor",nullable:false}
 				]
