@@ -20,5 +20,4 @@ public interface IExamTypeBizc extends IBizC<ExamType,Serializable>{
 	
 	public void update(ExamType examtype,Serializable pk);
 	
-	
 }

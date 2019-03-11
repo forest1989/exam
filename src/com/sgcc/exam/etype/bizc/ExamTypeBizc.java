@@ -1,14 +1,12 @@
 package com.sgcc.exam.etype.bizc;
-import java.util.*;
-import com.sgcc.exam.etype.po.ExamType;
-import com.sgcc.uap.rest.support.QueryResultObject;
-import com.sgcc.uap.rest.support.RequestCondition;
-import com.sgcc.uap.mdd.runtime.base.BizCDefaultImpl;
 import java.io.Serializable;
+
+import com.sgcc.exam.etype.po.ExamType;
+import com.sgcc.uap.mdd.runtime.base.BizCDefaultImpl;
 
 
 public class ExamTypeBizc extends BizCDefaultImpl<ExamType, Serializable> implements IExamTypeBizc {
-
+	
 	/**************** 标准方法执行前后事件,默认全部返回true *******************/
 	@Override
 	protected void afterDelete(ExamType examtype) {
