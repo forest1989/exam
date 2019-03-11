@@ -103,7 +103,7 @@ stgl.views.ExaminfoGridView=function(){
 			columns:[
 				{dataType:"clob",name:"examContentText",width:"120",caption:"试题内容(文本)",readOnly:false,id:"examContentText",editorType:"RichTextEditor"},
 				{dataType:"clob",name:"examContentImg",width:"120",caption:"试题内容(图片)",readOnly:false,id:"examContentImg",editorType:"RichTextEditor"},
-				{dataType:"string",name:"examTypeId",width:"120",caption:"试题分类ID",readOnly:false,id:"examTypeId",editorType:"TextEditor"},
+				{dataType:"string",name:"examTypeId",width:"120",caption:"试题分类",readOnly:false,id:"examTypeId",editorType:"TextEditor"},
 				{dataType:"string",name:"examAnswer",width:"120",caption:"试题答案",readOnly:false,id:"examAnswer",editorType:"TextEditor"},
 				{dataType:"string",name:"examSubject",width:"120",caption:"试题类型单选多选",readOnly:false,id:"examSubject",editorType:"TextEditor",
 					renderCell: function(p_item, $p_cell) { 

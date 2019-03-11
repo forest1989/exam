@@ -2,6 +2,8 @@ package com.sgcc.exam.tree.bizc;
 
 import java.util.List;
 
+import com.sgcc.exam.etype.po.ExamType;
+
 public interface ITreeBizc {
 
 	/**
@@ -29,4 +31,6 @@ public interface ITreeBizc {
 	 * @return boolean
 	 */
 	public boolean hasChild(String pid, Class childClazz, String pidName);
+
+	public ExamType getNode(String id);
 }

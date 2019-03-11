@@ -153,7 +153,7 @@ public class ExaminfoController {
 				examinfo.setOptionsFText(wp.getOptionsFText());
 			}
 			if(et!=null){
-				examinfo.setExamTypeId(et.getTypeName());
+				examinfo.setExamTypeId(String.valueOf(et.getExamTypeId()));
 			}
 		}
 		QueryResultObject qObject = new QueryResultObject();

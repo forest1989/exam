@@ -9,12 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.exam.tree.bizc.ITreeBizc;
 import com.sgcc.uap.rest.annotation.ItemRequestParam;
 import com.sgcc.uap.rest.annotation.TreeResponseBody;
 import com.sgcc.uap.rest.support.TreeNode;
+import com.sgcc.uap.rest.support.WrappedResult;
 
 @Controller
 @RequestMapping("/examTypeTree")
@@ -101,4 +103,14 @@ public class ExamTypeTreeController {
 		}
 		return list;
 	}
+	
+	@RequestMapping(value = "/tree/{id}/self", method = RequestMethod.GET)
+	 public @ResponseBody WrappedResult getNode(@PathVariable String id,@ItemRequestParam("params") String itemType) {
+	   TreeNode node = new TreeNode();
+	   node.setId(id);
+	   ExamType et = treeBizc.getNode(id);
+	   node.setText(et.getTypeName());
+	  return WrappedResult.successWrapedResult(node);
+	 }
+
 }

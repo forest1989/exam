@@ -101,10 +101,13 @@ stgl.views.ExaminfoFormView=function(){
 			[
 				[
 					"[默认]",true,
-					{lineBreak:false,name:"readingId",caption:"阅读内容ID",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"TextEditor",nullable:false},
+					{lineBreak:false,name:"readingId",caption:"阅读内容ID",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"DropDownGridEditor",nullable:false,
+							displayCheckBox:false,
+							url:stgl.mappath("~/rest/readingText/")},
 					{lineBreak:false,name:"examContentText",caption:"试题内容(文本)",labelWidth:120,readOnly:false,id:"examContentText",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"100",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"TextEditor",nullable:false},
+					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
+						url: stgl.mappath("~/rest/examTypeTree/tree")},
 					{lineBreak:false,name:"examAnswer",caption:"试题答案",labelWidth:120,readOnly:false,id:"examAnswer",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"answerAnalyze",caption:"答案解析",labelWidth:120,readOnly:false,id:"answerAnalyze",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examSubject",caption:"试题类型单选多选",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"DropDownEditor",nullable:false,
@@ -142,7 +145,8 @@ stgl.views.ExaminfoFormView=function(){
 		
 		_HSplitArea1.addControl(_DataForm);
 	}
-	
+
+
 	function _init_Window() {		
 		if(_Window == null || ((_Window.reusable==false) && _Window.disposed==true)) {
 			_Window = stgl.context.windowManager.create({
