@@ -87,14 +87,15 @@ testpaper.views.TestPaperGridView=function(){
 				{dataType:"string",name:"areaId",width:"120",caption:"区域ID",readOnly:false,id:"areaId",editorType:"TextEditor"},
 				{dataType:"string",name:"struId",width:"120",caption:"组织ID",readOnly:false,id:"struId",editorType:"TextEditor"},
 				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"DateTimeEditor"},
-				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor"},
+				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型",readOnly:false,id:"testPaperType",editorType:"TextEditor"},
 				{dataType:"string",name:"remarks",width:"120",caption:"备注",readOnly:false,id:"remarks",editorType:"TextEditor"},
 				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"createDate",width:"120",caption:"创建时间",readOnly:false,id:"createDate",editorType:"DateTimeEditor"},
 				{dataType:"string",name:"createBy",width:"120",caption:"创建者",readOnly:false,id:"createBy",editorType:"TextEditor"},
 				{dataType:"string",name:"updateBy",width:"120",caption:"更新者",readOnly:false,id:"updateBy",editorType:"TextEditor"},
 				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"updateDate",width:"120",caption:"更新时间",readOnly:false,id:"updateDate",editorType:"DateTimeEditor"},
 				{dataType:"string",name:"delFlag",width:"120",caption:"删除标记",readOnly:false,id:"delFlag",editorType:"TextEditor",value:"0"}
-			],
+
+				],
 			
 			allowEditing:false,
 			allowPaging:true,

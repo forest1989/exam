@@ -54,7 +54,7 @@ testpaper.views.TestPaperFormView=function(){
 			height:"24",
 			items:[
 				{imageKey:"save",width:"60",id:"SaveButton",text:"保存",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick}
-			]
+				]
 		});
 		
 		_HSplitArea0.addControl(_DetailToolBar);
@@ -83,12 +83,12 @@ testpaper.views.TestPaperFormView=function(){
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"struId",caption:"组织ID"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"答题时间",name:"answerTime"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"testPaperType",caption:"试卷生成类型"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"remarks",caption:"备注"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"创建时间",name:"createDate"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"createBy",caption:"创建者"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"updateBy",caption:"更新者"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"更新时间",name:"updateDate"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"delFlag",caption:"删除标记"}
+				{readOnly:false,nullable:true,visible:false,valueType:"string",name:"remarks",caption:"备注"},
+				{readOnly:false,nullable:true,visible:false,valueType:"string",caption:"创建时间",name:"createDate"},
+				{readOnly:false,nullable:true,visible:false,valueType:"string",name:"createBy",caption:"创建者"},
+				{readOnly:false,nullable:true,visible:false,valueType:"string",name:"updateBy",caption:"更新者"},
+				{readOnly:false,nullable:true,visible:false,valueType:"string",caption:"更新时间",name:"updateDate"},
+				{readOnly:false,nullable:true,visible:false,valueType:"string",name:"delFlag",caption:"删除标记"}
 			]
 		});
 		
@@ -118,7 +118,25 @@ testpaper.views.TestPaperFormView=function(){
 					{lineBreak:false,name:"createBy",caption:"创建者",labelWidth:120,readOnly:false,id:"createBy",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"updateDate",caption:"更新时间",labelWidth:120,readOnly:false,id:"updateDate",height:"22",editorType:"DateTimeEditor"},
-					{lineBreak:false,name:"delFlag",caption:"删除标记",labelWidth:120,readOnly:false,id:"delFlag",value:"0",height:"22",editorType:"TextEditor"}
+					{lineBreak:false,name:"delFlag",caption:"删除标记",labelWidth:120,readOnly:false,id:"delFlag",value:"0",height:"22",editorType:"TextEditor"},
+					{lineBreak:false,name:"testPaperCategory",caption:"试卷分类",labelWidth:120,readOnly:false,id:"testPaperCategory",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",
+		            	 items: [
+	            	         { name: "信息安全", value: "1" },
+	            	         { name: "网络安全", value: "2" }
+	            	     ]},
+	            	     {lineBreak:false,name:"testPaperLevel",caption:"难易程度",labelWidth:120,readOnly:false,id:"testPaperLevel",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",
+			            	 items: [
+		            	         { name: "容易", value: "1" },
+		            	         { name: "偏易", value: "2" },
+		            	         { name: "适中", value: "3" },
+		            	         { name: "偏南", value: "4" },
+		            	         { name: "复杂", value: "5" }
+		            	     ]},
+		            	     {lineBreak:false,name:"testPaperNum",caption:"试题道数",labelWidth:120,readOnly:false,id:"testPaperNum",height:"22",editorType: "NumberEditor", valueMember: "value",
+		            	    	 items: 
+			            	         { name: "容易", value: "1" }
+			            	     
+			            	     }
 				]
 			],
 			entityContainer: formEntityContainer
