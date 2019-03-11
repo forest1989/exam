@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Model id="69899f2fe0604a73abb28282af13d32b" name="etype" displayName="etype" stereotype="3" nameSpace="com.sgcc.exam">
+<Model id="52f4d73676564c39b0794da6b2cb1d0e" name="testpaper" displayName="testpaper" stereotype="3" nameSpace="com.sgcc.exam">
   <VersionInfo>
-    <CreatedTime>2019-03-06 16:38:30</CreatedTime>
-    <ChangedTime>2019-03-06 18:53:16</ChangedTime>
+    <CreatedTime>2019-03-07 17:22:11</CreatedTime>
+    <ChangedTime>2019-03-07 17:22:44</ChangedTime>
     <Description>This is a demo model.</Description>
     <Version>1.0</Version>
-    <Creator>forest</Creator>
-    <Modifier>forest</Modifier>
+    <Creator>Administrator</Creator>
+    <Modifier>Administrator</Modifier>
   </VersionInfo>
-  <Package id="c227ea817a024825b8e4a118688c785f" name="etype" displayName="etype" stereotype="3">
+  <Package id="7c93517b1e7f4e52b92098b34d54b255" name="testpaper" displayName="testpaper" stereotype="3">
     <Diagrams>
-      <Diagram id="de8e63a665894f26a3dd2cf3f54d57fb" name="etype" displayName="etype" stereotype="3" isDefault="true">
+      <Diagram id="46137c9cd68d4e26893ee6bc805e03b1" name="testpaper" displayName="testpaper" stereotype="3">
         <DiagramStyle>
           <BackGroundColor>white</BackGroundColor>
           <GridStyle>false</GridStyle>
@@ -19,7 +19,7 @@
           <Layout></Layout>
         </DiagramStyle>
         <Elements>
-          <Element id="8a241172c49b414d9c2a1d356ec0bf54" objectId="0557fa0680864fca97666747f13e1a4c">
+          <Element id="954ec828794b4f57bd28b58e76a7fa54" objectId="a72ba04a300e43bc92b70c2d2f3891d9">
             <ElementStyle>
               <FontFamily></FontFamily>
               <FontSize>0</FontSize>
@@ -39,25 +39,17 @@
       </Diagram>
     </Diagrams>
     <BusinessClasses>
-      <BusinessClass id="0557fa0680864fca97666747f13e1a4c" name="ExamType" displayName="ExamType" stereotype="1">
-        <VersionInfo>
-          <CreatedTime>2019-03-06 16:39:37</CreatedTime>
-          <ChangedTime>2019-03-06 18:53:16</ChangedTime>
-          <Description></Description>
-          <Version>9</Version>
-          <Creator>forest</Creator>
-          <Modifier>forest</Modifier>
-        </VersionInfo>
-        <TableName>exam_type</TableName>
+      <BusinessClass id="a72ba04a300e43bc92b70c2d2f3891d9" name="TestPaper" displayName="TestPaper" stereotype="1">
+        <TableName>test_paper</TableName>
         <IsAbstract>false</IsAbstract>
         <Properties>
-          <Property id="622ae7fb531e4a01811f22ceef31dd0b" name="examTypeId" displayName="试题分类ID" stereotype="3">
+          <Property id="778a9dcb9739429caab81edc2131ebdd" name="testPaperId" displayName="试卷ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>0</OrderNum>
-            <Editor id="1374899a0f2143f99efffebfe5e2e4fe" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="64f8acd7b92444958f2868e21cff7d16" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
-            <DBColumnName>EXAM_TYPE_ID</DBColumnName>
+            <DBColumnName>TEST_PAPER_ID</DBColumnName>
             <DBDataType></DBDataType>
             <DBDataLength>10</DBDataLength>
             <DBDataPrecision></DBDataPrecision>
@@ -71,32 +63,31 @@
             <PkName></PkName>
             <PrimaryKeyPloy>ASSIGNED</PrimaryKeyPloy>
           </Property>
-          <Property id="9b39976cf3f04505a87c9453358547c2" name="parentId" displayName="父级编号" stereotype="3">
+          <Property id="9db321b8b6644fd4a50abc14910358a6" name="testPaperName" displayName="试卷名称" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>1</OrderNum>
-            <Editor id="1323cb3d8e1e4f8c820ea1929ef50971" name="" displayName="" editorType="ComboBox" dataSourceType="1">
-              <Params>
-                <Param>
-                  <name>Key_PropertyId</name>
-                  <value>622ae7fb531e4a01811f22ceef31dd0b</value>
-                </Param>
-                <Param>
-                  <name>Value_PropertyId</name>
-                  <value>01b9d0b28558446da31352bb09103475</value>
-                </Param>
-                <Param>
-                  <name>BusinessClassId</name>
-                  <value>0557fa0680864fca97666747f13e1a4c</value>
-                </Param>
-                <Param>
-                  <name>FilterSql</name>
-                  <value><![CDATA[]]></value>
-                </Param>
-              </Params>
-            </Editor>
+            <Editor id="8052796c17974026a2b1f0c1d53bd7f0" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
-            <DBColumnName>PARENT_ID</DBColumnName>
+            <DBColumnName>TEST_PAPER_NAME</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="cc6f0d79d93744038a5376caf99d09af" name="areaId" displayName="区域ID" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>2</OrderNum>
+            <Editor id="61d893bb05ce4db2a6fae89a62a35c11" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>AREA_ID</DBColumnName>
             <DBDataType></DBDataType>
             <DBDataLength>10</DBDataLength>
             <DBDataPrecision>0</DBDataPrecision>
@@ -108,162 +99,11 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
-          <Property id="01b9d0b28558446da31352bb09103475" name="typeName" displayName="分类名称" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>2</OrderNum>
-            <Validators>
-              <Validator id="ca12da3c59d54a0f83f06af29892b167" name="NOTNULL" displayName="必填校验" orderNumber="0" validatorType="NOTNULL" validatorMessage="不能为空" expression="" validatorClass="" interfaceName=""/>
-            </Validators>
-            <Editor id="69a3570c4b824856b273ff33f7e9dc27" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>TYPE_NAME</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>255</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="e6a10a3469a8408690d7cc5707d0f1d2" name="typeCode" displayName="分类编码" stereotype="3">
+          <Property id="d5d45a7af88341d9a8847e4cbea06992" name="struId" displayName="组织ID" stereotype="3">
             <GroupId></GroupId>
             <DataType>string</DataType>
             <OrderNum>3</OrderNum>
-            <Validators>
-              <Validator id="5fcab98aa4dc49608642754eec7dad34" name="NOTNULL" displayName="必填校验" orderNumber="0" validatorType="NOTNULL" validatorMessage="不能为空" expression="" validatorClass="" interfaceName=""/>
-              <Validator id="7254bb714de14a1db1ab69d6388b2868" name="UNIQUE" displayName="唯一" orderNumber="0" validatorType="UNIQUE" validatorMessage="违反唯一性约束" expression="" validatorClass="" interfaceName=""/>
-            </Validators>
-            <Editor id="a2a1367b362146c1b949b9791dc399dd" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>TYPE_CODE</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>64</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="3f81d27c43a64a23a66c4e183587a517" name="remarks" displayName="备注" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>4</OrderNum>
-            <Editor id="6179760e683c40c1871f4c4e234fa22e" name="" displayName="" editorType="MultTextEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>REMARKS</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>255</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="cdf4a82818c1475595cf2b301c791061" name="createDate" displayName="创建时间" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>timestamp</DataType>
-            <OrderNum>5</OrderNum>
-            <Editor id="0f9a00ec3bf2474ebc0cd50facfc0363" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>CREATE_DATE</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>19</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="778ce3529b684eaeb096ef417389d539" name="createBy" displayName="创建者" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>6</OrderNum>
-            <Editor id="08307b4084d04c4ea622caab3481a1bf" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>CREATE_BY</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>64</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="9ac06c5455a144cdb68443b78e5c2308" name="updateBy" displayName="更新者" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>7</OrderNum>
-            <Editor id="52549b0d37df4864ab654e913fd422a4" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>UPDATE_BY</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>64</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="ac87bac3a6a14e3b87c32635f9637305" name="updateDate" displayName="更新时间" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>timestamp</DataType>
-            <OrderNum>8</OrderNum>
-            <Editor id="77f53394409d4fd9afd7b109d7c7a2dd" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
-            <DefaultValue></DefaultValue>
-            <DBColumnName>UPDATE_DATE</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>19</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="42cb19083cff4dd4a23f0213210e3965" name="delFlag" displayName="删除标记" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>9</OrderNum>
-            <Editor id="2b36fef3e04a4189a00cccdc0371db31" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
-            <DefaultValue>0</DefaultValue>
-            <DBColumnName>DEL_FLAG</DBColumnName>
-            <DBDataType></DBDataType>
-            <DBDataLength>1</DBDataLength>
-            <DBDataPrecision>0</DBDataPrecision>
-            <QueryProperty>false</QueryProperty>
-            <IsPrimaryKey>false</IsPrimaryKey>
-            <Unique>false</Unique>
-            <Nullable>true</Nullable>
-            <ReadOnly>false</ReadOnly>
-            <IndexedColumn>false</IndexedColumn>
-            <Persistence>true</Persistence>
-          </Property>
-          <Property id="0b09278038024e8aa75b64f32de8569a" name="struId" displayName="组织ID" stereotype="3">
-            <GroupId></GroupId>
-            <DataType>string</DataType>
-            <OrderNum>10</OrderNum>
-            <Editor id="21272653969c48e299677835d01cbf79" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <Editor id="e4cd0e33c2914fc49cfd221c5f559e5f" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
             <DefaultValue></DefaultValue>
             <DBColumnName>STRU_ID</DBColumnName>
             <DBDataType></DBDataType>
@@ -277,14 +117,158 @@
             <IndexedColumn>false</IndexedColumn>
             <Persistence>true</Persistence>
           </Property>
+          <Property id="5737bdbaea8e4ea8b86dd700a667745c" name="answerTime" displayName="答题时间" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>timestamp</DataType>
+            <OrderNum>4</OrderNum>
+            <Editor id="a96dd3d88218437fb517a85540a73721" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>ANSWER_TIME</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>19</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="841d8abe501d423f811255c0b5c74666" name="testPaperType" displayName="试卷生成类型(自动手动)" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>5</OrderNum>
+            <Editor id="0515f1d553854e4a8f97c026776735f6" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>TEST_PAPER_TYPE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>1</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="3bfa00a6842a48578fada5193c397dcc" name="remarks" displayName="备注" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>6</OrderNum>
+            <Editor id="a48f88eaaa184882812db2a1c452f38e" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>REMARKS</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>255</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="c6ae979f5046496e8b73f1fef4ee6fb6" name="createDate" displayName="创建时间" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>timestamp</DataType>
+            <OrderNum>7</OrderNum>
+            <Editor id="b9bab4a3e0fd42e1ae8f974ada759d43" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>CREATE_DATE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>19</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="3bf762604f4a48b68036a3c997c85af1" name="createBy" displayName="创建者" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>8</OrderNum>
+            <Editor id="b5263a5cda054efd90984034d088391d" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>CREATE_BY</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="e130aa13695b41078cbbc5f74f9e09db" name="updateBy" displayName="更新者" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>9</OrderNum>
+            <Editor id="fab6cf764fee4371b459699dc06c07ef" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>UPDATE_BY</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="767804bb99a44a3aa6988fd4a030d604" name="updateDate" displayName="更新时间" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>timestamp</DataType>
+            <OrderNum>10</OrderNum>
+            <Editor id="9197f5f6ecda4fb9b7af98aecc5df5c0" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>UPDATE_DATE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>19</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="8bae9efc8fd746bcb9a66c2efda6d40f" name="delFlag" displayName="删除标记" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>11</OrderNum>
+            <Editor id="57139a0e153c49128444ccbc462aa0ee" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue>0</DefaultValue>
+            <DBColumnName>DEL_FLAG</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>1</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
         </Properties>
         <ExtendAttributies/>
         <Operations>
-          <Operation id="7129720d4e814ddfacf7aeb8ccc693d6" name="add" displayName="新增" stereotype="3" operationType="standard"/>
-          <Operation id="d45b51b3e5ac4b31a7b469e0d1c02b6f" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
-          <Operation id="9dee4c2daa8d488087d2175a980ffc4a" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
-          <Operation id="7257da003049418e893ecf567fcdb789" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
-          <Operation id="37524ecae0904da0a38d742dc3056ae9" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
+          <Operation id="d479b941644d446b8b79da4b5874b53c" name="add" displayName="新增" stereotype="3" operationType="standard"/>
+          <Operation id="c6fc85ab52914f5aa6bbe5461bda58d9" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
+          <Operation id="6415ca282d86455fa044722d30ba2b85" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
+          <Operation id="305965b29b7b439cb3f660609512882f" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
+          <Operation id="c16d7393dc0d43c98d6673cfd6890674" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
         </Operations>
       </BusinessClass>
     </BusinessClasses>
