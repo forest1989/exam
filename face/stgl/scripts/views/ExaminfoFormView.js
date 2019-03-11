@@ -101,9 +101,22 @@ stgl.views.ExaminfoFormView=function(){
 			[
 				[
 					"[默认]",true,
-					{lineBreak:false,name:"readingId",caption:"阅读内容ID",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"DropDownGridEditor",nullable:false,
+					{lineBreak:false,name:"readingId",caption:"阅读内容编码",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"DropDownGridEditor",nullable:false,
 							displayCheckBox:false,
-							url:stgl.mappath("~/rest/readingText/")},
+							valueColumn:"readingId",
+						    displayColumn:"readingCode",
+							dataGrid:{
+								columns:[
+								         {name: "readingId", caption: "阅读内容ID" , editorType: "TextEditor"	,visible:true},
+								         {name: "readingCode", caption: "阅读内容编码" , editorType: "TextEditor",visible:true},
+								         {name: "readingText", caption: "阅读文本内容" , editorType: "RichTextEditor",visible:true}
+								        ],
+								    displayPrimaryKey:false,
+									pageSize : 10,
+									primaryKey: "readingId",
+									width:"300",
+									baseUrl : stgl.mappath("~/rest/readingText/")
+								}},
 					{lineBreak:false,name:"examContentText",caption:"试题内容(文本)",labelWidth:120,readOnly:false,id:"examContentText",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
