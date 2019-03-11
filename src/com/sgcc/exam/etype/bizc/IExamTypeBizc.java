@@ -19,5 +19,7 @@ public interface IExamTypeBizc extends IBizC<ExamType,Serializable>{
 	public ExamType get(Serializable id);
 	
 	public void update(ExamType examtype,Serializable pk);
+
+	public ExamType getExamtype(Integer valueOf);
 	
 }

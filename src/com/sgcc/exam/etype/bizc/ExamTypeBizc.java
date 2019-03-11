@@ -1,11 +1,18 @@
 package com.sgcc.exam.etype.bizc;
 import java.io.Serializable;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper;
+
 import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.uap.mdd.runtime.base.BizCDefaultImpl;
+import com.sgcc.uap.persistence.IHibernateDao;
 
 
 public class ExamTypeBizc extends BizCDefaultImpl<ExamType, Serializable> implements IExamTypeBizc {
+
+	@Autowired
+	private IHibernateDao hibernateDao;
 	
 	/**************** 标准方法执行前后事件,默认全部返回true *******************/
 	@Override
@@ -41,6 +48,16 @@ public class ExamTypeBizc extends BizCDefaultImpl<ExamType, Serializable> implem
 	protected boolean beforeUpdate(ExamType examtype, Serializable pk) {
 		// 自定义逻辑
 		return true;
+	}
+
+	@Override
+	public ExamType getExamtype(Integer valueOf) {
+		int n=this.hibernateDao.queryForIntWithSql("select count(*) from  exam_type where EXAM_TYPE_ID=?", new Object[]{valueOf});
+		if(n>0){
+			return (ExamType) this.hibernateDao.queryForObjectWithSql("select * from  exam_type where EXAM_TYPE_ID=?", new Object[]{valueOf}, ParameterizedBeanPropertyRowMapper.newInstance(ExamType.class));
+		}else{
+			return null;
+		}
 	}
 	
 }

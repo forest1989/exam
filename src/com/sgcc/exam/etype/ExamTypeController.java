@@ -1,39 +1,42 @@
 package com.sgcc.exam.etype;
-import com.sgcc.uap.rest.support.DicItems;
-import org.springframework.web.bind.annotation.RequestMethod;
-import com.sgcc.uap.rest.annotation.ItemResponseBody;
-import com.sgcc.uap.rest.annotation.VoidResponseBody;
 import java.io.Serializable;
-import org.springframework.http.server.ServletServerHttpRequest;
-import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
-import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
-import com.sgcc.uap.rest.support.QueryResultObject;
-import com.sgcc.uap.mdd.runtime.validate.IValidateService;
-import javax.servlet.http.HttpServletRequest;
-import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
-import java.net.URL;
-import org.osgi.framework.FrameworkUtil;
-import org.springframework.web.bind.annotation.RequestMapping;
-import com.sgcc.uap.rest.annotation.ItemsRequestBody;
-import com.sgcc.uap.rest.annotation.QueryRequestParam;
-import org.osgi.framework.Bundle;
-import com.sgcc.uap.rest.annotation.ColumnResponseBody;
-import com.sgcc.exam.etype.bizc.IExamTypeBizc;
-import com.sgcc.uap.rest.annotation.IdRequestBody;
-import org.springframework.web.client.RestClientException;
-import com.sgcc.uap.rest.support.IDRequestObject;
-import com.sgcc.uap.rest.annotation.ColumnRequestParam;
-import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
-import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
-import java.util.*;
-import com.sgcc.exam.etype.po.ExamType;
-import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
-import com.sgcc.uap.rest.support.RequestCondition;
-import com.sgcc.uap.mdd.runtime.utils.HttpMessageConverter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestClientException;
+
+import com.sgcc.exam.etype.bizc.IExamTypeBizc;
+import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.uap.bizc.sysbizc.datadictionary.IDataDictionaryBizC;
+import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
+import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
+import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
+import com.sgcc.uap.mdd.runtime.utils.HttpMessageConverter;
+import com.sgcc.uap.mdd.runtime.validate.IValidateService;
+import com.sgcc.uap.rest.annotation.ColumnRequestParam;
+import com.sgcc.uap.rest.annotation.ColumnResponseBody;
+import com.sgcc.uap.rest.annotation.IdRequestBody;
+import com.sgcc.uap.rest.annotation.ItemRequestParam;
+import com.sgcc.uap.rest.annotation.ItemResponseBody;
+import com.sgcc.uap.rest.annotation.QueryRequestParam;
+import com.sgcc.uap.rest.annotation.TreeResponseBody;
+import com.sgcc.uap.rest.annotation.VoidResponseBody;
+import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
+import com.sgcc.uap.rest.support.DicItems;
+import com.sgcc.uap.rest.support.IDRequestObject;
+import com.sgcc.uap.rest.support.QueryResultObject;
+import com.sgcc.uap.rest.support.RequestCondition;
+import com.sgcc.uap.rest.support.TreeNode;
+import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 
 
 @Controller
@@ -102,18 +105,25 @@ public class ExamTypeController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			examtypeBizc.delete(java.lang.String.valueOf(id));
+			examtypeBizc.delete(Integer.valueOf(id));
 		}
 		return null;
 	}
 
+	@RequestMapping(value = "/deleteById", method = RequestMethod.POST)
+	public @VoidResponseBody Object deleteById(HttpServletRequest request_){
+		String id = request_.getParameter("id");
+		examtypeBizc.delete(Integer.valueOf(id));
+		return null;
+	}
+	
 	@RequestMapping("/{id}")
     public @ItemResponseBody QueryResultObject get(@PathVariable String id) {
 		ExamType examtype ;
 		if("null".equals(id)){
 			examtype = null;
 		}else {
-			examtype = examtypeBizc.get(java.lang.String.valueOf(id));
+			examtype = examtypeBizc.get(Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();
@@ -134,13 +144,13 @@ public class ExamTypeController {
 		return dicts;
 	}
 
-@RequestMapping("/")
-    public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
+	
+	@RequestMapping("/")
+    public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition, 
+    		HttpServletRequest request){
+		String etId = request.getParameter("etId");
 	    QueryResultObject queryResult = examtypeBizc.query(queryCondition);
-
 	    return queryResult.addDicItems(wrapDictList());
     }
 
-
-	
 }

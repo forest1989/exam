@@ -54,11 +54,28 @@ etype.views.ExamTypeGridViewController = function(){
 	/*************公共函数库结束****************************/
 	
 	var dataGrid = null;
+	var _DataTree = null;
 	me._onactivate = function(e){
 		dataGrid = me.getView().findControlById("DataGrid");
-		dataGrid.load();		
+		dataGrid.load();
+		// 加载dataTree
+		_DataTree = me.getView().findControlById("DataTree");
+		_DataTree.load();
 	};
-
+	
+	me._DataTree_onnodeclick = function(e) {
+		var _grid = me.view.findControlById("DataGrid");
+    	
+    	if (_grid == null) return;
+		//响应左侧树某一类节点的单击操作，在右侧展示相关表单信息。
+    	if (e.node.itemType == "examType") {
+			selectedNode = e.node;
+    		//alert(e.node.id); 	
+			dataGrid.objID = e.node.id;
+			dataGrid.load(dataGrid.objID);    
+    	}
+	};
+	
 	/**
      * 新增
      */
@@ -104,5 +121,30 @@ etype.views.ExamTypeGridViewController = function(){
 	};
 	
 	
+	me._ToolBar3_btn_add_onclick = function(e)	{
+		var detailController = me.getController("ExamTypeFormView");
+		me.utils.showDetailViewWindow(null, detailController, "DataForm");
+	};
+
+	me._ToolBar3_btn_update_onclick = function(e)	{
+		if(dataGrid.selection == null) {
+			mx.indicate("info", "请选择一条待编辑记录。");
+			return;
+		}
+		
+		var primaryKey = dataGrid.entityContainer.primaryKey;
+		var primaryValue = dataGrid.selection.getValue(primaryKey);
+		var detailController = me.getController("ExamTypeFormView");
+		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
+	};
+
+	me._ToolBar3_btn_delete_onclick = function(e)	{
+		me.utils.removeDataGridSelections(dataGrid);
+	};
+
+	me._ToolBar3_btn_query_onclick = function(e)	{
+
+	};
+
 	return me.endOfClass(arguments);
 };
