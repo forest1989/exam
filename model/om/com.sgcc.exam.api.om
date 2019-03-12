@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model id="be0966c1d17a472489d2964a127a2a29" name="api" displayName="api" stereotype="3" nameSpace="com.sgcc.exam">
+  <VersionInfo>
+    <CreatedTime>2019-03-12 09:20:02</CreatedTime>
+    <ChangedTime>2019-03-12 09:23:04</ChangedTime>
+    <Description>This is a demo model.</Description>
+    <Version>1.0</Version>
+    <Creator>tyg</Creator>
+    <Modifier>tyg</Modifier>
+  </VersionInfo>
+  <Package id="aa9645bb20cf4c3ba13a0c2a7fc49e8a" name="api" displayName="api" stereotype="3">
+    <Diagrams>
+      <Diagram id="501eefc6918e4929990eb52734601b37" name="api" displayName="api" stereotype="3">
+        <DiagramStyle>
+          <BackGroundColor>white</BackGroundColor>
+          <GridStyle>false</GridStyle>
+          <ZoomScale>100%</ZoomScale>
+          <Layout></Layout>
+        </DiagramStyle>
+        <Elements>
+          <Element id="0a637856c95f4e40915b789ca8a36aa6" objectId="f187cc8789b148b99109a855ac3248aa">
+            <ElementStyle>
+              <FontFamily></FontFamily>
+              <FontSize>0</FontSize>
+              <Width>150</Width>
+              <Height>200</Height>
+              <Position_X>10.0</Position_X>
+              <Position_Y>40.0</Position_Y>
+              <End_Position_X>0.0</End_Position_X>
+              <End_Position_Y>0.0</End_Position_Y>
+              <Point_List></Point_List>
+              <Border>false</Border>
+              <BorderColor></BorderColor>
+              <BackGroundColor></BackGroundColor>
+            </ElementStyle>
+          </Element>
+        </Elements>
+      </Diagram>
+    </Diagrams>
+    <BusinessClasses>
+      <BusinessClass id="f187cc8789b148b99109a855ac3248aa" name="Area" displayName="Area" stereotype="1">
+        <TableName>area</TableName>
+        <IsAbstract>false</IsAbstract>
+        <Properties>
+          <Property id="acea0201f5084ab4a49d2118c29dabb8" name="areaId" displayName="区域ID" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>0</OrderNum>
+            <Editor id="969d40e5d3d045cbaa2d4d70f947d043" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>AREA_ID</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>10</DBDataLength>
+            <DBDataPrecision></DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <Unique>true</Unique>
+            <Nullable>false</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+            <PkName></PkName>
+            <PrimaryKeyPloy>ASSIGNED</PrimaryKeyPloy>
+          </Property>
+          <Property id="100f7dbe378e48a4a5ee9dc7f5627877" name="parentId" displayName="父级编号" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>1</OrderNum>
+            <Editor id="84fef6a0108d4d1d929f74cf52cdda8c" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>PARENT_ID</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>10</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="97711e8bffbf4108bc4dab2381aa37d7" name="parentIds" displayName="所有父级编号" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>2</OrderNum>
+            <Editor id="f6fedc201fa143918548f97870994007" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>PARENT_IDS</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>2000</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="980b66d088914086826122ffa49f9535" name="areaName" displayName="区域名称" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>3</OrderNum>
+            <Editor id="3c8cd995577d480e93cb2e330b7e16fc" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>AREA_NAME</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>255</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="1f65446e983d46febc1e4f02dc06b751" name="areaCode" displayName="区域编码" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>4</OrderNum>
+            <Editor id="69be0ac4b3aa471eb011802c9978c1b9" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>AREA_CODE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="fd6633954fb0485aa11b20b182cda12a" name="remarks" displayName="备注" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>5</OrderNum>
+            <Editor id="edfa7fb887624add8caeb2d6006f213b" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>REMARKS</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>255</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="b602db2db0984eb9a869f34c7d1b3ff4" name="createDate" displayName="创建时间" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>timestamp</DataType>
+            <OrderNum>6</OrderNum>
+            <Editor id="843dc1b641d74d2791b9a8f3f73e1e28" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>CREATE_DATE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>19</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="bf43f099d19643cdad349eda019fd586" name="createBy" displayName="创建者" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>7</OrderNum>
+            <Editor id="cde2d3f6f74e4b70b2543cf6e6e17449" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>CREATE_BY</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="e7517a9e678a487d9e59bbd8aaca0ba4" name="updateBy" displayName="更新者" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>8</OrderNum>
+            <Editor id="a0acf2b45c634a0ca9d862b8154b4246" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>UPDATE_BY</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>64</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="8cbb09047bc74855bcc4b4492fab04d0" name="updateDate" displayName="更新时间" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>timestamp</DataType>
+            <OrderNum>9</OrderNum>
+            <Editor id="07b62777d07740bc949039b6a5792c42" name="" displayName="" stereotype="3" editorType="DateTimeEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>UPDATE_DATE</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>19</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="8f2d6a1c8fcb406585c2b69d3bfa3f03" name="delFlag" displayName="删除标记" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>10</OrderNum>
+            <Editor id="07211e3baff947ff8b4238455f8f1af0" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue>0</DefaultValue>
+            <DBColumnName>DEL_FLAG</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>1</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+        </Properties>
+        <ExtendAttributies/>
+        <Operations>
+          <Operation id="42db2be2a648451a821f10c673b5410b" name="add" displayName="新增" stereotype="3" operationType="standard"/>
+          <Operation id="da738508a45345c0866b06a48640bc6c" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
+          <Operation id="7724d348c76b4f9996ffd1843804c207" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
+          <Operation id="aca8ab8a8c0e465699a7c4760561bdfa" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
+          <Operation id="8552efca684646e3a355715a550a0815" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
+        </Operations>
+      </BusinessClass>
+    </BusinessClasses>
+  </Package>
+</Model>
