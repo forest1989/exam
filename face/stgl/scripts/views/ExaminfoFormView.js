@@ -107,18 +107,27 @@ stgl.views.ExaminfoFormView=function(){
 						    displayColumn:"readingCode",
 							dataGrid:{
 								columns:[
-								         {name: "readingId", caption: "阅读内容ID" , editorType: "TextEditor"	,visible:true},
-								         {name: "readingCode", caption: "阅读内容编码" , editorType: "TextEditor",visible:true},
-								         {name: "readingText", caption: "阅读文本内容" , editorType: "RichTextEditor",visible:true}
+								         {name: "readingId", caption: "阅读内容ID" , editorType: "TextEditor",visible:true},
+								         {name: "readingCode", caption: "阅读内容编码" ,width:"120", editorType: "TextEditor",visible:true},
+								         {name: "readingText", caption: "阅读文本内容" ,width:"260", editorType: "RichTextEditor",visible:true}
 								        ],
 								    displayPrimaryKey:false,
 									pageSize : 10,
 									primaryKey: "readingId",
-									width:"300",
+									width:"1000",
 									baseUrl : stgl.mappath("~/rest/readingText/")
 								}},
 					{lineBreak:false,name:"examContentText",caption:"试题内容(文本)",labelWidth:120,readOnly:false,id:"examContentText",height:"100",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"100",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"examContentImg",caption:"试题内容(图片)",labelWidth:120,readOnly:false,id:"examContentImg",height:"30",editorType:"FileEditor",filePath:"\examContentImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "examContentImg",
+			            caption: "试题内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAMINFO",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "EXAM_ID",//数据表的主键字段名
+			            colName: "EXAM_CONTENT_IMG"//当前字段在数据库中的物理名称
+			            	},
 					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
 						url: stgl.mappath("~/rest/examTypeTree/tree")},
 					{lineBreak:false,name:"examAnswer",caption:"试题答案",labelWidth:120,readOnly:false,id:"examAnswer",height:"22",editorType:"TextEditor"},
@@ -138,17 +147,71 @@ stgl.views.ExaminfoFormView=function(){
 									       ]},
 					{lineBreak:false,name:"examMark",caption:"试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"optionsAText",caption:"试题选项A内容(文本)",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsAImg",caption:"试题选项A内容(图片)",labelWidth:120,readOnly:false,id:"optionsAImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsAImg",caption:"试题选项A内容(图片)",labelWidth:120,readOnly:false,id:"optionsAImg",height:"30",editorType:"FileEditor",filePath:"\optionsAImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsAImg",
+			            caption: "试题选项A内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_A_IMG"//当前字段在数据库中的物理名称
+			            	},
 					{lineBreak:false,name:"optionsBText",caption:"试题选项B内容(文本)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsBImg",caption:"试题选项B内容(图片)",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsCText",caption:"试题选项C内容(文本)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsCImg",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsDText",caption:"试题选项D内容(文本)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsDImg",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsEText",caption:"试题选项E内容(文本)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsEImg",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsFText",caption:"试题选项F内容(文本)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"optionsFImg",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsBImg",caption:"试题选项B内容(图片)",labelWidth:120,readOnly:false,id:"optionsBImg",height:"30",editorType:"FileEditor",filePath:"\optionsBImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsBImg",
+			            caption: "试题选项B内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_B_IMG"//当前字段在数据库中的物理名称
+			            	},
+					{lineBreak:false,name:"optionsCText",caption:"试题选项C内容(文本)",labelWidth:120,readOnly:false,id:"optionsCText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsCImg",caption:"试题选项C内容(图片)",labelWidth:120,readOnly:false,id:"optionsCImg",height:"30",editorType:"FileEditor",filePath:"\optionsCImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsCImg",
+			            caption: "试题选项C内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_C_IMG"//当前字段在数据库中的物理名称
+			            	},
+					{lineBreak:false,name:"optionsDText",caption:"试题选项D内容(文本)",labelWidth:120,readOnly:false,id:"optionsDText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsDImg",caption:"试题选项D内容(图片)",labelWidth:120,readOnly:false,id:"optionsDImg",height:"30",editorType:"FileEditor",filePath:"\optionsDImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsDImg",
+			            caption: "试题选项D内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_D_IMG"//当前字段在数据库中的物理名称
+			            	},
+					{lineBreak:false,name:"optionsEText",caption:"试题选项E内容(文本)",labelWidth:120,readOnly:false,id:"optionsEText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsEImg",caption:"试题选项E内容(图片)",labelWidth:120,readOnly:false,id:"optionsEImg",height:"30",editorType:"FileEditor",filePath:"\optionsEImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsEImg",
+			            caption: "试题选项E内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_E_IMG"//当前字段在数据库中的物理名称
+			            	},
+					{lineBreak:false,name:"optionsFText",caption:"试题选项F内容(文本)",labelWidth:120,readOnly:false,id:"optionsFText",height:"120",editorType:"RichTextEditor"},
+					{lineBreak:false,name:"optionsFImg",caption:"试题选项F内容(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"30",editorType:"FileEditor",filePath:"\optionsFImg",
+						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						name: "optionsFImg",
+			            caption: "试题选项F内容(图片)",
+			            type: "form",//类型声明为 form
+			            uploadMode: "file",//保存方式为file，文件会保存到服务器指定磁盘路径；为blob会保存到数据库的BLOB类型字段中。
+			            tableName: "EXAM_OPTIONS",//数据对应的表名，必须是数据库中的物理表名
+			            primaryKey: "OPTIONS_ID",//数据表的主键字段名
+			            colName: "OPTIONS_F_IMG"//当前字段在数据库中的物理名称
+			            	},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor",nullable:false},
 					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor",nullable:false}
 				]
