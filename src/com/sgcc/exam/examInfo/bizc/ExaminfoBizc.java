@@ -44,5 +44,10 @@ public class ExaminfoBizc extends BizCDefaultImpl<Examinfo, Serializable> implem
 		// 自定义逻辑
 		return true;
 	}
+
+	@Override
+	public void updateReadId(Serializable pkValue,String readingId) {
+		this.hibernateDao.update("update  Examinfo  set READING_ID=? where EXAM_ID=?", new Object[]{readingId,pkValue});
+	}
 	
 }
