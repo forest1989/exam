@@ -197,7 +197,8 @@
 		'<menu id="01100" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 			'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
-			'</menu>'+
+			 '<menu id="01107" url="../readtext/index.jsp" text="阅读列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
+			 '</menu>'+
 			
 		'</menu>'+
 		

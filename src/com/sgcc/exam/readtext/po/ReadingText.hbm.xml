@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-8 9:50:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.readtext.po.ReadingText" table="READING_TEXT"> 
+    <id name="readingId" type="java.lang.Integer"> 
+      <column name="READING_ID" length="10"/>  
+      <generator class="increment"/> 
+    </id>  
+    <property name="readingCode" type="java.lang.String" lazy="true"> 
+      <column name="READING_CODE" precision="64" scale="0"/> 
+    </property>  
+    <property name="readingImg" type="java.lang.String" lazy="true"> 
+      <column name="READING_IMG" precision="1000" scale="0"/> 
+    </property>  
+    <property name="readingText" type="java.lang.String" lazy="true"> 
+      <column name="READING_TEXT" precision="4000" scale="0" sql-type="text"/> 
+    </property>  
+    <property name="remarks" type="java.lang.String" lazy="true"> 
+      <column name="REMARKS" precision="255" scale="0"/> 
+    </property>  
+    <property name="createDate" type="java.util.Date" lazy="true"> 
+      <column name="CREATE_DATE" scale="0"/> 
+    </property>  
+    <property name="createBy" type="java.lang.String" lazy="true"> 
+      <column name="CREATE_BY" precision="64" scale="0"/> 
+    </property>  
+    <property name="updateBy" type="java.lang.String" lazy="true"> 
+      <column name="UPDATE_BY" precision="64" scale="0"/> 
+    </property>  
+    <property name="updateDate" type="java.util.Date" lazy="true"> 
+      <column name="UPDATE_DATE" scale="0"/> 
+    </property>  
+    <property name="delFlag" type="java.lang.String" lazy="true"> 
+      <column name="DEL_FLAG" precision="1" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>
