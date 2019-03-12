@@ -53,7 +53,10 @@ testpaper.views.TestPaperFormView=function(){
 			direction:"horizontal",
 			height:"24",
 			items:[
-				{imageKey:"save",width:"60",id:"SaveButton",text:"保存",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick}
+				{imageKey:"save",width:"120",name:"SaveButton",id:"SaveButton",text:"生成试卷",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick},
+				{imageKey:"add",width:"120",name:"AddButton",id:"AddButton",text:"增加试题",droppedDown:false,useSymbol:true,height:"20"},
+				{imageKey:"query",width:"120",name:"QueryButton",id:"QueryButton",text:"试题查看",droppedDown:false,useSymbol:true,height:"20"}
+
 				]
 		});
 		
@@ -92,6 +95,17 @@ testpaper.views.TestPaperFormView=function(){
 			]
 		});
 		
+		
+		
+		var paperTpye =[
+	         { name: "手动", value: "1" },
+	         { name: "自动", value: "2" }
+	     ];
+		
+	
+		
+		
+
 		_DataForm = new mx.datacontrols.DataForm({
 			width:"100%",
 			layoutConfigs:{},
@@ -108,11 +122,10 @@ testpaper.views.TestPaperFormView=function(){
 					{lineBreak:false,name:"struId",caption:"组织ID",labelWidth:120,readOnly:false,id:"struId",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTime",caption:"答题开始时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"DateTimeEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTimeEnd",caption:"答题结束时间",labelWidth:120,readOnly:false,id:"answerTimeEnd",height:"22",editorType:"DateTimeEditor"},
-					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",
-		            	 items: [
-	            	         { name: "手动", value: "1" },
-	            	         { name: "自动", value: "2" }
-	            	     ]},
+					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",items:paperTpye,
+						onchanged: function(e){
+							testPaperTypeAuto(e.newValue);
+						}},
 					{lineBreak:false,name:"remarks",caption:"备注",labelWidth:120,readOnly:false,id:"remarks",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor"},
 					{lineBreak:false,name:"createBy",caption:"创建者",labelWidth:120,readOnly:false,id:"createBy",height:"22",editorType:"TextEditor"},
@@ -132,18 +145,23 @@ testpaper.views.TestPaperFormView=function(){
 		            	         { name: "偏南", value: "4" },
 		            	         { name: "复杂", value: "5" }
 		            	     ]},
-		            	     {lineBreak:false,name:"testPaperNum",caption:"试题道数",labelWidth:120,readOnly:false,id:"testPaperNum",height:"22",editorType: "NumberEditor", valueMember: "value",
-		            	    	 items: 
-			            	         { name: "容易", value: "1" }
-			            	     
-			            	     }
+		  {visible:true,lineBreak:false,name:"testPaperNum",caption:"试题道数",labelWidth:120,readOnly:false
+		            					,id:"testPaperNum",height:"22",editorType: "NumberEditor", valueMember: "value",renderCell: function(p_item, $p_cell) { 
+		            						console.log("kanyixia:");
+		            					}}
 				]
-			],
+			],onload: function(){
+				testPaperTypeAuto(me.findControlById('DataForm').getEditor('testPaperType').getValue());
+			},
 			entityContainer: formEntityContainer
 		});
 		
 		_HSplitArea1.addControl(_DataForm);
 	}
+	
+	
+	
+	
 	
 	function _init_Window() {		
 		if(_Window == null || ((_Window.reusable==false) && _Window.disposed==true)) {
@@ -176,5 +194,16 @@ testpaper.views.TestPaperFormView=function(){
 			return null;
 		}	
 	};
+	
+	
+	function testPaperTypeAuto(testPaperType) {		
+		me.findControlById('DataForm').getEditor('testPaperNum').setVisible(testPaperType == '1'?false:true);
+		me.findControlById('DataForm').getEditor('testPaperLevel').setVisible(testPaperType == '1'?false:true);
+		me.findControlById('DataForm').getEditor('testPaperCategory').setVisible(testPaperType == '1'?false:true);
+
+		me.findControlById('DetailToolBar').getItemByName("AddButton").setVisible(testPaperType == '1'?false:true);
+		
+	}
+	
     return me.endOfClass(arguments);
 };
