@@ -56,7 +56,6 @@ testpaper.views.TestPaperFormView=function(){
 				{imageKey:"save",width:"120",name:"SaveButton",id:"SaveButton",text:"生成试卷",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick},
 				{imageKey:"add",width:"120",name:"AddButton",id:"AddButton",text:"增加试题",droppedDown:false,useSymbol:true,height:"20"},
 				{imageKey:"query",width:"120",name:"QueryButton",id:"QueryButton",text:"试题查看",droppedDown:false,useSymbol:true,height:"20"}
-
 				]
 		});
 		
@@ -96,16 +95,11 @@ testpaper.views.TestPaperFormView=function(){
 		});
 		
 		
-		
 		var paperTpye =[
 	         { name: "手动", value: "1" },
 	         { name: "自动", value: "2" }
 	     ];
 		
-	
-		
-		
-
 		_DataForm = new mx.datacontrols.DataForm({
 			width:"100%",
 			layoutConfigs:{},
@@ -158,9 +152,6 @@ testpaper.views.TestPaperFormView=function(){
 		
 		_HSplitArea1.addControl(_DataForm);
 	}
-	
-	
-	
 	
 	
 	function _init_Window() {		
