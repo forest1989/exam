@@ -86,7 +86,7 @@ testpaper.views.TestPaperGridView=function(){
 				{dataType:"string",name:"testPaperName",width:"120",caption:"试卷名称",readOnly:false,id:"testPaperName",editorType:"TextEditor"},
 				{dataType:"string",name:"areaId",width:"120",caption:"区域ID",readOnly:false,id:"areaId",editorType:"TextEditor"},
 				{dataType:"string",name:"struId",width:"120",caption:"组织ID",readOnly:false,id:"struId",editorType:"TextEditor"},
-				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"DateTimeEditor"},
+				{dataType:"string",name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"TextEditor"},
 				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型",readOnly:false,id:"testPaperType",editorType:"TextEditor"},
 				{dataType:"string",name:"remarks",width:"120",caption:"备注",readOnly:false,id:"remarks",editorType:"TextEditor"},
 				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"createDate",width:"120",caption:"创建时间",readOnly:false,id:"createDate",editorType:"DateTimeEditor"},

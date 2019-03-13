@@ -29,7 +29,7 @@ public class TestPaper implements java.io.Serializable {
 	
 	/** 答题时间*/
 	
-	private Date answerTime;
+	private Integer answerTime;
 	
 	/** 试卷生成类型(自动手动)*/
 	
@@ -112,11 +112,11 @@ public class TestPaper implements java.io.Serializable {
     }
 	
 	
-    public Date getAnswerTime() {
+    public Integer getAnswerTime() {
         return this.answerTime;
     }
     
-    public void setAnswerTime(Date answerTime) {
+    public void setAnswerTime(Integer answerTime) {
         this.answerTime = answerTime;
     }
 	
