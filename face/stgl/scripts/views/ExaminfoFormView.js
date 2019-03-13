@@ -77,7 +77,7 @@ stgl.views.ExaminfoFormView=function(){
 			primaryKey:"examId",
 			meta:
 			[
-				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"readingId",caption:"阅读内容ID"},
+				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"readingId",caption:"阅读内容ID"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentText",caption:"试题内容(文本)"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"examContentImg",caption:"试题内容(图片)"},
 				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"examTypeId",caption:"试题分类"},
@@ -101,7 +101,7 @@ stgl.views.ExaminfoFormView=function(){
 			[
 				[
 					"[注:带红色*的为必填项]",true,
-					{lineBreak:false,name:"readingId",caption:"阅读[编码]",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"DropDownGridEditor",nullable:false,
+					{lineBreak:false,name:"readingId",caption:"* 阅读[编码]",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"DropDownGridEditor",nullable:true,
 							displayCheckBox:false,
 							valueColumn:"readingId",
 						    displayColumn:"readingCode",
@@ -130,22 +130,22 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"examTypeId",caption:"试题分类",labelWidth:120,readOnly:false,id:"examTypeId",height:"22",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
 						url: stgl.mappath("~/rest/examTypeTree/tree")},
+					{lineBreak:false,name:"examSubject",caption:"试题类型",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"DropDownEditor",nullable:false,
+							displayMember: "name", valueMember: "id",  
+							items: [ { name: "单选", id: "1" }, 
+							         { name:"多选", id: "2" }
+							       ]},
+					{lineBreak:false,name:"examGrades",caption:"难度等级",labelWidth:120,readOnly:false,id:"examGrades",height:"22",editorType:"DropDownEditor",nullable:false,
+										displayMember: "name", valueMember: "id",  
+										items: [ { name: "容易", id: "01" },
+											     { name: "偏易", id: "02" },
+											     { name: "适中", id: "03" },
+											     { name: "偏难", id: "04" },
+										         { name:"复杂", id: "05" }
+										       ]},
+					{lineBreak:false,name:"examMark",caption:"* 试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"examAnswer",caption:"* 试题答案",labelWidth:120,readOnly:false,id:"examAnswer",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"answerAnalyze",caption:"* 答案解析",labelWidth:120,readOnly:false,id:"answerAnalyze",height:"100",editorType:"RichTextEditor"},
-					{lineBreak:false,name:"examSubject",caption:"试题类型",labelWidth:120,readOnly:false,id:"examSubject",height:"22",editorType:"DropDownEditor",nullable:false,
-						displayMember: "name", valueMember: "id",  
-						items: [ { name: "单选", id: "1" }, 
-						         { name:"多选", id: "2" }
-						       ]},
-					{lineBreak:false,name:"examGrades",caption:"难度等级",labelWidth:120,readOnly:false,id:"examGrades",height:"22",editorType:"DropDownEditor",nullable:false,
-									displayMember: "name", valueMember: "id",  
-									items: [ { name: "容易", id: "01" },
-										     { name: "偏易", id: "02" },
-										     { name: "适中", id: "03" },
-										     { name: "偏难", id: "04" },
-									         { name:"复杂", id: "05" }
-									       ]},
-					{lineBreak:false,name:"examMark",caption:"* 试题分数",labelWidth:120,readOnly:false,id:"examMark",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"optionsAText",caption:"* 试题选项A[文本]",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsAImg",caption:"* 试题选项A[图片]",labelWidth:120,readOnly:false,id:"optionsAImg",height:"30",editorType:"FileEditor",filePath:"\optionsAImg",
 						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
