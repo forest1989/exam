@@ -85,7 +85,7 @@ stgl.views.ExaminfoGridView=function(){
 				width:"100%",
 				id:"DataGridSearchBox1",
 				fields:[
-					{lineBreak:false,valueType:"string",name:"examGrades",caption:"难易程度",labelWidth:100,readOnly:false,id:"examGrades",editorType:"DropDownEditor",nullable:false,
+					{lineBreak:false,valueType:"string",name:"examGrades",caption:"难易程度",labelWidth:100,readOnly:false,id:"examGrades",editorType:"DropDownEditor",nullable:true,
 						displayMember: "name", valueMember: "id",  
 						items: [ { name: "容易", id: "01" },
 							     { name: "偏易", id: "02" },
@@ -93,7 +93,7 @@ stgl.views.ExaminfoGridView=function(){
 							     { name: "偏难", id: "04" },
 						         { name:"复杂", id: "05" }
 						       ],height:"22"},
-					{lineBreak:false,valueType:"string",name:"examSubject",caption:"试题类型",labelWidth:100,readOnly:false,id:"examSubject",editorType:"DropDownEditor",nullable:false,
+					{lineBreak:false,valueType:"string",name:"examSubject",caption:"试题类型",labelWidth:100,readOnly:false,id:"examSubject",editorType:"DropDownEditor",nullable:true,
 									displayMember: "name", valueMember: "id",  
 									items: [ { name: "单选", id: "1" }, 
 									         { name:"多选", id: "2" }
