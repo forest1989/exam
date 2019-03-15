@@ -34,7 +34,7 @@ readtext.views.ReadingTextGridViewController = function(){
 	/*移除DataGrid的选中记录*/
 	me.utils.removeDataGridSelections = function(datagrid){
 		if(datagrid.displayCheckBox) {//数据项之前带选择框
-			if (datagrid.getCheckedItems().length == 0) {
+			if (datagrid.getCheckedItems().length  == 0) {
 	        	mx.indicate("info", "请至少勾选一条待删除记录。");
 	            return;
 	        }
@@ -78,25 +78,41 @@ readtext.views.ReadingTextGridViewController = function(){
      * 修改
      */
 	me._EditButton_onclick = function() {
-		if(dataGrid.selection == null) {
-			mx.indicate("info", "请选择一条待编辑记录。");
-			return;
-		}
+		
+		if (dataGrid.getCheckedItems().length != 1) {
+        	mx.indicate("info", "请选择一条待编辑记录");
+            return;
+        }
 		console.log("edit selected.");
 		var primaryKey = dataGrid.entityContainer.primaryKey; 
-		console.log(primaryKey);
-		var primaryValue = dataGrid.selection.getValue(primaryKey);
-		var detailController = me.getController("ReadingTextFormView");
+		console.log(primaryKey); 
+		
+		var primaryValue = dataGrid.getCheckedItems()[0].getValue(primaryKey);
+		var detailController = me.getController("ReadingTextFormView"); 
+		
+		
 		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
 	};
+	 
 	
 	/**
      * 双击进行修改
      */
 	me._DataGrid_onitemdoubleclick = function(e){
-		me._EditButton_onclick();
+        // me._EditButton_onclick();
+//		$e.checked = true;  
+//		dataGrid.checkAll(); 
+//		me.dataGird.selection.setChecked(true);
+	//	dataGrid.selectPreviousItem();
+		//dataGrid.selectNextItem(); 
+//		dataGird.selectAll(true);
 	};
+	me._DataGrid_onitemchecked = function(e){ 
+	 
 	
+//		alert("skshd");
+		
+	};
 	/**
      * 打印
      */
