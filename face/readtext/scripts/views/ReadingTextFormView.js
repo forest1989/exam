@@ -32,7 +32,8 @@ readtext.views.ReadingTextFormView=function(){
 	//-----定义初始化函数-----
 	function _init_HSplit(){
 		_HSplit=new mx.containers.HSplit({borderThick:"0",padding:"0",orientation:"horizontal",width:"100%",id:"HSplit",rows:"25,auto",height:"100%"});
-		me.addControl(_HSplit);
+		me.addControl(_HSplit); 
+	
 	}
 	
 	function _init_HSplitArea0(){

@@ -82,10 +82,10 @@ readtext.views.ReadingTextGridView=function(){
 		
 		_DataGrid = new mx.datacontrols.DataGrid({
 			columns:[
-				{valueType:"string",dataType:"string",name:"readingId",width:"120",caption:"阅读内容ID",readOnly:false,id:"readingId",editorType:"TextEditor"},
-				{valueType:"string",dataType:"string",name:"readingCode",width:"120",caption:"阅读内容编码",readOnly:false,id:"readingCode",editorType:"TextEditor"},
-				{valueType:"string",dataType:"string",name:"readingImg",width:"120",caption:"阅读图片内容",readOnly:false,id:"readingImg",editorType:"TextEditor"},
-				{valueType:"string",dataType:"string",name:"readingText",width:"120",caption:"阅读文本内容",readOnly:false,id:"readingText",editorType:"RichTextEditor"}
+				{valueType:"string",dataType:"string",name:"readingId",width:"0%",caption:"阅读sd内容ID",readOnly:false,id:"readingId",editorType:"TextEditor"},
+				{valueType:"string",dataType:"string",name:"readingCode",width:"20%",caption:"阅读内容编码",readOnly:false,id:"readingCode",editorType:"TextEditor"},
+				{valueType:"string",dataType:"string",name:"readingImg",width:"30%",caption:"阅读图片内容",readOnly:false,id:"readingImg",editorType:"TextEditor"},
+				{valueType:"string",dataType:"string",name:"readingText",width:"50%",caption:"阅读文本内容",readOnly:false,id:"readingText",editorType:"RichTextEditor"}
 			],
 			
 			allowEditing:false,
@@ -93,7 +93,7 @@ readtext.views.ReadingTextGridView=function(){
 			pageIndex:1,
 			width:"100%",
 			layoutConfigs:{},
-			pageSize:20,
+			pageSize:20, 
 			displayCheckBox:true,
 			id:"DataGrid",
 			height:"100%",
@@ -101,12 +101,14 @@ readtext.views.ReadingTextGridView=function(){
 				pageIndex:1,
 				pageSize:20,
 				id:"PageNaviBar",
-				height:"24"
+				height:"50"
 			}),
 			entityContainer: gridEntityContainer
 		});
 		
-		_DataGrid.on("itemdoubleclick", me.controller._DataGrid_onitemdoubleclick);
+		//_DataGrid.on("itemdoubleclick", me.controller._DataGrid_onitemdoubleclick); 
+		_DataGrid.on("itemclick", me.controller._DataGrid_onitemdoubleclick); 
+		_DataGrid.on("itemchecked", me.controller._DataGrid_onitemchecked);
 		_HSplitArea1.addControl(_DataGrid);
 	}
 	
