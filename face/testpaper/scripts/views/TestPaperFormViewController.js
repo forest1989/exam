@@ -33,7 +33,10 @@ testpaper.views.TestPaperFormViewController = function(){
 		detailForm.save();
 	};
 	
-	
+	me._queryButton_onclick = function() {
+		console.log("_queryButton_onclick");
+//		detailForm.save();
+	};
 	
 	return me.endOfClass(arguments);
 };

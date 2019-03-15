@@ -84,6 +84,9 @@ public class ExaminfoController {
 					Examinfo old = examinfoBizc.get(pkValue);
 	 				BeanUtils.populate(old, changedProperty);
 	                examinfoBizc.update(old, pkValue);
+	                if(changedProperty.containsKey("readingId")){
+	                	examinfoBizc.updateReadId(pkValue,examinfo.getReadingId());
+	                }
 	                //试题选项表判断
 	                ExamOptions oldEx = examoptionsBizc.getInfo(examId);
 	                if(oldEx==null){

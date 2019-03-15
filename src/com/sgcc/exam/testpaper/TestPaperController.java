@@ -53,7 +53,7 @@ public class TestPaperController {
 	private HttpMessageConverter coverter;
 	@RequestMapping("/meta")
 	public @ColumnResponseBody List<ViewAttributeData> getPropertyMeta(@ColumnRequestParam("params") String[] filterPropertys) throws Exception {
-	
+		System.out.println("testPaper:meta");
 		List<ViewAttributeData> datas = null;
 		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.testpaper.po.TestPaper", filterPropertys);
 		return datas;
@@ -62,6 +62,7 @@ public class TestPaperController {
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public @ItemResponseBody List<TestPaper> save(HttpServletRequest request_){
+		System.out.println("testPaper:save");
 		try {
 			//获取servlet API
 			ServletServerHttpRequest servlet = new BodyReaderRequestWrapper(request_);
@@ -99,6 +100,7 @@ public class TestPaperController {
 	}
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
+		System.out.println("testPaper:delete");
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
 			testpaperBizc.delete(java.lang.Integer.valueOf(id));
@@ -108,6 +110,7 @@ public class TestPaperController {
 
 	@RequestMapping("/{id}")
     public @ItemResponseBody QueryResultObject get(@PathVariable String id) {
+		System.out.println("testPaper:id");
 		TestPaper testpaper ;
 		if("null".equals(id)){
 			testpaper = null;
@@ -125,7 +128,8 @@ public class TestPaperController {
 
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
-	    QueryResultObject queryResult = testpaperBizc.query(queryCondition);
+		System.out.println("testPaper:query");
+		QueryResultObject queryResult = testpaperBizc.query(queryCondition);
 
 	    return queryResult;
     }

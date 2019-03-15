@@ -53,8 +53,10 @@ testpaper.views.TestPaperFormView=function(){
 			direction:"horizontal",
 			height:"24",
 			items:[
-				{imageKey:"save",width:"60",id:"SaveButton",text:"保存",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick}
-			]
+				{imageKey:"save",width:"120",name:"SaveButton",id:"SaveButton",text:"生成试卷",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._saveButton_onclick},
+				{imageKey:"add",width:"120",name:"AddButton",id:"AddButton",text:"增加试题",droppedDown:false,useSymbol:true,height:"20"},
+				{imageKey:"query",width:"120",name:"QueryButton",id:"QueryButton",text:"试题查看",droppedDown:false,useSymbol:true,height:"20",onclick:me.controller._queryButton_onclick}
+				]
 		});
 		
 		_HSplitArea0.addControl(_DetailToolBar);
@@ -82,7 +84,7 @@ testpaper.views.TestPaperFormView=function(){
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"areaId",caption:"区域ID"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"struId",caption:"组织ID"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"答题时间",name:"answerTime"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"testPaperType",caption:"试卷生成类型(自动手动)"},
+				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"testPaperType",caption:"试卷生成类型"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"remarks",caption:"备注"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"创建时间",name:"createDate"},
 				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"createBy",caption:"创建者"},
@@ -93,10 +95,14 @@ testpaper.views.TestPaperFormView=function(){
 		});
 		
 		
-		var d_item1=[ { name: "自动", id: "1" }, 
-	         { name:"手动", id: "2" },
-	    
-	       ];
+		var paperTpye =[
+	         { name: "手动", value: "1" },
+	         { name: "自动", value: "2" }
+	     ];
+		
+		
+		
+		
 		
 		_DataForm = new mx.datacontrols.DataForm({
 			width:"100%",
@@ -110,25 +116,82 @@ testpaper.views.TestPaperFormView=function(){
 					"[默认]",true,
 					{lineBreak:false,name:"testPaperId",caption:"试卷ID",labelWidth:120,readOnly:false,id:"testPaperId",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"areaId",caption:"区域ID",labelWidth:120,readOnly:false,id:"areaId",height:"22",editorType:"TextEditor",nullable:false
-						},
+					{lineBreak:false,name:"areaId",caption:"区域ID",labelWidth:120,readOnly:false,id:"areaId",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"struId",caption:"组织ID",labelWidth:120,readOnly:false,id:"struId",height:"22",editorType:"TextEditor"},
-					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"DateTimeEditor"},
-					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor"
-						,displayMember: "name", valueMember: "id",items: d_item1},
+					{lineBreak:false,name:"answerTime",caption:"答题开始时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"TextEditor"},
+					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",items:paperTpye,
+						onchanged: function(e){				
+							testPaperTypeAuto(e.newValue);
+						}},
+							{lineBreak:false,name:"testPaperType",caption:"阅读内容编码",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownGridEditor",nullable:false,
+								displayCheckBox:false,
+								valueColumn:"readingId",
+							    displayColumn:"readingCode",
+								dataGrid:{
+									columns:[
+									         {name: "readingId", caption: "阅读内容ID" , editorType: "TextEditor",visible:true},
+									         {name: "readingCode", caption: "阅读内容编码" ,width:"120", editorType: "TextEditor",visible:true},
+									         {name: "readingText", caption: "阅读文本内容" ,width:"260", editorType: "RichTextEditor",visible:true}
+									        ],
+									    displayPrimaryKey:false,
+										pageSize : 10,
+										primaryKey: "testPaperType",
+										width:"1000",
+										baseUrl : testpaper.mappath("~/rest/readingText/")
+									}},
+									
+									{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownGridEditor",nullable:false,
+										displayCheckBox:false,
+										valueColumn:"examTypeId",
+										displayColumn:"typeName",
+										dataGrid:{
+											columns:[
+											         {name: "examTypeId", caption: "试题类型ID" , editorType: "TextEditor",visible:true},
+											         {name: "typeCode", caption: "试题类型编码" ,width:"120", editorType: "TextEditor",visible:true},
+											         {name: "typeName", caption: "试题类型名称" ,width:"260", editorType: "TextEditor",visible:true}
+											        ],
+											    displayPrimaryKey:false,
+												pageSize : 10,
+												primaryKey: "testPaperType",
+												width:"1000",
+												baseUrl : testpaper.mappath("~/rest/examType/")
+											}},
 					{lineBreak:false,name:"remarks",caption:"备注",labelWidth:120,readOnly:false,id:"remarks",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor"},
 					{lineBreak:false,name:"createBy",caption:"创建者",labelWidth:120,readOnly:false,id:"createBy",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"updateDate",caption:"更新时间",labelWidth:120,readOnly:false,id:"updateDate",height:"22",editorType:"DateTimeEditor"},
-					{lineBreak:false,name:"delFlag",caption:"删除标记",labelWidth:120,readOnly:false,id:"delFlag",value:"0",height:"22",editorType:"TextEditor"}
+					{lineBreak:false,name:"delFlag",caption:"删除标记",labelWidth:120,readOnly:false,id:"delFlag",value:"0",height:"22",editorType:"TextEditor"},
+					{lineBreak:false,name:"paperCategory",caption:"试卷分类",labelWidth:120,readOnly:false,id:"paperCategory",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",
+						items: [
+					         { name: "信息安全", value: "1" },
+					         { name: "网络安全", value: "2" }
+					     ]},
+	            	     {lineBreak:false,name:"testPaperLevel",caption:"难易程度",labelWidth:120,readOnly:false,id:"testPaperLevel",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",
+			            	 items: [
+		            	         { name: "容易", value: "1" },
+		            	         { name: "偏易", value: "2" },
+		            	         { name: "适中", value: "3" },
+		            	         { name: "偏南", value: "4" },
+		            	         { name: "复杂", value: "5" }
+		            	     ]},
+		  {visible:true,lineBreak:false,name:"testPaperNum",caption:"试题道数",labelWidth:120,readOnly:false
+		            					,id:"testPaperNum",height:"22",editorType: "NumberEditor", valueMember: "value",renderCell: function(p_item, $p_cell) { 
+		            						console.log("kanyixia:");
+		            					}}
 				]
-			],
+			],onload: function(){
+				console.log("onload");
+				
+				
+				testPaperTypeAuto(me.findControlById('DataForm').getEditor('testPaperType').getValue());
+			},
 			entityContainer: formEntityContainer
 		});
 		
 		_HSplitArea1.addControl(_DataForm);
 	}
+	
 	
 	function _init_Window() {		
 		if(_Window == null || ((_Window.reusable==false) && _Window.disposed==true)) {
@@ -161,5 +224,16 @@ testpaper.views.TestPaperFormView=function(){
 			return null;
 		}	
 	};
+	
+	
+	function testPaperTypeAuto(testPaperType) {		
+		me.findControlById('DataForm').getEditor('testPaperNum').setVisible(testPaperType == '1'?false:true);
+		me.findControlById('DataForm').getEditor('testPaperLevel').setVisible(testPaperType == '1'?false:true);
+		me.findControlById('DataForm').getEditor('paperCategory').setVisible(testPaperType == '1'?false:true);
+
+		me.findControlById('DetailToolBar').getItemByName("AddButton").setVisible(testPaperType == '1'?false:true);
+		
+	}
+	
     return me.endOfClass(arguments);
 };

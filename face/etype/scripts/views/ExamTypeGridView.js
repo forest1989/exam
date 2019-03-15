@@ -63,7 +63,11 @@ etype.views.ExamTypeGridView=function(){
 			height:"100%",
 			entityContainer: treeEntityContainer
 		});
-		
+		// 默认展开第一个节点
+		_DataTree.load({}, function(){
+			_DataTree.findNode("li:first-child").expand(function(){
+			});
+        });
 		_DataTree.on("nodeclick",me.controller._DataTree_onnodeclick);
 		_DataTree.on("expanding",_DataTree_expanding);
 		_DataTree.on("menushowing",_DataTree_menushowing);

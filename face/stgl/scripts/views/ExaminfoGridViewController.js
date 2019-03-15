@@ -78,13 +78,13 @@ stgl.views.ExaminfoGridViewController = function(){
      * 修改
      */
 	me._EditButton_onclick = function() {
-		if(dataGrid.selection == null) {
-			mx.indicate("info", "请选择一条待编辑记录。");
-			return;
+		if(dataGrid.displayCheckBox) {//数据项之前带选择框
+			if (dataGrid.getCheckedItems().length > 1 || dataGrid.getCheckedItems().length == 0) {
+	        	mx.indicate("info", "请勾选一条待编辑记录。");
+	            return;
+	        }
 		}
-		
-		var primaryKey = dataGrid.entityContainer.primaryKey;
-		var primaryValue = dataGrid.selection.getValue(primaryKey);
+	    var primaryValue = dataGrid.getCheckedItems()[0].id;
 		var detailController = me.getController("ExaminfoFormView");
 		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
 	};
@@ -92,9 +92,9 @@ stgl.views.ExaminfoGridViewController = function(){
 	/**
      * 双击进行修改
      */
-	me._DataGrid_onitemdoubleclick = function(e){
+	/*me._DataGrid_onitemdoubleclick = function(e){
 		me._EditButton_onclick();
-	};
+	};*/
 	
 	/**
      * 打印

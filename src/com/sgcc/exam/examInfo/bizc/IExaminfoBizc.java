@@ -19,6 +19,8 @@ public interface IExaminfoBizc extends IBizC<Examinfo,Serializable>{
 	public Examinfo get(Serializable id);
 	
 	public void update(Examinfo examinfo,Serializable pk);
+
+	public void updateReadId(Serializable pkValue,String readingId);
 	
 	
 }

@@ -73,7 +73,11 @@ etTree.views.ExamTypeTreeView=function(){
 			height:"100%",
 			entityContainer: treeEntityContainer
 		});
-		
+		// 默认展开第一个节点
+		_DataTree.load({}, function(){
+			_DataTree.findNode("li:first-child").expand(function(){
+			});
+        });
 		_DataTree.on("nodeclick", me.controller._DataTree_onnodeclick);
 		_DataTree.on("expanding",_DataTree_expanding);
 		_DataTree.on("menushowing",_DataTree_menushowing);
@@ -89,7 +93,7 @@ etTree.views.ExamTypeTreeView=function(){
 	function _DataTree_RootNodes() {
 		var rootNodes = {nodes:[
 				{
-					itemType:"70fc383b-622c-4eb7-9ed7-11f09e30e65f",
+					itemType:"examType",
 					classDisplayName:"ExamType",
 					nodeTextProp:"typeName",
 					className:"ExamType",
@@ -184,7 +188,8 @@ etTree.views.ExamTypeTreeView=function(){
 			[
 				[
 					"[默认]",true,
-					{lineBreak:false,valueType:"string",name:"parentId",caption:"上级分类",labelWidth:120,readOnly:false,id:"parentId",height:"22",editorType:"DropDownEditor"},
+					{lineBreak:false,name:"parentId",caption:"所属分类",labelWidth:120,readOnly:false,id:"parentId",height:"22",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
+						url: etTree.mappath("~/rest/examTypeTree/tree")},
 					{lineBreak:false,valueType:"string",name:"typeName",caption:"分类名称",labelWidth:120,readOnly:false,id:"typeName",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,valueType:"string",name:"typeCode",caption:"分类编码",labelWidth:120,readOnly:false,id:"typeCode",height:"22",editorType:"TextEditor",nullable:false},
 					{lineBreak:false,valueType:"string",name:"remarks",caption:"备注",textMode:"multiline",labelWidth:120,readOnly:false,id:"remarks",height:"66",editorType:"TextEditor"}
