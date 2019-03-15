@@ -119,7 +119,7 @@ stgl.views.ExaminfoFormView=function(){
 								}},
 					{lineBreak:false,name:"examContentText",caption:"* 试题[文本]",labelWidth:120,readOnly:false,id:"examContentText",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"examContentImg",caption:"* 试题[图片]",labelWidth:120,readOnly:false,id:"examContentImg",height:"30",editorType:"FileEditor",filePath:"\examContentImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "examContentImg",
 			            caption: "* 试题[图片]",
 			            type: "form",//类型声明为 form
@@ -148,7 +148,7 @@ stgl.views.ExaminfoFormView=function(){
 					{lineBreak:false,name:"answerAnalyze",caption:"* 答案解析",labelWidth:120,readOnly:false,id:"answerAnalyze",height:"100",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsAText",caption:"* 试题选项A[文本]",labelWidth:120,readOnly:false,id:"optionsAText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsAImg",caption:"* 试题选项A[图片]",labelWidth:120,readOnly:false,id:"optionsAImg",height:"30",editorType:"FileEditor",filePath:"\optionsAImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsAImg",
 			            caption: "* 试题选项A[图片]",
 			            type: "form",//类型声明为 form
@@ -159,7 +159,7 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"optionsBText",caption:"* 试题选项B[文本]",labelWidth:120,readOnly:false,id:"optionsBText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsBImg",caption:"* 试题选项B[图片]",labelWidth:120,readOnly:false,id:"optionsBImg",height:"30",editorType:"FileEditor",filePath:"\optionsBImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsBImg",
 			            caption: "* 试题选项B[图片]",
 			            type: "form",//类型声明为 form
@@ -170,7 +170,7 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"optionsCText",caption:"* 试题选项C[文本]",labelWidth:120,readOnly:false,id:"optionsCText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsCImg",caption:"* 试题选项C[图片]",labelWidth:120,readOnly:false,id:"optionsCImg",height:"30",editorType:"FileEditor",filePath:"\optionsCImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsCImg",
 			            caption: "* 试题选项C[图片]",
 			            type: "form",//类型声明为 form
@@ -181,7 +181,7 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"optionsDText",caption:"* 试题选项D[文本]",labelWidth:120,readOnly:false,id:"optionsDText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsDImg",caption:"* 试题选项D[图片]",labelWidth:120,readOnly:false,id:"optionsDImg",height:"30",editorType:"FileEditor",filePath:"\optionsDImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsDImg",
 			            caption: "* 试题选项D[图片]",
 			            type: "form",//类型声明为 form
@@ -192,7 +192,7 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"optionsEText",caption:"* 试题选项E[文本]",labelWidth:120,readOnly:false,id:"optionsEText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsEImg",caption:"* 试题选项E[图片]",labelWidth:120,readOnly:false,id:"optionsEImg",height:"30",editorType:"FileEditor",filePath:"\optionsEImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsEImg",
 			            caption: "* 试题选项E[图片]",
 			            type: "form",//类型声明为 form
@@ -203,7 +203,7 @@ stgl.views.ExaminfoFormView=function(){
 			            	},
 					{lineBreak:false,name:"optionsFText",caption:"* 试题选项F(文本)",labelWidth:120,readOnly:false,id:"optionsFText",height:"120",editorType:"RichTextEditor"},
 					{lineBreak:false,name:"optionsFImg",caption:"* 试题选项F(图片)",labelWidth:120,readOnly:false,id:"optionsFImg",height:"30",editorType:"FileEditor",filePath:"\optionsFImg",
-						allowTypes:"jpg",displayCheckBox:true,filesLimit:"1", 
+						allowTypes:"jpg,png",displayCheckBox:true,filesLimit:"1", 
 						name: "optionsFImg",
 			            caption: "* 试题选项F[图片]",
 			            type: "form",//类型声明为 form
