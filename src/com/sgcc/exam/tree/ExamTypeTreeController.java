@@ -109,7 +109,9 @@ public class ExamTypeTreeController {
 	   TreeNode node = new TreeNode();
 	   node.setId(id);
 	   ExamType et = treeBizc.getNode(id);
-	   node.setText(et.getTypeName());
+	   if(et != null){
+		   node.setText(et.getTypeName());
+	   }
 	  return WrappedResult.successWrapedResult(node);
 	 }
 
