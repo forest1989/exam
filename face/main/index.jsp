@@ -14,7 +14,6 @@
  	
  	//u.put("bm", user2.getOrgsPath().get(0).getName());
  	//u.put("dw", user2.getOrgsPath().get(1).getName());
-
  	//System.out.println(session.getAttribute("userObj").toString());
  	
  	//== 
@@ -24,7 +23,6 @@
  	//String unicode = user2.getOrgsPath().get(0).getUnicode();
  	
  	//String baseOrgId = user2.getBaseOrgId();
-
  	//System.out.println("orgName==========" +orgName);
  	
  	//System.out.println("unicode==========" +unicode);
@@ -40,7 +38,6 @@
  	//ISCOrgInfo add = new ISCOrgInfo();
  	//== 
  	String xml11 = null ;//add.test(request);
-
  	//== 
  	//List<String> syss = add.getOrgInfo(userId);
  	//== 
@@ -197,7 +194,8 @@
 		'<menu id="01100" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 			'<menu id="01101" url="../ggl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="01106" url="../stgl/index.jsp" text="试题管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
-			'</menu>'+
+			 '<menu id="01107" url="../readtext/index.jsp" text="阅读列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt5"/>'+
+			 '</menu>'+
 			
 		'</menu>'+
 		
@@ -208,12 +206,8 @@
 			
 		'</menu>'+
 			'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
-				'<menu id="02102" url="../wjtz/xx" text="资源库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-				'<menu id="02103" url="../bookInfoYD/index.jsp" text="借阅源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02104" url="../bookInfo/index.jsp" text="图书源管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02105" url="../bookInfoE/index.jsp" text="电子书管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02106" url="../tslxgl/index.jsp" text="职工书屋分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
-				'<menu id="02107" url="../dzslxgl/index.jsp" text="电子书分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+				'<menu id="02102" url="../wjtz/xx" text="试卷库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
+				'<menu id="02103" url="../testpaper/index.jsp" text="试卷列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
 				'</menu>'+
 			'</menu>'+
 			'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
