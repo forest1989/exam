@@ -13,10 +13,7 @@ $import("mx.datacontrols.DataForm");
 $import("mx.datacontainers.FormEntityContainer");				
 $import("testpaper.views.TestPaperFormView");				
 $import("testpaper.views.TestPaperFormViewController");				
-$import("testpaper.views.TestPaperFormViewUserController");	
-$import("testpaper.views.ExamInfoGridView");				
-$import("testpaper.views.ExamInfoGridViewController");				
-$import("testpaper.views.ExamInfoGridViewUserController");		
+$import("testpaper.views.TestPaperFormViewUserController");		
 
 mx.weblets.WebletManager.register(
 {

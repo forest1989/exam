@@ -70,8 +70,9 @@ etype.views.ExamTypeGridViewController = function(){
 		//响应左侧树某一类节点的单击操作，在右侧展示相关表单信息。
     	if (e.node.itemType == "examType") {
 			selectedNode = e.node;
-    		//alert(e.node.id); 	
 			dataGrid.objID = e.node.id;
+			//debugger;
+			//alert(dataGrid.objID); 
 			dataGrid.load(dataGrid.objID);    
     	}
 	};

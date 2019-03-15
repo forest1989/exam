@@ -118,16 +118,11 @@ testpaper.views.TestPaperFormView=function(){
 					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"areaId",caption:"区域ID",labelWidth:120,readOnly:false,id:"areaId",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"struId",caption:"组织ID",labelWidth:120,readOnly:false,id:"struId",height:"22",editorType:"TextEditor"},
-					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTime",caption:"答题开始时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"DateTimeEditor"},
-					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTimeEnd",caption:"答题结束时间",labelWidth:120,readOnly:false,id:"answerTimeEnd",height:"22",editorType:"DateTimeEditor"},
+					{lineBreak:false,name:"answerTime",caption:"答题开始时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",items:paperTpye,
 						onchanged: function(e){				
 							testPaperTypeAuto(e.newValue);
-						}},	
-						{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType: "DropDownEditor", displayMember: "name",valueMember: "value",items:paperTpye,
-							onchanged: function(e){				
-								testPaperTypeAuto(e.newValue);
-							}},	
+						}},
 							{lineBreak:false,name:"testPaperType",caption:"阅读内容编码",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownGridEditor",nullable:false,
 								displayCheckBox:false,
 								valueColumn:"readingId",

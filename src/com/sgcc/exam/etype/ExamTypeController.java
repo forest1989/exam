@@ -144,11 +144,9 @@ public class ExamTypeController {
 		return dicts;
 	}
 
-	
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition, 
     		HttpServletRequest request){
-		String etId = request.getParameter("etId");
 	    QueryResultObject queryResult = examtypeBizc.query(queryCondition);
 	    return queryResult.addDicItems(wrapDictList());
     }

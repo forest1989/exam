@@ -14,7 +14,6 @@
  	
  	//u.put("bm", user2.getOrgsPath().get(0).getName());
  	//u.put("dw", user2.getOrgsPath().get(1).getName());
-
  	//System.out.println(session.getAttribute("userObj").toString());
  	
  	//== 
@@ -24,7 +23,6 @@
  	//String unicode = user2.getOrgsPath().get(0).getUnicode();
  	
  	//String baseOrgId = user2.getBaseOrgId();
-
  	//System.out.println("orgName==========" +orgName);
  	
  	//System.out.println("unicode==========" +unicode);
@@ -40,7 +38,6 @@
  	//ISCOrgInfo add = new ISCOrgInfo();
  	//== 
  	String xml11 = null ;//add.test(request);
-
  	//== 
  	//List<String> syss = add.getOrgInfo(userId);
  	//== 
@@ -211,12 +208,12 @@
 			'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="02102" url="../wjtz/xx" text="试卷库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
 				'<menu id="02103" url="../testpaper/index.jsp" text="试卷列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
-
 				'</menu>'+
 			'</menu>'+
 			'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="04102" url="../hdglmovie/index.jsp" text="试题分类管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
-				'<menu id="04103" url="../etype/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+				'<menu id="04103" url="../etype/index.jsp" text="试题分类1" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
+				'<menu id="04103" url="../etTree/index.jsp" text="试题分类2" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" />'+
 			'</menu>'+
 		'</menu>'+
 		'</xmlmenu>';

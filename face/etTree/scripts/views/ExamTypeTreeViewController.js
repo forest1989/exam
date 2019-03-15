@@ -76,25 +76,29 @@ etTree.views.ExamTypeTreeViewController = function() {
     	    var selectedNode = me.view.getTreeView().selection; 
     	    if (selectedNode != null)
     	    {
-   
-    	    	if (confirm("您确认删除数据吗？")) {
-    	    		var client = new mx.rpc.RESTClient({
-    	    			baseUrl : etTree.mappath("~/rest/examType")
-    	    		});
-    	    		client.post("/deleteById?id=" + selectedNode.id, function(ret) {
-    	    			if (ret.successful) {
-    	    				mx.indicate("info", "删除成功！");
-    	    				var _DataTree = me.view.findControlById("DataTree");
-    	    				_DataTree.load();
-    	    				// 加载dataTree
-    	    				dataForm = me.getView().findControlById("DataForm");
-    	    				dataForm.load();
-    	    			} else {
-    	    				mx.indicate("info", "删除失败！");
-    	    			}
-    	    		});  	    	
-    	    		//alert(selectedNode.id);
-    			}
+    	    	if(selectedNode.childNodes.length > 0){
+    	    		mx.indicate("info", "请先删除子节点！");
+    	    	}else{
+    	    		if (confirm("您确认删除数据吗？")) {
+        	    		var client = new mx.rpc.RESTClient({
+        	    			baseUrl : etTree.mappath("~/rest/examType")
+        	    		});
+        	    		client.post("/deleteById?id=" + selectedNode.id, function(ret) {
+        	    			if (ret.successful) {
+        	    				mx.indicate("info", "删除成功！");
+        	    				var _DataTree = me.view.findControlById("DataTree");
+        	    				_DataTree.load();
+        	    				// 加载dataTree
+        	    				dataForm = me.getView().findControlById("DataForm");
+        	    				dataForm.load();
+        	    			} else {
+        	    				mx.indicate("info", "删除失败！");
+        	    			}
+        	    		});  	    	
+        	    		//alert(selectedNode.id);
+        			}
+    	    	}
+    	    	
     	    }
     	}
     }
