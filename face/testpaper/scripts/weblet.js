@@ -15,6 +15,18 @@ $import("testpaper.views.TestPaperFormView");
 $import("testpaper.views.TestPaperFormViewController");				
 $import("testpaper.views.TestPaperFormViewUserController");		
 
+$import("testpaper.views.ExaminfoGridView");
+$import("testpaper.views.ExaminfoGridViewController");
+$import("testpaper.views.ExaminfoGridViewUserController");
+
+$import("testpaper.views.ManualRuleGridView");
+$import("testpaper.views.ManualRuleGridViewController");
+$import("testpaper.views.ManualRuleGridViewUserController");
+
+$import("testpaper.views.ManualRuleFormView");
+$import("testpaper.views.ManualRuleFormViewController");
+$import("testpaper.views.ManualRuleFormViewUserController");
+
 mx.weblets.WebletManager.register(
 {
     id: "testpaper",

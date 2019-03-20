@@ -30,13 +30,43 @@ testpaper.views.TestPaperFormViewController = function(){
 
 	//事件处理函数写在这里
 	me._saveButton_onclick = function() {
+		
+		
 		detailForm.save();
+	};
+	
+	me._addExaminButton_onclick = function() {
+//		var detailController = me.getController("ExaminfoGridView");
+//		console.log("detailController:"+detailController);
+//		var _win = detailController.getView().getWindow();	
+//		_win.showDialog();
+		
+		var detailController = me.getController("ManualRuleGridView");
+//		detailController.load();
+		var _win = detailController.getView().getWindow();	
+		_win.showDialog();
+		
+		
+//		var detailForm = detailController.getView().findControlById(formId);
+//		detailForm.load(primaryValue);
+//		var _win = detailController.getView().getWindow();	
+//		if(typeof(title) == "string")
+//			_win.setTitle(title);
+//		_win.showDialog();
+		
+//		var primaryKey = dataGrid.entityContainer.primaryKey;
+//		var primaryValue = dataGrid.selection.getValue(primaryKey);
+//		var detailController = me.getController("TestPaperFormView");
+//		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
 	};
 	
 	me._queryButton_onclick = function() {
 		console.log("_queryButton_onclick");
 //		detailForm.save();
 	};
+	
+	
+	
 	
 	return me.endOfClass(arguments);
 };

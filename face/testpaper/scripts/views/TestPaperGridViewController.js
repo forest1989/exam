@@ -65,6 +65,10 @@ testpaper.views.TestPaperGridViewController = function(){
 	me._NewButton_onclick = function() {
 		var detailController = me.getController("TestPaperFormView");
 		me.utils.showDetailViewWindow(null, detailController, "DataForm");
+		
+	
+		
+		
 	};
 
 	/**
@@ -86,6 +90,8 @@ testpaper.views.TestPaperGridViewController = function(){
 		var primaryKey = dataGrid.entityContainer.primaryKey;
 		var primaryValue = dataGrid.selection.getValue(primaryKey);
 		var detailController = me.getController("TestPaperFormView");
+		testpaper.testPaperId=primaryValue;
+		console.log("testpaper.testPaperId:"+testpaper.testPaperId);
 		me.utils.showDetailViewWindow(primaryValue, detailController, "DataForm");
 	};
 	
