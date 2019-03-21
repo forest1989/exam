@@ -12,7 +12,7 @@ public class ManualRule implements java.io.Serializable {
     
 	/** 手动规则试卷内容*/
 	
-	private String manualRuleId;
+	private Integer manualRuleId;
 	
 	
 	
@@ -41,17 +41,17 @@ public class ManualRule implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public ManualRule(String manualRuleId) {
+	public ManualRule(Integer manualRuleId) {
 	    this.manualRuleId = manualRuleId;
 	 }
 	 	   
 	
 	
-    public String getManualRuleId() {
+    public Integer getManualRuleId() {
         return this.manualRuleId;
     }
     
-    public void setManualRuleId(String manualRuleId) {
+    public void setManualRuleId(Integer manualRuleId) {
         this.manualRuleId = manualRuleId;
     }
 	

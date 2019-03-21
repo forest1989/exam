@@ -15,7 +15,7 @@ public class TestPaper implements java.io.Serializable {
     
 	/** 试卷ID*/
 	
-	private String testPaperId;
+	private Integer testPaperId;
 	
 	
 	
@@ -80,17 +80,17 @@ public class TestPaper implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public TestPaper(String testPaperId) {
+	public TestPaper(Integer testPaperId) {
 	    this.testPaperId = testPaperId;
 	 }
 	 	   
 	
 	
-    public String getTestPaperId() {
+    public Integer getTestPaperId() {
         return this.testPaperId;
     }
     
-    public void setTestPaperId(String testPaperId) {
+    public void setTestPaperId(Integer testPaperId) {
         this.testPaperId = testPaperId;
     }
 	

@@ -101,7 +101,7 @@ public class ManualRuleController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			manualruleBizc.delete(java.lang.String.valueOf(id));
+			manualruleBizc.delete(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
@@ -112,7 +112,7 @@ public class ManualRuleController {
 		if("null".equals(id)){
 			manualrule = null;
 		}else {
-			manualrule = manualruleBizc.get(java.lang.String.valueOf(id));
+			manualrule = manualruleBizc.get(java.lang.Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();

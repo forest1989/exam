@@ -101,7 +101,7 @@ public class TestPaperController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			testpaperBizc.delete(java.lang.String.valueOf(id));
+			testpaperBizc.delete(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
@@ -112,7 +112,7 @@ public class TestPaperController {
 		if("null".equals(id)){
 			testpaper = null;
 		}else {
-			testpaper = testpaperBizc.get(java.lang.String.valueOf(id));
+			testpaper = testpaperBizc.get(java.lang.Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();
