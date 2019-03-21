@@ -49,12 +49,12 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 	public AutomaticRule get(Serializable id) {
 
 		AutomaticRule automaticrule = super.get(id);
-		/*
+
 		if (automaticrule != null) {
 			Hibernate.initialize(automaticrule.getTestpaper());
 
 		}
-		*/
+
 		return automaticrule;
 	}
 
@@ -62,7 +62,7 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 	public QueryResultObject query(RequestCondition queryCondition) {
 
 		QueryResultObject qo = super.query(queryCondition);
-		/*
+
 		List<AutomaticRule> automaticrules = qo.getItems();
 		if (automaticrules != null) {
 			for (AutomaticRule automaticrule : automaticrules) {
@@ -70,7 +70,7 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 
 			}
 		}
-		*/
+
 		return qo;
 	}
 	

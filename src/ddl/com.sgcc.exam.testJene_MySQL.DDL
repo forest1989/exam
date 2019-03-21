@@ -36,7 +36,7 @@
         TEST_PAPER_NAME varchar(64) comment '试卷名称',
         AREA_ID varchar(10) comment '区域ID',
         STRU_ID varchar(255) comment '组织ID',
-        ANSWER_TIME datetime comment '答题时间',
+        ANSWER_TIME varchar(10) comment '答题时间',
         TEST_PAPER_TYPE varchar(1) comment '试卷生成类型(自动手动)',
         REMARKS varchar(255) comment '备注',
         CREATE_DATE datetime comment '创建时间',

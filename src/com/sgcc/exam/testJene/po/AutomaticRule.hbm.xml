@@ -4,9 +4,9 @@
 <!-- Generated 2019-3-21 10:13:54 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping> 
   <class name="com.sgcc.exam.testJene.po.AutomaticRule" table="AUTOMATIC_RULE"> 
-    <id name="automaticRuleId" type="java.lang.String"> 
+    <id name="automaticRuleId" type="java.lang.Integer"> 
       <column name="AUTOMATIC_RULE_ID" length="10"/>  
-      <generator class="assigned"/> 
+      <generator class="increment"/> 
     </id>  
     <many-to-one name="testpaper" class="com.sgcc.exam.testJene.po.TestPaper" fetch="select"> 
       <column name="TEST_PAPER_ID"/> 

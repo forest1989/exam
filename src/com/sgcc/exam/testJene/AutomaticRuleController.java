@@ -101,7 +101,7 @@ public class AutomaticRuleController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			automaticruleBizc.delete(java.lang.String.valueOf(id));
+			automaticruleBizc.delete(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
@@ -112,7 +112,7 @@ public class AutomaticRuleController {
 		if("null".equals(id)){
 			automaticrule = null;
 		}else {
-			automaticrule = automaticruleBizc.get(java.lang.String.valueOf(id));
+			automaticrule = automaticruleBizc.get(java.lang.Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();

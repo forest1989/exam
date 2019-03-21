@@ -12,7 +12,7 @@ public class AutomaticRule implements java.io.Serializable {
     
 	/** 自动规则试卷内容*/
 	
-	private String automaticRuleId;
+	private Integer automaticRuleId;
 	
 	
 	
@@ -41,17 +41,17 @@ public class AutomaticRule implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public AutomaticRule(String automaticRuleId) {
+	public AutomaticRule(Integer automaticRuleId) {
 	    this.automaticRuleId = automaticRuleId;
 	 }
 	 	   
 	
 	
-    public String getAutomaticRuleId() {
+    public Integer getAutomaticRuleId() {
         return this.automaticRuleId;
     }
     
-    public void setAutomaticRuleId(String automaticRuleId) {
+    public void setAutomaticRuleId(Integer automaticRuleId) {
         this.automaticRuleId = automaticRuleId;
     }
 	
