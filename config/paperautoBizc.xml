@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:module="http://www.sgcc.com.cn/schema/platform/module" xmlns:bizc="http://www.sgcc.com.cn/schema/platform/bizc" xsi:schemaLocation="http://www.springframework.org/schema/beans    http://www.springframework.org/schema/beans/spring-beans.xsd    http://www.sgcc.com.cn/schema/platform/module    http://www.sgcc.com.cn/schema/platform/module/module.xsd    http://www.sgcc.com.cn/schema/platform/bizc    http://www.sgcc.com.cn/schema/platform/bizc/bizc.xsd">  
+  <bizc:logic id="testpaperBizc">
+    <bizc:implementation type="java" target="com.sgcc.exam.paperauto.bizc.TestPaperBizc"/>
+    <bizc:service interface="com.sgcc.exam.paperauto.bizc.ITestPaperBizc">
+      <bizc:transaction>
+        <bizc:tranactionAttribute method="add*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="update*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="delete*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="get*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="true"/>
+        <bizc:tranactionAttribute method="query*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="true"/>
+      </bizc:transaction>
+    </bizc:service>
+  </bizc:logic>
+  <bizc:logic id="automaticruleBizc">
+    <bizc:implementation type="java" target="com.sgcc.exam.paperauto.bizc.AutomaticRuleBizc"/>
+    <bizc:service interface="com.sgcc.exam.paperauto.bizc.IAutomaticRuleBizc">
+      <bizc:transaction>
+        <bizc:tranactionAttribute method="add*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="update*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="delete*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="false"/>
+        <bizc:tranactionAttribute method="get*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="true"/>
+        <bizc:tranactionAttribute method="query*" propagation="REQUIRED" isolation="DEFAULT" timeout="-1" readOnly="true"/>
+      </bizc:transaction>
+    </bizc:service>
+  </bizc:logic>
+</beans>
