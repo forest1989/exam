@@ -130,8 +130,8 @@ paperauto.views.TestPaperFormView=function(){
 					{lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"TextEditor",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor",nullable:false,
 						displayMember: "name", valueMember: "id",  
-						items: [ { name: "自动", id: "2" }
-						       ]},
+						items: [ { name: "自动", id: "2" } 
+					       ]},
 					{lineBreak:false,name:"createBy",caption:"创建者",labelWidth:120,readOnly:false,id:"createBy",height:"22",editorType:"TextEditor"},
 					{lineBreak:false,name:"updateBy",caption:"更新者",labelWidth:120,readOnly:false,id:"updateBy",height:"22",editorType:"TextEditor"}
 				]
@@ -205,7 +205,8 @@ paperauto.views.TestPaperFormView=function(){
 		_DataGrid = new mx.datacontrols.DataGrid({
 			columns:[
 				{dataType:"string",name:"automaticRuleId",width:"120",caption:"自动规则试卷内容",readOnly:false,id:"automaticRuleId",editorType:"TextEditor",nullable:false},
-				{dataType:"string",name:"examTypeId",width:"120",caption:"试题类型ID",readOnly:false,id:"examTypeId",editorType:"TextEditor"},
+				{dataType:"string",name:"examTypeId",width:"120",caption:"试题类型",readOnly:false,id:"examTypeId",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
+					url: paperauto.mappath("~/rest/examTypeTree/tree")},
 				{dataType:"string",name:"examCount",width:"120",caption:"试题道数",readOnly:false,id:"examCount",editorType:"TextEditor"},
 				{dataType:"string",name:"delFlag",width:"120",caption:"删除标记",readOnly:false,id:"delFlag",editorType:"TextEditor",value:"0"}
 			],

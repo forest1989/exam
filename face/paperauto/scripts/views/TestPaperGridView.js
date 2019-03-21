@@ -84,7 +84,17 @@ paperauto.views.TestPaperGridView=function(){
 			columns:[
 				{dataType:"string",name:"testPaperName",width:"120",caption:"试卷名称",readOnly:false,id:"testPaperName",editorType:"TextEditor"},
 				{name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"TextEditor"},
-				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor"},
+				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor",
+					renderCell: function(p_item, $p_cell) { 
+					var value = null;
+					if (p_item.getValue("testPaperType") == '1') { 
+						
+						value = "手动";
+					}else if(p_item.getValue("testPaperType") == '2') { 
+						value = "自动";
+					}
+					$p_cell.text(value);  
+				}},
 				{dataType:"string",name:"createBy",width:"120",caption:"创建者",readOnly:false,id:"createBy",editorType:"TextEditor"},
 				{dataType:"string",name:"updateBy",width:"120",caption:"更新者",readOnly:false,id:"updateBy",editorType:"TextEditor"}
 			],

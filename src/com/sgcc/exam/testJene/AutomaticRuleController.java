@@ -17,6 +17,8 @@ import com.sgcc.uap.rest.annotation.ItemsRequestBody;
 import com.sgcc.uap.rest.annotation.QueryRequestParam;
 import org.osgi.framework.Bundle;
 import com.sgcc.uap.rest.annotation.ColumnResponseBody;
+import com.sgcc.exam.etype.bizc.IExamTypeBizc;
+import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.exam.testJene.bizc.IAutomaticRuleBizc;
 import com.sgcc.uap.rest.annotation.IdRequestBody;
 import org.springframework.web.client.RestClientException;
@@ -24,6 +26,7 @@ import com.sgcc.uap.rest.support.IDRequestObject;
 import com.sgcc.uap.rest.annotation.ColumnRequestParam;
 import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
 import com.sgcc.exam.testJene.po.AutomaticRule;
+import com.sgcc.exam.testJene.po.ManualRule;
 import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
 import java.util.*;
 import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
@@ -44,7 +47,8 @@ public class AutomaticRuleController {
 	
 	@Resource
 	private IDataDictionaryBizC dataDictionaryBizC;
-	
+	@Resource
+	private IExamTypeBizc examtypeBizc;
 	@Resource
 	private IMetadataService metadataService;
 	@Resource
@@ -127,6 +131,19 @@ public class AutomaticRuleController {
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
 	    QueryResultObject queryResult = automaticruleBizc.query(queryCondition);
 
+	    
+//	    QueryResultObject queryResult = manualruleBizc.query(queryCondition);
+	    List<AutomaticRule> lit=queryResult.getItems();
+        List<AutomaticRule> items =new ArrayList<AutomaticRule>();
+        for (int i = 0; i < lit.size(); i++) {
+        	AutomaticRule mr=lit.get(i);
+        	ExamType et = examtypeBizc.getExamtype(Integer.valueOf(mr.getExamTypeId()));
+        	mr.setExamTypeId(et.getTypeName());
+        	items.add(mr);
+        	mr=new AutomaticRule();
+		}
+        queryResult.setItems(items);
+	    
 	    return queryResult;
     }
 
