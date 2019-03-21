@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<!-- Generated 2019-3-20 18:48:13 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2019-3-21 10:13:54 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping> 
-  <class name="com.sgcc.exam.paperauto.po.TestPaper" table="TEST_PAPER"> 
-    <id name="testPaperId" type="java.lang.Integer"> 
+  <class name="com.sgcc.exam.testJene.po.TestPaper" table="TEST_PAPER"> 
+    <id name="testPaperId" type="java.lang.String"> 
       <column name="TEST_PAPER_ID" length="10"/>  
-      <generator class="increment"/> 
+      <generator class="assigned"/> 
     </id>  
     <set name="automaticrules" table="AUTOMATIC_RULE" inverse="true" lazy="true" fetch="select"> 
       <key> 
         <column name="TEST_PAPER_ID"/> 
       </key>  
-      <one-to-many class="com.sgcc.exam.paperauto.po.AutomaticRule"/> 
+      <one-to-many class="com.sgcc.exam.testJene.po.AutomaticRule"/> 
+    </set>  
+    <set name="manualrules" table="MANUAL_RULE" inverse="true" lazy="true" fetch="select"> 
+      <key> 
+        <column name="TEST_PAPER_ID"/> 
+      </key>  
+      <one-to-many class="com.sgcc.exam.testJene.po.ManualRule"/> 
     </set>  
     <property name="testPaperName" type="java.lang.String" lazy="true"> 
       <column name="TEST_PAPER_NAME" precision="64" scale="0"/> 
@@ -23,8 +29,8 @@
     <property name="struId" type="java.lang.String" lazy="true"> 
       <column name="STRU_ID" precision="255" scale="0"/> 
     </property>  
-    <property name="answerTime" type="java.lang.String" lazy="true"> 
-      <column name="ANSWER_TIME" precision="10" scale="0"/> 
+    <property name="answerTime" type="java.util.Date" lazy="true"> 
+      <column name="ANSWER_TIME" scale="0"/> 
     </property>  
     <property name="testPaperType" type="java.lang.String" lazy="true"> 
       <column name="TEST_PAPER_TYPE" precision="1" scale="0"/> 

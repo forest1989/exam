@@ -1,11 +1,11 @@
-package com.sgcc.exam.paperauto.bizc;
+package com.sgcc.exam.testJene.bizc;
+import com.sgcc.exam.testJene.po.AutomaticRule;
 import java.util.*;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.mdd.runtime.base.BizCDefaultImpl;
 import java.io.Serializable;
 import org.hibernate.Hibernate;
-import com.sgcc.exam.paperauto.po.AutomaticRule;
 
 
 public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializable> implements IAutomaticRuleBizc {
@@ -49,12 +49,12 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 	public AutomaticRule get(Serializable id) {
 
 		AutomaticRule automaticrule = super.get(id);
-
+		/*
 		if (automaticrule != null) {
 			Hibernate.initialize(automaticrule.getTestpaper());
 
 		}
-
+		*/
 		return automaticrule;
 	}
 
@@ -62,7 +62,7 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 	public QueryResultObject query(RequestCondition queryCondition) {
 
 		QueryResultObject qo = super.query(queryCondition);
-
+		/*
 		List<AutomaticRule> automaticrules = qo.getItems();
 		if (automaticrules != null) {
 			for (AutomaticRule automaticrule : automaticrules) {
@@ -70,7 +70,7 @@ public class AutomaticRuleBizc extends BizCDefaultImpl<AutomaticRule, Serializab
 
 			}
 		}
-
+		*/
 		return qo;
 	}
 	

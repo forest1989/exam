@@ -1,10 +1,9 @@
-package com.sgcc.exam.paperauto;
+package com.sgcc.exam.testJene;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
 import com.sgcc.uap.rest.annotation.VoidResponseBody;
 import java.io.Serializable;
 import org.springframework.http.server.ServletServerHttpRequest;
-import com.sgcc.exam.paperauto.po.TestPaper;
 import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
 import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
 import java.net.URL;
 import org.osgi.framework.FrameworkUtil;
-import com.sgcc.exam.paperauto.bizc.ITestPaperBizc;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgcc.uap.rest.annotation.ItemsRequestBody;
 import com.sgcc.uap.rest.annotation.QueryRequestParam;
@@ -24,12 +22,14 @@ import org.springframework.web.client.RestClientException;
 import com.sgcc.uap.rest.support.IDRequestObject;
 import com.sgcc.uap.rest.annotation.ColumnRequestParam;
 import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
+import com.sgcc.exam.testJene.po.TestPaper;
 import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
 import java.util.*;
 import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.mdd.runtime.utils.HttpMessageConverter;
 import javax.annotation.Resource;
+import com.sgcc.exam.testJene.bizc.ITestPaperBizc;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.sgcc.uap.bizc.sysbizc.datadictionary.IDataDictionaryBizC;
@@ -55,7 +55,7 @@ public class TestPaperController {
 	public @ColumnResponseBody List<ViewAttributeData> getPropertyMeta(@ColumnRequestParam("params") String[] filterPropertys) throws Exception {
 	
 		List<ViewAttributeData> datas = null;
-		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.paperauto.po.TestPaper", filterPropertys);
+		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.testJene.po.TestPaper", filterPropertys);
 		return datas;
 	}
 	

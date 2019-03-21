@@ -1,24 +1,24 @@
-package com.sgcc.exam.paperauto.bizc;
+package com.sgcc.exam.testJene.bizc;
 
+import com.sgcc.exam.testJene.po.AutomaticRule;
 import java.util.*;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.mdd.runtime.base.IBizC;
 import java.io.Serializable;
-import com.sgcc.exam.paperauto.po.TestPaper;
 
 
-public interface ITestPaperBizc extends IBizC<TestPaper,Serializable>{
+public interface IAutomaticRuleBizc extends IBizC<AutomaticRule,Serializable>{
 
-	public TestPaper add(TestPaper be);
+	public AutomaticRule add(AutomaticRule be);
 	
 	public void delete(Serializable id);
 	
 	public QueryResultObject query(RequestCondition queryCondition);
 	
-	public TestPaper get(Serializable id);
+	public AutomaticRule get(Serializable id);
 	
-	public void update(TestPaper testpaper,Serializable pk);
+	public void update(AutomaticRule automaticrule,Serializable pk);
 	
 	
 }

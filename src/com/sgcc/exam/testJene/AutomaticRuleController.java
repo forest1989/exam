@@ -1,10 +1,9 @@
-package com.sgcc.exam.paperauto;
+package com.sgcc.exam.testJene;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
 import com.sgcc.uap.rest.annotation.VoidResponseBody;
 import java.io.Serializable;
 import org.springframework.http.server.ServletServerHttpRequest;
-import com.sgcc.exam.paperauto.bizc.IAutomaticRuleBizc;
 import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
 import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
@@ -13,17 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
 import java.net.URL;
 import org.osgi.framework.FrameworkUtil;
-import com.sgcc.exam.paperauto.po.AutomaticRule;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgcc.uap.rest.annotation.ItemsRequestBody;
 import com.sgcc.uap.rest.annotation.QueryRequestParam;
 import org.osgi.framework.Bundle;
 import com.sgcc.uap.rest.annotation.ColumnResponseBody;
+import com.sgcc.exam.testJene.bizc.IAutomaticRuleBizc;
 import com.sgcc.uap.rest.annotation.IdRequestBody;
 import org.springframework.web.client.RestClientException;
 import com.sgcc.uap.rest.support.IDRequestObject;
 import com.sgcc.uap.rest.annotation.ColumnRequestParam;
 import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
+import com.sgcc.exam.testJene.po.AutomaticRule;
 import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
 import java.util.*;
 import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
@@ -55,7 +55,7 @@ public class AutomaticRuleController {
 	public @ColumnResponseBody List<ViewAttributeData> getPropertyMeta(@ColumnRequestParam("params") String[] filterPropertys) throws Exception {
 	
 		List<ViewAttributeData> datas = null;
-		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.paperauto.po.AutomaticRule", filterPropertys);
+		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.testJene.po.AutomaticRule", filterPropertys);
 		return datas;
 	}
 	

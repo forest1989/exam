@@ -1,24 +1,24 @@
-package com.sgcc.exam.paperauto.bizc;
+package com.sgcc.exam.testJene.bizc;
 
 import java.util.*;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.mdd.runtime.base.IBizC;
 import java.io.Serializable;
-import com.sgcc.exam.paperauto.po.AutomaticRule;
+import com.sgcc.exam.testJene.po.ManualRule;
 
 
-public interface IAutomaticRuleBizc extends IBizC<AutomaticRule,Serializable>{
+public interface IManualRuleBizc extends IBizC<ManualRule,Serializable>{
 
-	public AutomaticRule add(AutomaticRule be);
+	public ManualRule add(ManualRule be);
 	
 	public void delete(Serializable id);
 	
 	public QueryResultObject query(RequestCondition queryCondition);
 	
-	public AutomaticRule get(Serializable id);
+	public ManualRule get(Serializable id);
 	
-	public void update(AutomaticRule automaticrule,Serializable pk);
+	public void update(ManualRule manualrule,Serializable pk);
 	
 	
 }

@@ -1,10 +1,10 @@
-package com.sgcc.exam.paperauto.bizc;
+package com.sgcc.exam.testJene.bizc;
 import java.util.*;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.mdd.runtime.base.BizCDefaultImpl;
 import java.io.Serializable;
-import com.sgcc.exam.paperauto.po.TestPaper;
+import com.sgcc.exam.testJene.po.TestPaper;
 
 
 public class TestPaperBizc extends BizCDefaultImpl<TestPaper, Serializable> implements ITestPaperBizc {

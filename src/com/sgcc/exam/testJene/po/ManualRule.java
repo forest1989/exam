@@ -1,18 +1,18 @@
-package com.sgcc.exam.paperauto.po;
+package com.sgcc.exam.testJene.po;
 
 
 /**
- * AutomaticRule
- * @author Administrator
- * @date 2019-03-20
+ * ManualRule
+ * @author tyg
+ * @date 2019-03-21
  */
-public class AutomaticRule implements java.io.Serializable {
+public class ManualRule implements java.io.Serializable {
 	
 	
     
-	/** 自动规则试卷内容*/
+	/** 手动规则试卷内容*/
 	
-	private String automaticRuleId;
+	private String manualRuleId;
 	
 	
 	
@@ -22,9 +22,9 @@ public class AutomaticRule implements java.io.Serializable {
 	
 	private String examTypeId;
 	
-	/** 试题道数*/
+	/** 试题ID集合*/
 	
-	private String examCount;
+	private String examIds;
 	
 	/** 删除标记*/
 	
@@ -36,23 +36,23 @@ public class AutomaticRule implements java.io.Serializable {
 	
 
     /** 无参构造方法 */
-    public AutomaticRule() {
+    public ManualRule() {
     } 
     
 		
 	/** 构造方法 */
-	public AutomaticRule(String automaticRuleId) {
-	    this.automaticRuleId = automaticRuleId;
+	public ManualRule(String manualRuleId) {
+	    this.manualRuleId = manualRuleId;
 	 }
 	 	   
 	
 	
-    public String getAutomaticRuleId() {
-        return this.automaticRuleId;
+    public String getManualRuleId() {
+        return this.manualRuleId;
     }
     
-    public void setAutomaticRuleId(String automaticRuleId) {
-        this.automaticRuleId = automaticRuleId;
+    public void setManualRuleId(String manualRuleId) {
+        this.manualRuleId = manualRuleId;
     }
 	
 	
@@ -74,12 +74,12 @@ public class AutomaticRule implements java.io.Serializable {
     }
 	
 	
-    public String getExamCount() {
-        return this.examCount;
+    public String getExamIds() {
+        return this.examIds;
     }
     
-    public void setExamCount(String examCount) {
-        this.examCount = examCount;
+    public void setExamIds(String examIds) {
+        this.examIds = examIds;
     }
 	
 	
@@ -105,10 +105,10 @@ public class AutomaticRule implements java.io.Serializable {
          StringBuffer buffer = new StringBuffer();
 
 		 buffer.append(getClass().getName()).append("@").append(Integer.toHexString(hashCode())).append(" [");
-		 buffer.append("automaticRuleId").append("='").append(getAutomaticRuleId()).append("' ");			
+		 buffer.append("manualRuleId").append("='").append(getManualRuleId()).append("' ");			
 		 buffer.append("testpaper").append("='").append(getTestpaper()).append("' ");			
 		 buffer.append("examTypeId").append("='").append(getExamTypeId()).append("' ");			
-		 buffer.append("examCount").append("='").append(getExamCount()).append("' ");			
+		 buffer.append("examIds").append("='").append(getExamIds()).append("' ");			
 		 buffer.append("delFlag").append("='").append(getDelFlag()).append("' ");			
 		 buffer.append("mxVirtualId").append("='").append(getMxVirtualId()).append("' ");			
 		 buffer.append("]");
@@ -119,13 +119,13 @@ public class AutomaticRule implements java.io.Serializable {
 	public boolean equals(Object other) {
         if ( (this == other ) ) return true;
 		if ( (other == null ) ) return false;
-		if ( !(other instanceof AutomaticRule) ) return false;
-		AutomaticRule castOther = ( AutomaticRule ) other; 
+		if ( !(other instanceof ManualRule) ) return false;
+		ManualRule castOther = ( ManualRule ) other; 
          
-		return ( (this.getAutomaticRuleId()==castOther.getAutomaticRuleId()) || ( this.getAutomaticRuleId()!=null && castOther.getAutomaticRuleId()!=null && this.getAutomaticRuleId().equals(castOther.getAutomaticRuleId()) ) )
+		return ( (this.getManualRuleId()==castOther.getManualRuleId()) || ( this.getManualRuleId()!=null && castOther.getManualRuleId()!=null && this.getManualRuleId().equals(castOther.getManualRuleId()) ) )
  && ( (this.getTestpaper()==castOther.getTestpaper()) || ( this.getTestpaper()!=null && castOther.getTestpaper()!=null && this.getTestpaper().equals(castOther.getTestpaper()) ) )
  && ( (this.getExamTypeId()==castOther.getExamTypeId()) || ( this.getExamTypeId()!=null && castOther.getExamTypeId()!=null && this.getExamTypeId().equals(castOther.getExamTypeId()) ) )
- && ( (this.getExamCount()==castOther.getExamCount()) || ( this.getExamCount()!=null && castOther.getExamCount()!=null && this.getExamCount().equals(castOther.getExamCount()) ) )
+ && ( (this.getExamIds()==castOther.getExamIds()) || ( this.getExamIds()!=null && castOther.getExamIds()!=null && this.getExamIds().equals(castOther.getExamIds()) ) )
  && ( (this.getDelFlag()==castOther.getDelFlag()) || ( this.getDelFlag()!=null && castOther.getDelFlag()!=null && this.getDelFlag().equals(castOther.getDelFlag()) ) )
  && ( (this.getMxVirtualId()==castOther.getMxVirtualId()) || ( this.getMxVirtualId()!=null && castOther.getMxVirtualId()!=null && this.getMxVirtualId().equals(castOther.getMxVirtualId()) ) );
    }
@@ -133,10 +133,10 @@ public class AutomaticRule implements java.io.Serializable {
    public int hashCode() {
        int result = 17;
          
-		result = 37 * result + ( getAutomaticRuleId() == null ? 0 : this.getAutomaticRuleId().hashCode() );
+		result = 37 * result + ( getManualRuleId() == null ? 0 : this.getManualRuleId().hashCode() );
 		result = 37 * result + ( getTestpaper() == null ? 0 : this.getTestpaper().hashCode() );
 		result = 37 * result + ( getExamTypeId() == null ? 0 : this.getExamTypeId().hashCode() );
-		result = 37 * result + ( getExamCount() == null ? 0 : this.getExamCount().hashCode() );
+		result = 37 * result + ( getExamIds() == null ? 0 : this.getExamIds().hashCode() );
 		result = 37 * result + ( getDelFlag() == null ? 0 : this.getDelFlag().hashCode() );
 		result = 37 * result + ( getMxVirtualId() == null ? 0 : this.getMxVirtualId().hashCode() );
 		return result;

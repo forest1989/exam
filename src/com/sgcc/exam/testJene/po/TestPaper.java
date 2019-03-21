@@ -1,4 +1,4 @@
-package com.sgcc.exam.paperauto.po;
+package com.sgcc.exam.testJene.po;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,8 +6,8 @@ import java.util.Date;
 
 /**
  * TestPaper
- * @author Administrator
- * @date 2019-03-20
+ * @author tyg
+ * @date 2019-03-21
  */
 public class TestPaper implements java.io.Serializable {
 	
@@ -15,11 +15,15 @@ public class TestPaper implements java.io.Serializable {
     
 	/** 试卷ID*/
 	
-	private Integer testPaperId;
+	private String testPaperId;
 	
 	
 	
 	private Set<AutomaticRule> automaticrules = new HashSet<AutomaticRule>(0);
+	
+	
+	
+	private Set<ManualRule> manualrules = new HashSet<ManualRule>(0);
 	
 	/** 试卷名称*/
 	
@@ -35,7 +39,7 @@ public class TestPaper implements java.io.Serializable {
 	
 	/** 答题时间*/
 	
-	private String answerTime;
+	private Date answerTime;
 	
 	/** 试卷生成类型(自动手动)*/
 	
@@ -76,17 +80,17 @@ public class TestPaper implements java.io.Serializable {
     
 		
 	/** 构造方法 */
-	public TestPaper(Integer testPaperId) {
+	public TestPaper(String testPaperId) {
 	    this.testPaperId = testPaperId;
 	 }
 	 	   
 	
 	
-    public Integer getTestPaperId() {
+    public String getTestPaperId() {
         return this.testPaperId;
     }
     
-    public void setTestPaperId(Integer testPaperId) {
+    public void setTestPaperId(String testPaperId) {
         this.testPaperId = testPaperId;
     }
 	
@@ -97,6 +101,15 @@ public class TestPaper implements java.io.Serializable {
     
     public void setAutomaticrules(Set<AutomaticRule> automaticrules) {
         this.automaticrules = automaticrules;
+    }
+	
+	
+    public Set<ManualRule> getManualrules() {
+        return this.manualrules;
+    }
+    
+    public void setManualrules(Set<ManualRule> manualrules) {
+        this.manualrules = manualrules;
     }
 	
 	
@@ -127,11 +140,11 @@ public class TestPaper implements java.io.Serializable {
     }
 	
 	
-    public String getAnswerTime() {
+    public Date getAnswerTime() {
         return this.answerTime;
     }
     
-    public void setAnswerTime(String answerTime) {
+    public void setAnswerTime(Date answerTime) {
         this.answerTime = answerTime;
     }
 	
@@ -255,6 +268,7 @@ public class TestPaper implements java.io.Serializable {
        int result = 17;
          
 		result = 37 * result + ( getTestPaperId() == null ? 0 : this.getTestPaperId().hashCode() );
+		
 		
 		result = 37 * result + ( getTestPaperName() == null ? 0 : this.getTestPaperName().hashCode() );
 		result = 37 * result + ( getAreaId() == null ? 0 : this.getAreaId().hashCode() );
