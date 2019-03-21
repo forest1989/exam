@@ -83,7 +83,7 @@ paperauto.views.TestPaperGridView=function(){
 		_DataGrid = new mx.datacontrols.DataGrid({
 			columns:[
 				{dataType:"string",name:"testPaperName",width:"120",caption:"试卷名称",readOnly:false,id:"testPaperName",editorType:"TextEditor"},
-				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"DateTimeEditor"},
+				{name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"TextEditor"},
 				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor"},
 				{dataType:"string",name:"createBy",width:"120",caption:"创建者",readOnly:false,id:"createBy",editorType:"TextEditor"},
 				{dataType:"string",name:"updateBy",width:"120",caption:"更新者",readOnly:false,id:"updateBy",editorType:"TextEditor"}
