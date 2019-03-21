@@ -208,8 +208,17 @@ papersd.views.TestPaperFormView=function(){
 				    displayColumn:"examId",
 					displayCheckBox : true,
 					dataGrid:{
+						searchBox:{
+			        	    width:"100%",
+							id:"DataGridSearchBox3",
+							fields:[
+								{lineBreak:false,valueType:"string",name:"examTypeId",caption:"试题类型",labelWidth:100,readOnly:false,id:"examTypeId",editorType:"DropDownTreeEditor",displayCheckBox: false, // 设置是否多选
+									url: papersd.mappath("~/rest/examTypeTree/tree")}
+			    			]
+						},
 						columns:[
 						         {name: "examContentText", caption: "试题内容" ,width:"260", editorType: "RichTextEditor",visible:true},
+						         {name: "examTypeId", caption: "试题类型" ,width:"120", editorType: "TextEditor",visible:true},
 						         {name: "examAnswer", caption: "试题答案" ,width:"120", editorType: "TextEditor",visible:true},
 						         {name: "answerAnalyze", caption: "答案解析" ,width:"120", editorType: "TextEditor",visible:true},
 						         {name: "examMark", caption: "试题分数" ,width:"120", editorType: "TextEditor",visible:true}
@@ -221,7 +230,6 @@ papersd.views.TestPaperFormView=function(){
 							baseUrl : papersd.mappath("~/rest/examinfo/")
 						}}
 			],
-			
 			allowEditing:true,
 			allowPaging:true,
 			validateOnSaving:true,
