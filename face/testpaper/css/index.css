@@ -10,7 +10,7 @@
 
 .toolbar {
     height: 30px;
-    background: aqua;
+    background: #BFDBFF;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,7 +57,7 @@
 }
 
 .testpaper-chooser-row-item1-label {
-    background: #ff0000;
+    background: #fffff0;
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
@@ -66,17 +66,17 @@
     justify-content: center;
 }
 
-.testpaper-chooser-type-item{
+.testpaper-chooser-type-item {
     margin-top: 2px;
     padding: 15px;
     background-color: bisque;
 }
 
-.question-chooser-head{
+.question-chooser-head {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: aquamarine;
+    background-color: #E9E9E9;
 
 }
 
@@ -85,13 +85,27 @@
 
 }
 
-.question-view{
+.question-view {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.question-sure{
+.question-sure {
     margin-left: 15px;
+}
+
+.testpaper-chooser-type-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.testpaper-chooser-type-span {
+    margin-top: 1px;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #284C79;
 }

@@ -10,6 +10,8 @@ import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.mdd.runtime.validate.IValidateService;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
 import java.net.URL;
 import com.sgcc.exam.api.bizc.IAreaBizc;
@@ -126,7 +128,6 @@ public class AreaController {
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
 	    QueryResultObject queryResult = areaBizc.query(queryCondition);
-
 	    return queryResult;
     }
 

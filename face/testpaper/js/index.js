@@ -1,10 +1,10 @@
-let pageNum=1;
-let pageSize=2;
-let paperListDataIsSuc=true;
+let pageNum = 1;
+let pageSize = 2;
+let paperListDataIsSuc = true;
 
-let questionPageNum=1;
-let questionPageSize=2;
-let questionListDataIsSuc=true;
+let questionPageNum = 1;
+let questionPageSize = 2;
+let questionListDataIsSuc = true;
 
 
 $(function () {
@@ -12,7 +12,6 @@ $(function () {
 
 
     getPaperListData();
-
 
 
     $("#btn-chooser-testpaper").click(function () {
@@ -31,7 +30,10 @@ $(function () {
         ShowPage(1);
     });
 
-
+    $("#question-item-type").click(function () {
+        let id=$(this).attr("data-id");
+        console.log("id:"+id);
+    });
 
 
     $("#pestpaper-gennerate-type").change(function () {
@@ -47,43 +49,43 @@ $(function () {
 
 
     $("#testlist-provious").click(function () {
-        if(paperListDataIsSuc){
-            if(pageNum>1){
+        if (paperListDataIsSuc) {
+            if (pageNum > 1) {
                 pageNum--;
             }
             getPaperListData();
-        }else{
+        } else {
             alert("暂无数据");
         }
     });
 
     $("#testlist-next").click(function () {
 
-        if(paperListDataIsSuc){
+        if (paperListDataIsSuc) {
             pageNum++;
             getPaperListData();
-        }else{
+        } else {
             alert("暂无数据");
         }
     });
 
     $("#questionlist-provious").click(function () {
-        if(questionListDataIsSuc){
-            if(questionPageNum>1){
+        if (questionListDataIsSuc) {
+            if (questionPageNum > 1) {
                 questionPageNum--;
             }
             getQuestionListData();
-        }else{
+        } else {
             alert("暂无数据");
         }
     });
 
     $("#questionlist-next").click(function () {
 
-        if(questionListDataIsSuc){
+        if (questionListDataIsSuc) {
             questionPageNum++;
             getQuestionListData();
-        }else{
+        } else {
             alert("暂无数据");
         }
     });
@@ -92,51 +94,57 @@ $(function () {
 });
 
 function getPaperListData() {
-    get(api.testpaper+"?pageNum="+pageNum+"&pageSize="+pageSize+"&paperName=",function (data) {
-        if(data.resultValue.length>0){
+    get(api.testpaper + "?pageNum=" + pageNum + "&pageSize=" + pageSize + "&paperName=", function (data) {
+        if (data.resultValue.length > 0) {
             setListData(data);
-            paperListDataIsSuc=true;
+            paperListDataIsSuc = true;
             $("#curpage").html(pageNum);
 
-        }else{
-            paperListDataIsSuc=false;
+        } else {
+            paperListDataIsSuc = false;
             alert("暂无数据");
         }
     });
 }
 
 function getQuestionListData() {
-    get(api.testpaper+"?pageNum="+pageNum+"&pageSize="+pageSize+"&paperName=",function (data) {
-        if(data.resultValue.length>0){
+    get(api.testpaper + "?pageNum=" + pageNum + "&pageSize=" + pageSize + "&paperName=", function (data) {
+        if (data.resultValue.length > 0) {
             setQuestionListData(data);
-            questionListDataIsSuc=true;
+            questionListDataIsSuc = true;
             $("#questioncurpage").html(questionPageNum);
-        }else{
-            questionListDataIsSuc=false;
-            alert("暂无数据");
-        }
-    });
-}
-function getQuestionTypeOneData() {
-    get(api.testpaper+"?pageNum="+pageNum+"&pageSize="+pageSize+"&paperName=",function (data) {
-        if(data.resultValue.length>0){
-            setQuestionListData(data);
-            questionListDataIsSuc=true;
-            $("#questioncurpage").html(questionPageNum);
-        }else{
-            questionListDataIsSuc=false;
+        } else {
+            questionListDataIsSuc = false;
             alert("暂无数据");
         }
     });
 }
 
+function getQuestionTypeOneData() {
+    get(api.questionTypeOne, function (data) {
+        // TYPE_NAME
+        let questiontype = $("#question-type-div");
+        questiontype.empty();
+
+        $.each(data.resultValue, function (i, item) {
+            let html = '';
+           let  id=item.EXAM_TYPE_ID;
+            html += "<span id='question-item-type' class='testpaper-chooser-type-span'  data-id="+id+" >" + item.TYPE_NAME + "</span>";
+
+            console.log("i:" + i);
+            questiontype.append(html);
+        });
+
+
+    });
+}
 
 
 function ShowPage(pageShow) {
     //0显示首页 1试卷生成页面；
 
-            // $('#home').css('display', 'none');
-            // $('#testPaperGenerate').css('display', 'none');
+    // $('#home').css('display', 'none');
+    // $('#testPaperGenerate').css('display', 'none');
 
     switch (pageShow) {
         case 0:
@@ -153,6 +161,7 @@ function ShowPage(pageShow) {
             $('#home').css('display', 'none');
             $('#testPaperGenerate').css('display', 'none');
             $('#testPaper-chooser').css('display', 'inline');
+            getQuestionTypeOneData();
             setQuestionListData();
             break;
     }
@@ -166,7 +175,7 @@ function setListData(data) {
     let tableid = $("#tableid");
     tableid.empty();
 
-   let head='<tr class="max-width">' +
+    let head = '<tr class="max-width">' +
         '<td>试卷名称</td>' +
         // '<td>区域ID</td>' +
         '<td>组织ID</td>' +
@@ -201,18 +210,28 @@ function setListData(data) {
 function setQuestionListData(data) {
 
 
-    let data1=[{"item1":"试题内容","item2":"试题内容(图片)","item3":"试题类型（单选，多选）","item4":"难易程度（难度等级暂定）"
-    ,"item5":"试题分类ID","item6":"试题答案","item7":"答案解析","item8":"试题分数"},{"item1":"试题内容","item2":"试题内容(图片)","item3":"试题类型（单选，多选）","item4":"难易程度（难度等级暂定）"
-        ,"item5":"试题分类ID","item6":"试题答案","item7":"答案解析","item8":"试题分数"},{"item1":"试题内容","item2":"试题内容(图片)","item3":"试题类型（单选，多选）","item4":"难易程度（难度等级暂定）"
-        ,"item5":"试题分类ID","item6":"试题答案","item7":"答案解析","item8":"试题分数"},{"item1":"试题内容","item2":"试题内容(图片)","item3":"试题类型（单选，多选）","item4":"难易程度（难度等级暂定）"
-        ,"item5":"试题分类ID","item6":"试题答案","item7":"答案解析","item8":"试题分数"},{"item1":"试题内容","item2":"试题内容(图片)","item3":"试题类型（单选，多选）","item4":"难易程度（难度等级暂定）"
-        ,"item5":"试题分类ID","item6":"试题答案","item7":"答案解析","item8":"试题分数"}];
+    let data1 = [{
+        "item1": "试题内容", "item2": "试题内容(图片)", "item3": "试题类型（单选，多选）", "item4": "难易程度（难度等级暂定）"
+        , "item5": "试题分类ID", "item6": "试题答案", "item7": "答案解析", "item8": "试题分数"
+    }, {
+        "item1": "试题内容", "item2": "试题内容(图片)", "item3": "试题类型（单选，多选）", "item4": "难易程度（难度等级暂定）"
+        , "item5": "试题分类ID", "item6": "试题答案", "item7": "答案解析", "item8": "试题分数"
+    }, {
+        "item1": "试题内容", "item2": "试题内容(图片)", "item3": "试题类型（单选，多选）", "item4": "难易程度（难度等级暂定）"
+        , "item5": "试题分类ID", "item6": "试题答案", "item7": "答案解析", "item8": "试题分数"
+    }, {
+        "item1": "试题内容", "item2": "试题内容(图片)", "item3": "试题类型（单选，多选）", "item4": "难易程度（难度等级暂定）"
+        , "item5": "试题分类ID", "item6": "试题答案", "item7": "答案解析", "item8": "试题分数"
+    }, {
+        "item1": "试题内容", "item2": "试题内容(图片)", "item3": "试题类型（单选，多选）", "item4": "难易程度（难度等级暂定）"
+        , "item5": "试题分类ID", "item6": "试题答案", "item7": "答案解析", "item8": "试题分数"
+    }];
     console.log("setListData:" + JSON.stringify(data));
 
     let tableid = $("#table-question");
     tableid.empty();
 
-    let head='<tr class="max-width">' +
+    let head = '<tr class="max-width">' +
         '<td>选择</td>' +
 
         '<td>试题内容(文本)</td>' +
@@ -245,15 +264,6 @@ function setQuestionListData(data) {
         tableid.append(html);
     });
 }
-
-
-
-
-
-
-
-
-
 
 
 // let data = {

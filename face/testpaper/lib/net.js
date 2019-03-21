@@ -2,7 +2,7 @@ let base_url;
 getUri('lilong');
 api = {};
 api.testpaper = base_url + 'answers/getPaperList';
-api.testpaper = base_url + 'answers/getPaperList';
+api.questionTypeOne = base_url + 'apiExamInfoType/';
 
 
 function getUri(type) {

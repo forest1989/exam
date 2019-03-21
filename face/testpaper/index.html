@@ -41,8 +41,9 @@
     <!--添加试卷-->
     <div id="testPaperGenerate" class="root-column max-width">
         <div class="toolbar max-width">
-            <div id="addTestPaper-return" class="toolbar-new">返回</div>
+            <!--<div id="addTestPaper-return" class="toolbar-new">返回</div>-->
 
+            <button id="addTestPaper-return" class="toolbar-new">返回</button>
             <button class="question-sure">生成试卷</button>
             <!--<div id="addTestPaper-generate" class="toolbar-new">生成试卷</div>-->
         </div>
@@ -72,7 +73,8 @@
     <!--试题选择-->
 <div  id="testPaper-chooser" class="root-column max-width">
     <div  class="toolbar max-width">
-        <div id="testPaper-chooser-return" class="toolbar-new">返回</div>
+        <!--<div id="testPaper-chooser-return" class="toolbar-new">返回</div>-->
+        <button id="testPaper-chooser-return" class="toolbar-new">返回</button>
         <button class="question-sure">确认选择</button>
     </div>
 
@@ -80,11 +82,16 @@
 
 
     <div class="testpaper-chooser-row-item1">
-        <div class="max-width testpaper-chooser-row-item1-label"><label >试题分类</label></div>
+        <div class="max-width testpaper-chooser-row-item1-label">
+            <label >试题分类</label>
+        </div>
+
+        <div id="question-type-div" class="testpaper-chooser-type-view">
+            <span id='question-item-type' class="testpaper-chooser-type-span">作者：李白</span>
+            <span class="testpaper-chooser-type-span">作者：李白</span>
+        </div>
 
 
-        <span class="testpaper-chooser-type-item">作者：李白</span>
-        <span class="testpaper-chooser-type-item">作者：李白</span>
 
 
         <!--<div class="testpaper-chooser-type-item">sss</div>-->
