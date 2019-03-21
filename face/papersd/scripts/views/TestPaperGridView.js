@@ -83,11 +83,7 @@ papersd.views.TestPaperGridView=function(){
 		_DataGrid = new mx.datacontrols.DataGrid({
 			columns:[
 				{dataType:"string",name:"testPaperName",width:"120",caption:"试卷名称",readOnly:false,id:"testPaperName",editorType:"TextEditor"},
-<<<<<<< HEAD
 				{name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"TextEditor"},
-				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor"}
-=======
-				{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,dataType:"timestamp",name:"answerTime",width:"120",caption:"答题时间",readOnly:false,id:"answerTime",editorType:"DateTimeEditor"},
 				{dataType:"string",name:"testPaperType",width:"120",caption:"试卷生成类型(自动手动)",readOnly:false,id:"testPaperType",editorType:"TextEditor",
 					renderCell: function(p_item, $p_cell) { 
 					var value = null;
@@ -99,7 +95,6 @@ papersd.views.TestPaperGridView=function(){
 					}
 					$p_cell.text(value);  
 				}}
->>>>>>> branch 'master' of https://github.com/forest1989/exam.git
 			],
 			
 			allowEditing:false,

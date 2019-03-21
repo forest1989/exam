@@ -125,16 +125,11 @@ papersd.views.TestPaperFormView=function(){
 				[
 					"[默认]",true,
 					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor"},
-<<<<<<< HEAD
 					{lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型(自动手动)",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"TextEditor"}
-=======
-					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"DateTimeEditor"},
 					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor",
 						displayMember: "name", valueMember: "id",  
 						items: [ { name: "手动", id: "1" } 
 					       ]}
->>>>>>> branch 'master' of https://github.com/forest1989/exam.git
 				]
 			],
 			entityContainer: formEntityContainer
@@ -206,9 +201,9 @@ papersd.views.TestPaperFormView=function(){
 		_DataGrid = new mx.datacontrols.DataGrid({
 			columns:[
 				{dataType:"string",name:"manualRuleId",width:"120",caption:"手动规则试卷内容",readOnly:false,id:"manualRuleId",editorType:"TextEditor",nullable:false},
-				{dataType:"string",name:"examTypeId",width:"120",caption:"试题类型ID",readOnly:false,id:"examTypeId",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
+				{dataType:"string",name:"examTypeId",width:"120",caption:"试题类型",readOnly:false,id:"examTypeId",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
 					url: papersd.mappath("~/rest/examTypeTree/tree")},
-				{dataType:"string",name:"examIds",width:"120",caption:"试题ID集合",readOnly:false,id:"examIds",editorType:"TextEditor"}
+				{dataType:"string",name:"examIds",width:"120",caption:"选择试题",readOnly:false,id:"examIds",editorType:"TextEditor"}
 			],
 			
 			allowEditing:true,
