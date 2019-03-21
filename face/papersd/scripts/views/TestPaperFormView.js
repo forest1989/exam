@@ -107,9 +107,9 @@ papersd.views.TestPaperFormView=function(){
 			primaryKey:"testPaperId",
 			meta:
 			[
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"testPaperName",caption:"试卷名称"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",caption:"答题时间",name:"answerTime"},
-				{readOnly:false,nullable:true,visible:true,valueType:"string",name:"testPaperType",caption:"试卷生成类型(自动手动)"}
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"testPaperName",caption:"试卷名称"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",caption:"答题时间",name:"answerTime"},
+				{readOnly:false,nullable:false,visible:true,valueType:"string",name:"testPaperType",caption:"试卷生成类型"}
 			]
 		});
 		
@@ -124,9 +124,9 @@ papersd.views.TestPaperFormView=function(){
 			[
 				[
 					"[默认]",true,
-					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"TextEditor"},
-					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor",
+					{lineBreak:false,name:"testPaperName",caption:"试卷名称",labelWidth:120,readOnly:false,id:"testPaperName",height:"22",editorType:"TextEditor",nullable:false},
+					{lineBreak:false,name:"answerTime",caption:"答题时间",labelWidth:120,readOnly:false,id:"answerTime",height:"22",editorType:"TextEditor",nullable:false},
+					{lineBreak:false,name:"testPaperType",caption:"试卷生成类型",labelWidth:120,readOnly:false,id:"testPaperType",height:"22",editorType:"DropDownEditor",nullable:false,
 						displayMember: "name", valueMember: "id",  
 						items: [ { name: "手动", id: "1" } 
 					       ]}
@@ -203,7 +203,23 @@ papersd.views.TestPaperFormView=function(){
 				{dataType:"string",name:"manualRuleId",width:"120",caption:"手动规则试卷内容",readOnly:false,id:"manualRuleId",editorType:"TextEditor",nullable:false},
 				{dataType:"string",name:"examTypeId",width:"120",caption:"试题类型",readOnly:false,id:"examTypeId",editorType:"DropDownTreeEditor",nullable:false,displayCheckBox: false, // 设置是否多选
 					url: papersd.mappath("~/rest/examTypeTree/tree")},
-				{dataType:"string",name:"examIds",width:"120",caption:"选择试题",readOnly:false,id:"examIds",editorType:"TextEditor"}
+				{dataType:"string",name:"examIds",width:"120",caption:"选择试题",readOnly:false,id:"examIds",editorType:"DropDownGridEditor",nullable:false,
+					valueColumn:"examId",
+				    displayColumn:"examId",
+					displayCheckBox : true,
+					dataGrid:{
+						columns:[
+						         {name: "examContentText", caption: "试题内容" ,width:"260", editorType: "RichTextEditor",visible:true},
+						         {name: "examAnswer", caption: "试题答案" ,width:"120", editorType: "TextEditor",visible:true},
+						         {name: "answerAnalyze", caption: "答案解析" ,width:"120", editorType: "TextEditor",visible:true},
+						         {name: "examMark", caption: "试题分数" ,width:"120", editorType: "TextEditor",visible:true}
+						         ],
+						    displayPrimaryKey:true,
+							pageSize : 10,
+							primaryKey: "examId",
+							width:"1000",
+							baseUrl : papersd.mappath("~/rest/examinfo/")
+						}}
 			],
 			
 			allowEditing:true,

@@ -128,12 +128,13 @@ papersd.views.TestPaperGridViewController = function(){
 	};
 
 	me._EditButton_onclick = function() {
-	    if(MainDataGrid.selection == null) {
-	        mx.indicate("info", "请点选一条主表记录！");
-	        return;
-	    }
-	    var primaryKey = MainDataGrid.entityContainer.primaryKey;
-	    var primaryValue = MainDataGrid.selection.getValue(primaryKey);
+	    if(MainDataGrid.displayCheckBox) {//数据项之前带选择框
+			if (MainDataGrid.getCheckedItems().length > 1 || MainDataGrid.getCheckedItems().length == 0) {
+	        	mx.indicate("info", "请勾选一条待编辑记录。");
+	            return;
+	        }
+		}
+	    var primaryValue = MainDataGrid.getCheckedItems()[0].id;
 	    me.utils.showDetailViewWindow(primaryValue,DetailViewController,"DataForm","编辑");
 	};
 	
