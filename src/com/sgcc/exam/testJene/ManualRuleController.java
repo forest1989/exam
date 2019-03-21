@@ -6,6 +6,9 @@ import java.io.Serializable;
 import org.springframework.http.server.ServletServerHttpRequest;
 import com.sgcc.exam.testJene.po.ManualRule;
 import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
+import com.sgcc.exam.etype.bizc.IExamTypeBizc;
+import com.sgcc.exam.etype.po.ExamType;
+import com.sgcc.exam.examInfo.po.Examinfo;
 import com.sgcc.exam.testJene.bizc.IManualRuleBizc;
 import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
@@ -41,7 +44,8 @@ public class ManualRuleController {
 
 	@Resource
 	private IManualRuleBizc manualruleBizc;
-	
+	@Resource
+	private IExamTypeBizc examtypeBizc;
 	@Resource
 	private IDataDictionaryBizC dataDictionaryBizC;
 	
@@ -126,7 +130,16 @@ public class ManualRuleController {
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
 	    QueryResultObject queryResult = manualruleBizc.query(queryCondition);
-
+	    List<ManualRule> lit=queryResult.getItems();
+        List<ManualRule> items =new ArrayList<ManualRule>();
+        for (int i = 0; i < lit.size(); i++) {
+        	ManualRule mr=lit.get(i);
+        	ExamType et = examtypeBizc.getExamtype(Integer.valueOf(mr.getExamTypeId()));
+        	mr.setExamTypeId(et.getTypeName());
+        	items.add(mr);
+        	mr=new ManualRule();
+		}
+        queryResult.setItems(items);
 	    return queryResult;
     }
 
