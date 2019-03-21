@@ -208,7 +208,7 @@
 			'<menu id="02101" url="../bookInfoYD/index.jsp" text="试卷管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+
 				'<menu id="02102" url="../wjtz/xx" text="试卷库管理" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" >'+
 				'<menu id="02103" url="../paperauto/index.jsp" text="试卷列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
-				'<menu id="02104" url="../paperzd/index.jsp" text="试卷列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
+				'<menu id="02104" url="../papersd/index.jsp" text="试卷手动列表" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false" iconImg="bt7"/>'+
 				'</menu>'+
 			'</menu>'+
 			'<menu id="04101" url="../hdglmovie/index.jsp" text="试题分类" targetframe="main" type="0" link="" selected="false" enable="true" noborderColor="false">'+

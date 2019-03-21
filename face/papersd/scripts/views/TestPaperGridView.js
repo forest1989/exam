@@ -1,6 +1,6 @@
-$ns("paperzd.views");
+$ns("papersd.views");
 
-paperzd.views.TestPaperGridView=function(){
+papersd.views.TestPaperGridView=function(){
 	var me = $extend(mx.views.View);
 	var base = {};
 	base.init = me.init;
@@ -74,7 +74,7 @@ paperzd.views.TestPaperGridView=function(){
 	
 	function _init_DataGrid(){
 		var gridEntityContainer = new mx.datacontainers.GridEntityContainer({
-			baseUrl:paperzd.mappath("~/rest/testPaper/"),
+			baseUrl:papersd.mappath("~/rest/testPaper/"),
 			loadMeta:false,
 			iscID:"-1",
 			primaryKey:"testPaperId"
@@ -111,7 +111,7 @@ paperzd.views.TestPaperGridView=function(){
 	
 	function _init_Window() {		
 		if(_Window == null || ((_Window.reusable==false) && _Window.disposed==true)) {
-			_Window = paperzd.context.windowManager.create({
+			_Window = papersd.context.windowManager.create({
 				entry:true
 			});
 		}

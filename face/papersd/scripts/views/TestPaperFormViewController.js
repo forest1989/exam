@@ -1,16 +1,16 @@
-$ns("paperzd.views");
+$ns("papersd.views");
 
-//paperzd、TestPaperFormView在编译时将自动替换为实际值，设计过程中不要随意修改
+//papersd、TestPaperFormView在编译时将自动替换为实际值，设计过程中不要随意修改
 
-paperzd.views.TestPaperFormViewController = function(){
+papersd.views.TestPaperFormViewController = function(){
 	var me = $extend(mx.views.ViewController);
-	me.typeName="paperzd.views.TestPaperFormViewController";
+	me.typeName="papersd.views.TestPaperFormViewController";
 	me.getController=function(key){
-		return me.getLinkViewController("paperzd.views."+key+"Controller");
+		return me.getLinkViewController("papersd.views."+key+"Controller");
 	};
 	me.getView = function() {
 		if (me.view == null) {
-			me.view = new paperzd.views.TestPaperFormView({ controller: me });
+			me.view = new papersd.views.TestPaperFormView({ controller: me });
 		}
 		return me.view;
 	};

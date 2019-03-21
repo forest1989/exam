@@ -6,25 +6,25 @@ $import("mx.datacontrols.DataGrid");
 $import("mx.datacontainers.GridEntityContainer");
 $import("mx.datacontrols.PageNaviBar");				
 $import("mx.windows.Window");				
-$import("paperzd.views.TestPaperGridView");				
-$import("paperzd.views.TestPaperGridViewController");				
-$import("paperzd.views.TestPaperGridViewUserController");				
+$import("papersd.views.TestPaperGridView");				
+$import("papersd.views.TestPaperGridViewController");				
+$import("papersd.views.TestPaperGridViewUserController");				
 $import("mx.datacontrols.DataForm");
 $import("mx.datacontainers.FormEntityContainer");				
-$import("paperzd.views.TestPaperFormView");				
-$import("paperzd.views.TestPaperFormViewController");				
-$import("paperzd.views.TestPaperFormViewUserController");				
+$import("papersd.views.TestPaperFormView");				
+$import("papersd.views.TestPaperFormViewController");				
+$import("papersd.views.TestPaperFormViewUserController");				
 
 mx.weblets.WebletManager.register(
 {
-    id: "paperzd",
-    name: "paperzd",
+    id: "papersd",
+    name: "papersd",
     requires: [],
     onload: function (e) {
 		
     }, 
     onstart: function (e) {
-    	var mvc = new paperzd.views.TestPaperGridViewUserController();
+    	var mvc = new papersd.views.TestPaperGridViewUserController();
 		e.context.rootViewPort.setViewController(mvc);
     }
 });

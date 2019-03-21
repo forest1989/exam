@@ -5,12 +5,12 @@
 <html>
 	<head>
 		<mx:Framework debugMode="true"/>
-		<title>paperzd</title>
+		<title>papersd</title>
 		<style>
 			html, body{ width:100%; height:100%; margin:0; overflow:hidden;}
 		</style>
 	</head>
 	<body>
-		<mx:WebletContainer id="paperzdContainer" webletID="paperzd" bundleName="exam"></mx:WebletContainer>
+		<mx:WebletContainer id="papersdContainer" webletID="papersd" bundleName="exam"></mx:WebletContainer>
 	</body>
 </html>

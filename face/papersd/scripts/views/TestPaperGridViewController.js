@@ -1,16 +1,16 @@
-$ns("paperzd.views");
+$ns("papersd.views");
 
-//paperzd、TestPaperGridView在编译时将自动替换为实际值，设计过程中不要随意修改
+//papersd、TestPaperGridView在编译时将自动替换为实际值，设计过程中不要随意修改
 
-paperzd.views.TestPaperGridViewController = function(){
+papersd.views.TestPaperGridViewController = function(){
 	var me = $extend(mx.views.ViewController);
-	me.typeName="paperzd.views.TestPaperGridViewController";
+	me.typeName="papersd.views.TestPaperGridViewController";
 	me.getController=function(key){
-		return me.getLinkViewController("paperzd.views."+key+"Controller");
+		return me.getLinkViewController("papersd.views."+key+"Controller");
 	};
 	me.getView = function() {
 		if(me.view == null) {
-			me.view = new paperzd.views.TestPaperGridView({ controller: me });
+			me.view = new papersd.views.TestPaperGridView({ controller: me });
 		}
 		return me.view;
 	};

@@ -1,6 +1,6 @@
-$ns("paperzd.views");
+$ns("papersd.views");
 
-paperzd.views.TestPaperFormView=function(){
+papersd.views.TestPaperFormView=function(){
 	var me = $extend(mx.views.View);
 	var base = {};
 	base.init = me.init;
@@ -101,7 +101,7 @@ paperzd.views.TestPaperFormView=function(){
 	
 	function _init_DataForm(){
 		var formEntityContainer = new mx.datacontainers.FormEntityContainer({
-			baseUrl:paperzd.mappath("~/rest/testPaper/"),
+			baseUrl:papersd.mappath("~/rest/testPaper/"),
 			loadMeta:false,
 			iscID:"-1",
 			primaryKey:"testPaperId",
@@ -189,7 +189,7 @@ paperzd.views.TestPaperFormView=function(){
 	
 	function _init_DataGrid(){
 		var gridEntityContainer = new mx.datacontainers.GridEntityContainer({
-			baseUrl:paperzd.mappath("~/rest/manualRule/"),
+			baseUrl:papersd.mappath("~/rest/manualRule/"),
 			loadMeta:false,
 			iscID:"-1",
 			primaryKey:"manualRuleId"
@@ -227,7 +227,7 @@ paperzd.views.TestPaperFormView=function(){
 	
 	function _init_Window() {		
 		if(_Window == null || ((_Window.reusable==false) && _Window.disposed==true)) {
-			_Window = paperzd.context.windowManager.create({
+			_Window = papersd.context.windowManager.create({
 				title:"详细信息",
 				reusable:true
 			});
