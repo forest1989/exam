@@ -117,7 +117,8 @@ readtext.views.ReadingTextFormView=function(){
 						tableName : "READING_TEXT",
 						colName : "READING_IMG",
 						primaryKey : "READING_ID", 
-						allowTypes:"jpg,png", 
+						allowTypes:"jpg,png",  
+						filePath:"/readingImg"
 						
 					
 					},
