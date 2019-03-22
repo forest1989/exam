@@ -102,8 +102,25 @@ readtext.views.ReadingTextFormView=function(){
 				[
 					"[默认]",true,
 					{lineBreak:false,name:"readingId",caption:"阅读内容ID",labelWidth:120,readOnly:false,id:"readingId",height:"22",editorType:"TextEditor",nullable:false},
-					{lineBreak:false,name:"readingCode",caption:"阅读内容编码",labelWidth:120,readOnly:false,id:"readingCode",height:"22",editorType:"TextEditor",nullable:false},
-					{lineBreak:false,name:"readingImg",caption:"阅读图片内容",labelWidth:120,readOnly:false,id:"readingImg",height:"22",editorType:"TextEditor",nullable:false},
+					{lineBreak:false,name:"readingCode",caption:"阅读内容编码",labelWidth:120,readOnly:false,id:"readingCode",height:"22",editorType:"TextEditor",nullable:false}, 
+					{   lineBreak:false,
+						id:"readingImg", 
+						nullable:true,
+						name : "readingImg",
+						caption : "阅读图片",
+						editorType : "PictureManagerEditor",
+						width:300,
+						height:200,
+						type : "form", 
+						maxFileSize:4000,
+						uploadMode : "file",
+						tableName : "READING_TEXT",
+						colName : "READING_IMG",
+						primaryKey : "READING_ID", 
+						allowTypes:"jpg,png", 
+						
+					
+					},
 					{lineBreak:false,name:"readingText",caption:"阅读文本内容",labelWidth:120,readOnly:false,id:"readingText",height:"100",editorType:"RichTextEditor",nullable:false}
 				/*	{lineBreak:false,name:"remarks",caption:"备注",labelWidth:120,readOnly:false,id:"remarks",height:"22",editorType:"TextEditor"},
 					{formatString:"yyyy-MM-dd HH:mm:ss",displayTime:true,lineBreak:false,name:"createDate",caption:"创建时间",labelWidth:120,readOnly:false,id:"createDate",height:"22",editorType:"DateTimeEditor"},
