@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-6 17:58:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.api.po.APIPaperHistory" table="TEST_PAPER_HISTORY"> 
+    <id name="testPaperHistoryId" type="java.lang.Integer"> 
+      <column name="TEST_PAPER_HISTORY_ID" length="20"/>  
+      <generator class="increment"/> 
+    </id>
+    <property name="mUserId" type="java.lang.Integer" lazy="true"> 
+      <column name="M_USER_ID" precision="20" scale="0"/> 
+    </property>  
+     
+    <property name="testPaperId" type="java.lang.Integer" lazy="true"> 
+      <column name="TEST_PAPER_ID" precision="20" scale="0"/> 
+    </property>  
+     
+    <property name="mark" type="java.lang.Integer" lazy="true"> 
+      <column name="MARK" precision="100" scale="0"/> 
+    </property>  
+    
+    <property name="delFlag" type="java.lang.String" lazy="true"> 
+      <column name="DEL_FLAG" precision="1" scale="0"/> 
+    </property>  
+      <property name="createDate" type="java.util.Date" lazy="true"> 
+      <column name="CREATE_DATE" scale="0"/> 
+    </property>   
+  </class> 
+</hibernate-mapping>
