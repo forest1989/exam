@@ -1,20 +1,21 @@
-package com.sgcc.exam.api;
+package com.sgcc.exam.testJene;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.sgcc.exam.api.po.Area;
 import com.sgcc.uap.rest.annotation.ItemResponseBody;
 import com.sgcc.uap.rest.annotation.VoidResponseBody;
 import java.io.Serializable;
 import org.springframework.http.server.ServletServerHttpRequest;
+import com.sgcc.exam.testJene.po.ManualRule;
 import com.sgcc.uap.rest.annotation.attribute.ViewAttributeData;
+import com.sgcc.exam.etype.bizc.IExamTypeBizc;
+import com.sgcc.exam.etype.po.ExamType;
+import com.sgcc.exam.examInfo.po.Examinfo;
+import com.sgcc.exam.testJene.bizc.IManualRuleBizc;
 import com.sgcc.uap.service.validator.ServiceValidatorBaseException;
 import com.sgcc.uap.rest.support.QueryResultObject;
 import com.sgcc.uap.mdd.runtime.validate.IValidateService;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.sgcc.uap.mdd.runtime.base.validator.ValidateResult;
 import java.net.URL;
-import com.sgcc.exam.api.bizc.IAreaBizc;
 import org.osgi.framework.FrameworkUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sgcc.uap.rest.annotation.ItemsRequestBody;
@@ -38,12 +39,13 @@ import com.sgcc.uap.bizc.sysbizc.datadictionary.IDataDictionaryBizC;
 
 
 @Controller
-@RequestMapping("/area")
-public class AreaController {
+@RequestMapping("/manualRule")
+public class ManualRuleController {
 
 	@Resource
-	private IAreaBizc areaBizc;
-	
+	private IManualRuleBizc manualruleBizc;
+	@Resource
+	private IExamTypeBizc examtypeBizc;
 	@Resource
 	private IDataDictionaryBizC dataDictionaryBizC;
 	
@@ -57,39 +59,39 @@ public class AreaController {
 	public @ColumnResponseBody List<ViewAttributeData> getPropertyMeta(@ColumnRequestParam("params") String[] filterPropertys) throws Exception {
 	
 		List<ViewAttributeData> datas = null;
-		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.api.po.Area", filterPropertys);
+		datas = metadataService.getPropertyMeta(this.getClass(), "com.sgcc.exam.testJene.po.ManualRule", filterPropertys);
 		return datas;
 	}
 	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public @ItemResponseBody List<Area> save(HttpServletRequest request_){
+	public @ItemResponseBody List<ManualRule> save(HttpServletRequest request_){
 		try {
 			//获取servlet API
 			ServletServerHttpRequest servlet = new BodyReaderRequestWrapper(request_);
 	        //将模型转换为java对象
-			Area[] areas = coverter.converter(new Area[0], servlet);
+			ManualRule[] manualrules = coverter.converter(new ManualRule[0], servlet);
 		    List<Map<String,Object>> changedProperies = coverter.converter(new ArrayList<Map<String,Object>>(), servlet);
-	        List<Area> voList = new ArrayList<Area>();
+	        List<ManualRule> voList = new ArrayList<ManualRule>();
 	        //对所有属性进行后端校验
-			validateService.validateWithException(Area.class, changedProperies);
+			validateService.validateWithException(ManualRule.class, changedProperies);
 			//遍历表单数据, 如果当前数据在数据库里存在, 则做修改, 否则做新增处理
-			for (int i = 0; i < areas.length; i++) {
-				Area area= areas[i];
-				Serializable pkValue = area.getAreaId();
-				Map<String,Object> changedProperty = coverter.flatHandle(Area.class,changedProperies.get(i));
+			for (int i = 0; i < manualrules.length; i++) {
+				ManualRule manualrule= manualrules[i];
+				Serializable pkValue = manualrule.getManualRuleId();
+				Map<String,Object> changedProperty = coverter.flatHandle(ManualRule.class,changedProperies.get(i));
 				if (null != pkValue) {
-					Area old = areaBizc.get(pkValue);
+					ManualRule old = manualruleBizc.get(pkValue);
 
 	 				BeanUtils.populate(old, changedProperty);
 	 				
-	                areaBizc.update(old, pkValue);
-					voList.add(area);
+	                manualruleBizc.update(old, pkValue);
+					voList.add(manualrule);
 	
 				}else{
-					BeanUtils.populate(area, changedProperty);
-					areaBizc.add(area);
-					voList.add(area);
+					BeanUtils.populate(manualrule, changedProperty);
+					manualruleBizc.add(manualrule);
+					voList.add(manualrule);
 				}
 			}
 			return voList;
@@ -103,22 +105,22 @@ public class AreaController {
 	public @VoidResponseBody Object delete(@IdRequestBody IDRequestObject idObject){
 		String[] ids = idObject.getIds();
 		for (String id : ids) {
-			areaBizc.delete(java.lang.String.valueOf(id));
+			manualruleBizc.delete(java.lang.Integer.valueOf(id));
 		}
 		return null;
 	}
 
 	@RequestMapping("/{id}")
     public @ItemResponseBody QueryResultObject get(@PathVariable String id) {
-		Area area ;
+		ManualRule manualrule ;
 		if("null".equals(id)){
-			area = null;
+			manualrule = null;
 		}else {
-			area = areaBizc.get(java.lang.String.valueOf(id));
+			manualrule = manualruleBizc.get(java.lang.Integer.valueOf(id));
 		}
 		QueryResultObject qObject = new QueryResultObject();
 		List items = new ArrayList();
-		items.add(area);
+		items.add(manualrule);
 		qObject.setItems(items);
 
     	return qObject;
@@ -127,7 +129,17 @@ public class AreaController {
 
 	@RequestMapping("/")
     public @ItemResponseBody QueryResultObject query(@QueryRequestParam("params") RequestCondition queryCondition){
-	    QueryResultObject queryResult = areaBizc.query(queryCondition);
+	    QueryResultObject queryResult = manualruleBizc.query(queryCondition);
+	    List<ManualRule> lit=queryResult.getItems();
+        List<ManualRule> items =new ArrayList<ManualRule>();
+        for (int i = 0; i < lit.size(); i++) {
+        	ManualRule mr=lit.get(i);
+        	ExamType et = examtypeBizc.getExamtype(Integer.valueOf(mr.getExamTypeId()));
+        	mr.setExamTypeId(et.getTypeName());
+        	items.add(mr);
+        	mr=new ManualRule();
+		}
+        queryResult.setItems(items);
 	    return queryResult;
     }
 

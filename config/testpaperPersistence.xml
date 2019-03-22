@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:module="http://www.sgcc.com.cn/schema/platform/module" xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.sgcc.com.cn/schema/platform/module  http://www.sgcc.com.cn/schema/platform/module/module.xsd">  
-  <module:entity id="testpaper" sessionFactory="sessionFactory"> 
-    <module:mappingFile>classpath:com/sgcc/exam/testpaper/po/TestPaper.hbm.xml</module:mappingFile>
-  </module:entity>
-</beans>

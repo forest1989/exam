@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-21 10:13:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.testJene.po.AutomaticRule" table="AUTOMATIC_RULE"> 
+    <id name="automaticRuleId" type="java.lang.Integer"> 
+      <column name="AUTOMATIC_RULE_ID" length="10"/>  
+      <generator class="increment"/> 
+    </id>  
+    <many-to-one name="testpaper" class="com.sgcc.exam.testJene.po.TestPaper" fetch="select"> 
+      <column name="TEST_PAPER_ID"/> 
+    </many-to-one>  
+    <property name="examTypeId" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_TYPE_ID" precision="10" scale="0"/> 
+    </property>  
+    <property name="examCount" type="java.lang.String" lazy="true"> 
+      <column name="EXAM_COUNT" precision="100" scale="0"/> 
+    </property>  
+    <property name="delFlag" type="java.lang.String" lazy="true"> 
+      <column name="DEL_FLAG" precision="1" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>
