@@ -15,7 +15,10 @@ Require-Bundle: com.sgcc.uap.core,
  com.sgcc.uap.mdd.runtime,
  org.codehaus.jackson.core,
  org.codehaus.jackson.mapper,
- org.eclipse.osgi
+ org.eclipse.osgi,
+ org.bouncycastle.bcprovider;bundle-version="1.31.0",
+ com.fasterxml.jackson.module.hibernate;bundle-version="1.9.1",
+ net.sf.ezmorph;bundle-version="1.0.6"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Order-Num: 100
 Import-Package: javax.annotation,
