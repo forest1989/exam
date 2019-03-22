@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 2019-3-22 11:17:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping> 
+  <class name="com.sgcc.exam.wxImages.po.WxImageConf" table="WX_IMAGE_CONF"> 
+    <id name="id" type="java.lang.Integer"> 
+      <column name="ID" length="10"/>  
+      <generator class="increment"/> 
+    </id>  
+    <property name="wxIdentify" type="java.lang.String" lazy="true"> 
+      <column name="WX_IDENTIFY" precision="255" scale="0"/> 
+    </property>  
+    <property name="wxImage" type="java.lang.String" lazy="true"> 
+      <column name="WX_IMAGE" precision="255" scale="0"/> 
+    </property> 
+  </class> 
+</hibernate-mapping>
