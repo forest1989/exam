@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model id="3abb8ebb0b5548a8a26b5032ad63029a" name="wxImages" displayName="wxImages" stereotype="3" nameSpace="com.sgcc.exam">
+  <VersionInfo>
+    <CreatedTime>2019-03-22 11:16:42</CreatedTime>
+    <ChangedTime>2019-03-22 11:17:52</ChangedTime>
+    <Description>This is a demo model.</Description>
+    <Version>1.0</Version>
+    <Creator>hao</Creator>
+    <Modifier>hao</Modifier>
+  </VersionInfo>
+  <Package id="6bcbb5237d3a45a0a6074bb593173b95" name="wxImages" displayName="wxImages" stereotype="3">
+    <Diagrams>
+      <Diagram id="ec6e303c6fea48a1807623e1e2d70771" name="wxImages" displayName="wxImages" stereotype="3">
+        <DiagramStyle>
+          <BackGroundColor>white</BackGroundColor>
+          <GridStyle>false</GridStyle>
+          <ZoomScale>100%</ZoomScale>
+          <Layout></Layout>
+        </DiagramStyle>
+        <Elements>
+          <Element id="dce4f2fd813f4f74b74f7802359696ce" objectId="5a2cb96db910440d865a9f30aa20511b">
+            <ElementStyle>
+              <FontFamily></FontFamily>
+              <FontSize>0</FontSize>
+              <Width>150</Width>
+              <Height>200</Height>
+              <Position_X>10.0</Position_X>
+              <Position_Y>40.0</Position_Y>
+              <End_Position_X>0.0</End_Position_X>
+              <End_Position_Y>0.0</End_Position_Y>
+              <Point_List></Point_List>
+              <Border>false</Border>
+              <BorderColor></BorderColor>
+              <BackGroundColor></BackGroundColor>
+            </ElementStyle>
+          </Element>
+        </Elements>
+      </Diagram>
+    </Diagrams>
+    <BusinessClasses>
+      <BusinessClass id="5a2cb96db910440d865a9f30aa20511b" name="WxImageConf" displayName="微信图标" stereotype="1">
+        <TableName>wx_image_conf</TableName>
+        <IsAbstract>false</IsAbstract>
+        <Properties>
+          <Property id="20ae9678618844bdb4969c9daf4a818b" name="id" displayName="图标序列" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>0</OrderNum>
+            <Editor id="7dd805f8c3464deda2df3ad6d0164e9b" name="" displayName="" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>id</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>10</DBDataLength>
+            <DBDataPrecision></DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>true</IsPrimaryKey>
+            <Unique>true</Unique>
+            <Nullable>false</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+            <PkName></PkName>
+            <PrimaryKeyPloy>ASSIGNED</PrimaryKeyPloy>
+          </Property>
+          <Property id="47b04eab5be349ec8fdfed5e81ec91a8" name="wxIdentify" displayName="图标标识" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>1</OrderNum>
+            <Editor id="80b2125ac8074f49b661ccfb544637f8" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>wx_identify</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>255</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+          <Property id="37179620b41f408d82db650ef9a05505" name="wxImage" displayName="图标名称" stereotype="3">
+            <GroupId></GroupId>
+            <DataType>string</DataType>
+            <OrderNum>2</OrderNum>
+            <Editor id="4af03d55eb644b7c828593411b6ec71a" name="" displayName="" stereotype="3" editorType="TextEditor" dataSourceType="0"/>
+            <DefaultValue></DefaultValue>
+            <DBColumnName>wx_image</DBColumnName>
+            <DBDataType></DBDataType>
+            <DBDataLength>255</DBDataLength>
+            <DBDataPrecision>0</DBDataPrecision>
+            <QueryProperty>false</QueryProperty>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <Unique>false</Unique>
+            <Nullable>true</Nullable>
+            <ReadOnly>false</ReadOnly>
+            <IndexedColumn>false</IndexedColumn>
+            <Persistence>true</Persistence>
+          </Property>
+        </Properties>
+        <ExtendAttributies/>
+        <Operations>
+          <Operation id="ef821e5a30024a61bb68f785c64fc25c" name="add" displayName="新增" stereotype="3" operationType="standard"/>
+          <Operation id="23831031ada240fabaef7c02921380e1" name="update" displayName="编辑" stereotype="3" operationType="standard"/>
+          <Operation id="2d773a2a87aa41c2b60b951f04cdf4ce" name="delete" displayName="删除" stereotype="3" operationType="standard"/>
+          <Operation id="a7c7f55c16c545e8baefae3138fd6426" name="get" displayName="获取详情" stereotype="3" operationType="standard"/>
+          <Operation id="c1f64811ef1c4e6d944fc77ff475bd61" name="query" displayName="查询列表" stereotype="3" operationType="standard"/>
+        </Operations>
+      </BusinessClass>
+    </BusinessClasses>
+  </Package>
+</Model>
