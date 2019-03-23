@@ -101,7 +101,7 @@ paperauto.views.TestPaperFormView=function(){
 	
 	function _init_DataForm(){
 		var formEntityContainer = new mx.datacontainers.FormEntityContainer({
-			baseUrl:paperauto.mappath("~/rest/testPaper/"),
+			baseUrl:paperauto.mappath("~/rest/testPaper2/"),
 			loadMeta:false,
 			iscID:"-1",
 			primaryKey:"testPaperId",

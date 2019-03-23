@@ -22,7 +22,6 @@ import org.springframework.web.client.RestClientException;
 import com.sgcc.uap.rest.support.IDRequestObject;
 import com.sgcc.uap.rest.annotation.ColumnRequestParam;
 import com.sgcc.uap.mdd.runtime.utils.BeanUtils;
-import com.sgcc.exam.testJene.po.ManualRule;
 import com.sgcc.exam.testJene.po.TestPaper;
 import com.sgcc.uap.mdd.runtime.meta.IMetadataService;
 import java.util.*;
@@ -30,8 +29,6 @@ import com.sgcc.uap.mdd.runtime.utils.BodyReaderRequestWrapper;
 import com.sgcc.uap.rest.support.RequestCondition;
 import com.sgcc.uap.mdd.runtime.utils.HttpMessageConverter;
 import javax.annotation.Resource;
-
-import com.sgcc.exam.etype.po.ExamType;
 import com.sgcc.exam.testJene.bizc.ITestPaperBizc;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,8 +36,8 @@ import com.sgcc.uap.bizc.sysbizc.datadictionary.IDataDictionaryBizC;
 
 
 @Controller
-@RequestMapping("/testPaper")
-public class TestPaperController {
+@RequestMapping("/testPaper2")
+public class TestPaperController2 {
 
 	@Resource
 	private ITestPaperBizc testpaperBizc;
@@ -133,7 +130,7 @@ public class TestPaperController {
         List<TestPaper> items =new ArrayList<TestPaper>();
         for (int i = 0; i < lit.size(); i++) {
         	TestPaper mr=lit.get(i);
-        	if(mr.getTestPaperType().equals("1")){
+        	if(mr.getTestPaperType().equals("2")){
         		items.add(mr);
         	}
         	mr=new TestPaper();

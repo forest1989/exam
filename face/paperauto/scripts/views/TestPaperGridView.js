@@ -74,7 +74,7 @@ paperauto.views.TestPaperGridView=function(){
 	
 	function _init_DataGrid(){
 		var gridEntityContainer = new mx.datacontainers.GridEntityContainer({
-			baseUrl:paperauto.mappath("~/rest/testPaper/"),
+			baseUrl:paperauto.mappath("~/rest/testPaper2/"),
 			loadMeta:false,
 			iscID:"-1",
 			primaryKey:"testPaperId"
